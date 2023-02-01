@@ -4,8 +4,6 @@ services:
   tiggomark_db:
     image: mysql:8.0
     container_name: mysql_tiggomark_prod
-    networks:
-      - tiggomark
     volumes:
       - db_data:/var/lib/mysql
     restart: unless-stopped
@@ -17,18 +15,16 @@ services:
       MYSQL_PASSWORD: '321.qwerty'
     command: --character-set-server=utf8 --collation-server=utf8_unicode_ci
     ports:
-      - "3309:3309"
+      - "127.0.0.1:3309:3309"
 
   tiggomark:
     image: tiggomark/projects:1.0
     container_name: tiggomark_prod
     restart: unless-stopped
-    networks:
-      - tiggomark
     environment:
       # LEAN_APP_URL: 'https://domain.com/tiggomark'                     # Only needed for subdirectory setup; protocol (http or https) and base URL , trailing slash not needed
       LEAN_SITENAME: 'tiggomark2'                                         # Name of your site, can be changed later
-      LEAN_DB_HOST: 'mysql_tiggomark_prod'                                    # Database host, derived from container_name in tiggomark_db container
+      LEAN_DB_HOST: '0.0.0.0'                                    # Database host, derived from container_name in tiggomark_db container
       LEAN_DB_USER: 'admin'
       LEAN_DB_PASSWORD: '321.qwerty'
       LEAN_DB_PORT: 3309
@@ -49,6 +45,5 @@ volumes:
   userfiles2:
   public_userfiles2:
 
-networks:
-  tiggomark:
-    driver: bridge
+
+
