@@ -31,9 +31,9 @@ echo -e "${NC}"
 echo -e "\nFor correct operation of this script, please ensure you have zip, unzip, wget and curl installed.\n"
 
 CURRENT_VERSION=$(grep "appVersion" config/appSettings.php |tr -d [:cntrl:] |tr -d \" |tr -d [:space:] |tr -d ";" |awk -F'=' '{print "v"$2}')
-LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/leantime/leantime/releases/latest)
+LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/tiggomark/tiggomark/releases/latest)
 LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
-DOWNLOAD_URL=$(echo "https://github.com/leantime/leantime/releases/download/$LATEST_VERSION/Leantime-$LATEST_VERSION.zip")
+DOWNLOAD_URL=$(echo "https://github.com/tiggomark/tiggomark/releases/download/$LATEST_VERSION/tiggomark-$LATEST_VERSION.zip")
 
 if [ "${CURRENT_VERSION}" == "${LATEST_VERSION}" ]
 then
@@ -84,10 +84,10 @@ else
 						fi
 						read -r -p "\n- Username: " USER
 						read -r -p "\n- Password: " PSWD
-						read -r -p "\n- Database [leantime]: " DTBS
+						read -r -p "\n- Database [tiggomark]: " DTBS
 						if [ -z DTBS ]
 						then
-							DTBS='leantime'
+							DTBS='tiggomark'
 						fi
 						read -r -p "\n- Portnumber [3306]: " PORT
 						if [ -z PORT ]
@@ -97,7 +97,7 @@ else
 					fi
 
 					DT=$(getDateString)
-					FILE="leantime_db_backup_$CURRENT_VERSION_$DT.sql.gz"
+					FILE="tiggomark_db_backup_$CURRENT_VERSION_$DT.sql.gz"
 					printf "(${GREEN}Done${NC})\n"
 
 					#Backing up the database
@@ -113,7 +113,7 @@ else
 					fi
 
 					#Backing up the files
-					FILE="leantime_file_backup_$CURRENT_VERSION_$DT.zip"
+					FILE="tiggomark_file_backup_$CURRENT_VERSION_$DT.zip"
 					printf " - Backing up the files in backup/$FILE "
 					zip -q -r "backup/$FILE" . -x "updates/*" -x "backup/*"
 
@@ -143,19 +143,19 @@ else
 			echo -e "(${GREEN}Done${NC})\n"
 
 			printf " - Extracting the updatefile "
-			rm -f -r /tmp/leantime/
+			rm -f -r /tmp/tiggomark/
 			unzip -qq -d /tmp/ "update/$FILE"
                         echo -e "(${GREEN}Done${NC})\n"
 
 			printf " - Applying the update "
-			cp -r /tmp/leantime/* .
+			cp -r /tmp/tiggomark/* .
                         echo -e "(${GREEN}Done${NC})\n"
 
 			printf " - Cleaning up the temporary files "
-			rm -r /tmp/leantime/
+			rm -r /tmp/tiggomark/
 			echo -e "(${GREEN}Done${NC})\n"
 
-			echo -e "${BLUE}Leantime has been succesfully updated${NC}\n\n"
+			echo -e "${BLUE}tiggomark has been succesfully updated${NC}\n\n"
 			;;
 
 		n|N|No|no)

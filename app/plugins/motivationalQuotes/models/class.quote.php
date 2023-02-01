@@ -1,6 +1,6 @@
 <?php
 
-namespace leantime\plugins\models\motivationalQuotes {
+namespace tiggomark\plugins\models\motivationalQuotes {
 
     class quote
     {

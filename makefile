@@ -1,5 +1,5 @@
 VERSION := $(shell grep "appVersion" ./config/appSettings.php |awk -F' = ' '{print substr($$2,2,length($$2)-3)}')
-TARGET_DIR:= ./target/leantime
+TARGET_DIR:= ./target/tiggomark
 install-deps:
 	npm install
 	composer install --no-dev --optimize-autoloader
@@ -23,7 +23,7 @@ build: install-deps build-js
 	cp  ./.htaccess $(TARGET_DIR)
 	cp  ./LICENSE $(TARGET_DIR)
 	cp  ./nginx*.conf $(TARGET_DIR)
-	cp  ./updateLeantime.sh $(TARGET_DIR)
+	cp  ./updatetiggomark.sh $(TARGET_DIR)
 
 	rm -f $(TARGET_DIR)/config/configuration.php
 	#Remove font for QR code generator (not needed if no label is used)
@@ -52,8 +52,8 @@ build: install-deps build-js
 	find $(TARGET_DIR)/public/js/ -depth -mindepth 1 ! -name "*compiled*" -exec rm -rf {} \;
 
 package:
-	cd target && zip -r -X "Leantime-v$(VERSION)$$1.zip" leantime
-	cd target && tar -zcvf "Leantime-v$(VERSION)$$1.tar.gz" leantime
+	cd target && zip -r -X "tiggomark-v$(VERSION)$$1.zip" tiggomark
+	cd target && tar -zcvf "tiggomark-v$(VERSION)$$1.tar.gz" tiggomark
 
 clean:
 	rm -rf $(TARGET_DIR)

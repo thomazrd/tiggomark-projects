@@ -1,15 +1,15 @@
 version: '3.3'
 
 services:
-  leantime_db:
+  tiggomark_db:
     image: mysql:8.0
-    container_name: mysql_leantime_prod
+    container_name: mysql_tiggomark_prod
     volumes:
       - db_data:/var/lib/mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: '321.qwerty'
-      MYSQL_DATABASE: 'leantime'
+      MYSQL_DATABASE: 'tiggomark'
       MYSQL_USER: 'admin'
       MYSQL_TCP_PORT: '3309'
       MYSQL_PASSWORD: '321.qwerty'
@@ -17,18 +17,18 @@ services:
     ports:
       - "3309:3309"
 
-  leantime:
-    image: leantime:latest
-    container_name: leantime_prod
+  tiggomark:
+    image: tiggomark/projects:1.0
+    container_name: tiggomark_prod
     restart: unless-stopped
     environment:
-      # LEAN_APP_URL: 'https://domain.com/leantime'                     # Only needed for subdirectory setup; protocol (http or https) and base URL , trailing slash not needed
-      LEAN_SITENAME: 'Leantime2'                                         # Name of your site, can be changed later
-      LEAN_DB_HOST: 'mysql_leantime_prod'                                    # Database host, derived from container_name in leantime_db container
+      # LEAN_APP_URL: 'https://domain.com/tiggomark'                     # Only needed for subdirectory setup; protocol (http or https) and base URL , trailing slash not needed
+      LEAN_SITENAME: 'tiggomark2'                                         # Name of your site, can be changed later
+      LEAN_DB_HOST: 'mysql_tiggomark_prod'                                    # Database host, derived from container_name in tiggomark_db container
       LEAN_DB_USER: 'admin'
       LEAN_DB_PASSWORD: '321.qwerty'
       LEAN_DB_PORT: 3309
-      LEAN_DB_DATABASE: 'leantime'
+      LEAN_DB_DATABASE: 'tiggomark'
       LEAN_DEFAULT_TIMEZONE: 'Europe/Stockholm'                         # Set default server timezone
       LEAN_SESSION_PASSWORD: 'GD8Fozemg3AqM9my86TTfgTeGPXXkPF7'         # Salting sessions. Replace with a strong password
       LEAN_SESSION_EXPIRATION: 28800                                    # How many seconds after inactivity should we logout?  28800seconds = 8hours
@@ -36,9 +36,9 @@ services:
       - public_userfiles2:/var/www/html/public/userfiles
       - userfiles2:/var/www/html/userfiles
     ports:
-      - "80:80"                                                       # The port to expose and access Leantime
+      - "80:80"                                                       # The port to expose and access tiggomark
     depends_on:
-      - leantime_db                                                     # Don't start Leantime unless leantime_db is running
+      - tiggomark_db                                                     # Don't start tiggomark unless tiggomark_db is running
 
 volumes:
   db_data:

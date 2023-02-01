@@ -1,14 +1,14 @@
 //Lets get this party started.
-var leantime = leantime || {};
+var tiggomark = tiggomark || {};
 
 var themeColor = jQuery('meta[name=theme-color]').attr("content");
-leantime.companyColor = themeColor;
+tiggomark.companyColor = themeColor;
 
 var theme = jQuery('meta[name=color-scheme]').attr("content");
-leantime.theme = theme;
+tiggomark.theme = theme;
 
 var appURL = jQuery('meta[name=identifier-URL]').attr("content");
-leantime.appUrl = appURL;
+tiggomark.appUrl = appURL;
 
 //Backwards compatibility for some jQuery libs
 jQuery(function() {
@@ -28,14 +28,14 @@ jQuery(document).on('click', function (e) {
 });
 
 
-leantime.replaceSVGColors = function () {
+tiggomark.replaceSVGColors = function () {
 
     jQuery(document).ready(function(){
 
-        if(leantime.companyColor != "#1b75bb") {
+        if(tiggomark.companyColor != "#1b75bb") {
             jQuery("svg").children().each(function () {
                 if (jQuery(this).attr("fill") == "#1b75bb") {
-                    jQuery(this).attr("fill", leantime.companyColor);
+                    jQuery(this).attr("fill", tiggomark.companyColor);
                 }
             });
         }
@@ -44,7 +44,7 @@ leantime.replaceSVGColors = function () {
 
 };
 
-leantime.replaceSVGColors();
+tiggomark.replaceSVGColors();
 
 jQuery(document).on('focusin', function(e) {
     if (jQuery(e.target).closest(".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root").length) {
@@ -53,7 +53,7 @@ jQuery(document).on('focusin', function(e) {
 });
 
 //Set moment locale early in app creation
-moment.locale(leantime.i18n.__("language.code"));
+moment.locale(tiggomark.i18n.__("language.code"));
 
 
 jQuery(document).ready(function(){

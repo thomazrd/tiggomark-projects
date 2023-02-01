@@ -8,8 +8,8 @@ require_once '../config/configuration.php';
 require_once '../config/appSettings.php';
 
 
-$config = \leantime\core\environment::getInstance();
-$settings = new leantime\core\appSettings();
+$config = \tiggomark\core\environment::getInstance();
+$settings = new tiggomark\core\appSettings();
 $settings->loadSettings($config->defaultTimezone, $config->debug ?? 0);
 
 if(isset($config->appUrl) && $config->appUrl != ""){
@@ -21,6 +21,6 @@ if(isset($config->appUrl) && $config->appUrl != ""){
 }
 
 //Bootstrap application
-$application = new leantime\core\application();
+$application = new tiggomark\core\application();
 
 $application->start();

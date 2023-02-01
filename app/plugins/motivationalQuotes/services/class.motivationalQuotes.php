@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\plugins\services {
+namespace tiggomark\plugins\services {
 
-    use leantime\plugins\repositories;
+    use tiggomark\plugins\repositories;
 
     class motivationalQuotes
     {

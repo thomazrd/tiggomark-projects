@@ -26,15 +26,15 @@ require_once '../app/core/class.autoload.php';
 require_once '../config/configuration.php';
 require_once '../config/appSettings.php';
 
-use leantime\domain\repositories;
-use leantime\domain\services;
+use tiggomark\domain\repositories;
+use tiggomark\domain\services;
 
-$config = \leantime\core\environment::getInstance();
-$settings = new leantime\core\appSettings();
+$config = \tiggomark\core\environment::getInstance();
+$settings = new tiggomark\core\appSettings();
 $settings->loadSettings($config->defaultTimezone);
 
 // NEW Audit system
-$audit = new leantime\domain\repositories\audit();
+$audit = new tiggomark\domain\repositories\audit();
 
 $lastEvent = $audit->getLastEvent('cron');
 
@@ -96,7 +96,7 @@ function overrideThemeSettingsMinimal()
 {
     date_default_timezone_set('Europe/Paris');
 
-    $settingsRepo = new leantime\domain\repositories\setting();
+    $settingsRepo = new tiggomark\domain\repositories\setting();
     $logoPath = $settingsRepo->getSetting("companysettings.logoPath");
     $color = $settingsRepo->getSetting("companysettings.primarycolor");
     $color2 = $settingsRepo->getSetting("companysettings.secondarycolor");

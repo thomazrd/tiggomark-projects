@@ -2,7 +2,7 @@
 /**
  * backup.php - For Handling Backup DB.
  *
- * Can use CronJob for run 0 5 * * * wget http://yourleantimeurl.com/backup.php
+ * Can use CronJob for run 0 5 * * * wget http://yourtiggomarkurl.com/backup.php
  *
  */
 define('ROOT', dirname(__FILE__));
@@ -14,8 +14,8 @@ require_once '../app/core/class.autoload.php';
 require_once '../config/configuration.php';
 require_once '../config/appSettings.php';
 
-$config = \leantime\core\environment::getInstance();
-$settings = new leantime\core\appSettings();
+$config = \tiggomark\core\environment::getInstance();
+$settings = new tiggomark\core\appSettings();
 $settings->loadSettings($config->defaultTimezone);
 
 function runBackup($backupFile, $config){

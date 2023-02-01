@@ -17,7 +17,7 @@
 
 
 <style>
- .leantimeLogo { position: fixed; bottom: 10px; right: 10px; }
+ .tiggomarkLogo { position: fixed; bottom: 10px; right: 10px; }
 </style>
 
 <div class="row " style="height:100%; width: 99%;">
@@ -43,8 +43,8 @@
         </div>
 
     </div>
-	<div class="leantimeLogo">
-		<img style="height: 25px;" src="<?=BASE_URL ?>/images/logo-powered-by-leantime.png">
+	<div class="tiggomarkLogo">
+		<img style="height: 25px;" src="<?=BASE_URL ?>/images/logo-powered-by-tiggomark.png">
 	</div>
 </div>
 

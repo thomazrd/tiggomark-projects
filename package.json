@@ -1,5 +1,5 @@
 {
-  "name": "leantime",
+  "name": "tiggomark",
   "version": "2.3.5",
   "description": "Open source innovation management system",
   "main": "gruntfile.js",
@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Leantime/leantime"
+    "url": "https://github.com/tiggomark/tiggomark"
   },
   "keywords": [
     "Project",
@@ -54,5 +54,5 @@
   ],
   "author": "Marcel Folaron",
   "license": "GPL-2.0",
-  "homepage": "https://github.com/Leantime/leantime/blob/master/README.md"
+  "homepage": "https://github.com/tiggomark/tiggomark/blob/master/README.md"
 }

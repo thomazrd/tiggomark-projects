@@ -1,15 +1,15 @@
 {
-    "name": "leantime/motivationalquotes",
+    "name": "tiggomark/motivationalquotes",
     "description": "Displays a random quote on the welcome page",
     "version": "0.1",
     "screenshot": "/images/screenshot.png",
     "authors": [
         {
-            "name": "Leantime",
-            "email": "support@leantime.io"
+            "name": "tiggomark",
+            "email": "support@tiggomark.io"
         }
     ],
-    "homepage": "https://leantime.io",
+    "homepage": "https://tiggomark.io",
     "type": "plugin",
     "keywords": [
         "quotes",
@@ -17,6 +17,6 @@
     ],
     "license": "MIT",
     "require": {
-        "leantime/leantime": "2.3"
+        "tiggomark/tiggomark": "2.3"
     }
 }

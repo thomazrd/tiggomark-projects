@@ -1,8 +1,8 @@
 /*
- * Leantime Modals
+ * tiggomark Modals
  *
  * This is a heavily modified fork of nyroModal v2.0.0
- * Including a variety of filters needed for Leantime specific use cases
+ * Including a variety of filters needed for tiggomark specific use cases
  *
  *
  * Included parts:

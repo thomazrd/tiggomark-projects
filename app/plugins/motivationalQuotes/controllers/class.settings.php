@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\plugins\controllers {
+namespace tiggomark\plugins\controllers {
 
-    use leantime\core;
-    use leantime\core\controller;
+    use tiggomark\core;
+    use tiggomark\core\controller;
 
 
     class settings extends controller

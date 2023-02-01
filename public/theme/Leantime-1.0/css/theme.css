@@ -79,7 +79,7 @@
     --header-bg-color:var(--primary-color);
     --header-gradient:linear-gradient(90deg, var(--accent1) 0%,var(--accent1) 80%);
 
-    --primary-font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
+    --primary-font-family: font-family: "proxima-nova", "proxima nova", "helvetica neue", "helvetica", "arial", sans-serif;
     --base-font-size: 15px;
     --font-size-xs: 10px;
     --font-size-s:12px;

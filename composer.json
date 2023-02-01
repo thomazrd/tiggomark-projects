@@ -1,5 +1,5 @@
 {
-    "name": "leantime/leantime",
+    "name": "tiggomark/tiggomark",
     "description": "Open source project management system",
     "type": "project",
     "config": {
@@ -11,7 +11,7 @@
     "authors": [
         {
             "name": "Marcel",
-            "email": "marcel@leantime.io"
+            "email": "marcel@tiggomark.io"
         }
     ],
     "require": {
@@ -41,7 +41,7 @@
     "extra": {
         "installer-paths": {
             "app/plugins/{$name}/": [
-                "type:leantime-plugin"
+                "type:tiggomark-plugin"
             ]
         }
     }

@@ -2,225 +2,225 @@
 [01-Jan-2023 18:23:29 Europe/Paris] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9000 (through xdebug.client_host/xdebug.client_port) :-(
 [01-Jan-2023 20:59:14 Europe/Paris] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9000 (through xdebug.client_host/xdebug.client_port) :-(
 [01-Jan-2023 21:04:17 Europe/Paris] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9000 (through xdebug.client_host/xdebug.client_port) :-(
-[25-Jan-2023 10:58:34 America/Los_Angeles] PHP Parse error:  syntax error, unexpected 'appSettings' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php on line 12
-[25-Jan-2023 10:58:48 America/Los_Angeles] PHP Parse error:  syntax error, unexpected 'appSettings' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php on line 12
-[25-Jan-2023 11:02:15 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 10:58:34 America/Los_Angeles] PHP Parse error:  syntax error, unexpected 'appSettings' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php on line 12
+[25-Jan-2023 10:58:48 America/Los_Angeles] PHP Parse error:  syntax error, unexpected 'appSettings' (T_STRING), expecting function (T_FUNCTION) or const (T_CONST) in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php on line 12
+[25-Jan-2023 11:02:15 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:03:24 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 11:03:24 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:03:26 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 11:03:26 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:03:29 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 11:03:29 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:04:29 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 11:04:29 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:05:29 America/Los_Angeles] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo for mysql_leantime failed: Temporary failure in name resolution in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 11:05:29 America/Los_Angeles] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo for mysql_tiggomark failed: Temporary failure in name resolution in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
-#9 {main}
-
-Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql_leantime failed: Temporary failure in name resolution in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
-Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
-#9 {main}
-[25-Jan-2023 11:05:29 America/Los_Angeles] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo for mysql_leantime failed: Temporary failure in name resolution in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
-Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
 
-Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql_leantime failed: Temporary failure in name resolution in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql_tiggomark failed: Temporary failure in name resolution in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:05:29 America/Los_Angeles] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo for mysql_leantime failed: Temporary failure in name resolution in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 11:05:29 America/Los_Angeles] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo for mysql_tiggomark failed: Temporary failure in name resolution in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
-#9 {main}
-
-Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql_leantime failed: Temporary failure in name resolution in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
-Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
-#9 {main}
-[25-Jan-2023 11:08:22 America/Los_Angeles] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo for mysql_leantime failed: Temporary failure in name resolution in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
-Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
 
-Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql_leantime failed: Temporary failure in name resolution in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql_tiggomark failed: Temporary failure in name resolution in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:09:04 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 11:05:29 America/Los_Angeles] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo for mysql_tiggomark failed: Temporary failure in name resolution in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:09:42 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql_tiggomark failed: Temporary failure in name resolution in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:10:21 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 11:08:22 America/Los_Angeles] PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo for mysql_tiggomark failed: Temporary failure in name resolution in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[25-Jan-2023 11:18:54 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo for mysql_tiggomark failed: Temporary failure in name resolution in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}
-[26-Jan-2023 02:09:43 America/Los_Angeles] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'localhost' (using password: YES) in /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php:73
+[25-Jan-2023 11:09:04 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
 Stack trace:
-#0 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(73): PDO->__construct()
-#1 /home/tiggomark/Documents/leantime/leantime/app/core/class.db.php(98): leantime\core\db->__construct()
-#2 /home/tiggomark/Documents/leantime/leantime/app/domain/setting/repositories/class.setting.php(25): leantime\core\db::getInstance()
-#3 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(72): leantime\domain\repositories\setting->__construct()
-#4 /home/tiggomark/Documents/leantime/leantime/app/core/class.language.php(158): leantime\core\language->__construct()
-#5 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(138): leantime\core\language::getInstance()
-#6 /home/tiggomark/Documents/leantime/leantime/app/domain/auth/services/class.auth.php(150): leantime\domain\services\auth->__construct()
-#7 /home/tiggomark/Documents/leantime/leantime/app/core/class.application.php(40): leantime\domain\services\auth::getInstance()
-#8 /home/tiggomark/Documents/leantime/leantime/public/index.php(24): leantime\core\application->__construct()
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
+#9 {main}
+[25-Jan-2023 11:09:42 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
+Stack trace:
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
+#9 {main}
+[25-Jan-2023 11:10:21 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
+Stack trace:
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
+#9 {main}
+[25-Jan-2023 11:18:54 America/Los_Angeles] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
+Stack trace:
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
+#9 {main}
+[26-Jan-2023 02:09:43 America/Los_Angeles] PDOException: SQLSTATE[HY000] [1045] Access denied for user 'admin'@'localhost' (using password: YES) in /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php:73
+Stack trace:
+#0 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(73): PDO->__construct()
+#1 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.db.php(98): tiggomark\core\db->__construct()
+#2 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/setting/repositories/class.setting.php(25): tiggomark\core\db::getInstance()
+#3 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(72): tiggomark\domain\repositories\setting->__construct()
+#4 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.language.php(158): tiggomark\core\language->__construct()
+#5 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(138): tiggomark\core\language::getInstance()
+#6 /home/tiggomark/Documents/tiggomark/tiggomark/app/domain/auth/services/class.auth.php(150): tiggomark\domain\services\auth->__construct()
+#7 /home/tiggomark/Documents/tiggomark/tiggomark/app/core/class.application.php(40): tiggomark\domain\services\auth::getInstance()
+#8 /home/tiggomark/Documents/tiggomark/tiggomark/public/index.php(24): tiggomark\core\application->__construct()
 #9 {main}

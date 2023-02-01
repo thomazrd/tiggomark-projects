@@ -11,7 +11,7 @@
 function showQuote($payload)
 {
     // code here
-    $motivationalQuotesSvc = new \leantime\plugins\services\motivationalQuotes();
+    $motivationalQuotesSvc = new \tiggomark\plugins\services\motivationalQuotes();
     $randomQuote = $motivationalQuotesSvc->getRandomQuote();
     echo"<br />";
 
@@ -20,4 +20,4 @@ function showQuote($payload)
 }
 
 //Register event listener
-    \leantime\core\events::add_event_listener("core.template.tpl.dashboard.home.afterWelcomeMessage", 'showQuote');
+    \tiggomark\core\events::add_event_listener("core.template.tpl.dashboard.home.afterWelcomeMessage", 'showQuote');

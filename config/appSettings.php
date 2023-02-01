@@ -5,7 +5,7 @@
  *
  */
 
-namespace leantime\core {
+namespace tiggomark\core {
 
 
     class appSettings

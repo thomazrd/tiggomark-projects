@@ -10,9 +10,9 @@ require_once '../app/core/class.autoload.php';
 require_once '../config/configuration.php';
 require_once '../config/appSettings.php';
 
-$login = \leantime\domain\services\auth::getInstance(leantime\core\session::getSID());
-$config = \leantime\core\environment::getInstance();
-$settings = new leantime\core\appSettings();
+$login = \tiggomark\domain\services\auth::getInstance(tiggomark\core\session::getSID());
+$config = \tiggomark\core\environment::getInstance();
+$settings = new tiggomark\core\appSettings();
 $settings->loadSettings($config->defaultTimezone);
 
 if ($login->logged_in()!==true) {
@@ -22,7 +22,7 @@ if ($login->logged_in()!==true) {
 
     ob_end_clean();
     clearstatcache();
-    readfile(__DIR__.'/images/leantime-no-access.jpg');
+    readfile(__DIR__.'/images/tiggomark-no-access.jpg');
 
     exit();
 
@@ -42,7 +42,7 @@ if ($login->logged_in()!==true) {
 
 function getFileLocally(){
 
-	$config = \leantime\core\environment::getInstance();
+	$config = \tiggomark\core\environment::getInstance();
 
 	$encName = preg_replace("/[^a-zA-Z0-9]+/", "", $_GET['encName']);
  	$realName = $_GET['realName'];
@@ -113,7 +113,7 @@ function getFileFromS3(){
     $ext = preg_replace("/[^a-zA-Z0-9]+/", "", $_GET['ext']);
     $module = preg_replace("/[^a-zA-Z0-9]+/", "", $_GET['module']);
 
-    $config = \leantime\core\environment::getInstance();
+    $config = \tiggomark\core\environment::getInstance();
 
     $mimes = array
     (
