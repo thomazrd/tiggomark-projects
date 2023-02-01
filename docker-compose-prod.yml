@@ -18,7 +18,7 @@ services:
       - "3309:3309"
 
   leantime:
-    image: leantime:latest
+    image: tiggomark/projects:latest
     container_name: leantime_prod
     restart: unless-stopped
     environment:
