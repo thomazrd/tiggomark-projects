@@ -72,25 +72,25 @@
             jQuery.nmTop().close();
         <?php } ?>
 
-        leantime.ticketsController.initTicketTabs();
+        tiggomark.ticketsController.initTicketTabs();
 
         <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
-            leantime.ticketsController.initAsyncInputChange();
-            leantime.ticketsController.initDueDateTimePickers();
-            leantime.ticketsController.initDates();
+            tiggomark.ticketsController.initAsyncInputChange();
+            tiggomark.ticketsController.initDueDateTimePickers();
+            tiggomark.ticketsController.initDates();
 
-            leantime.ticketsController.initTagsInput();
+            tiggomark.ticketsController.initTagsInput();
 
-            leantime.ticketsController.initEffortDropdown();
-            leantime.ticketsController.initStatusDropdown();
+            tiggomark.ticketsController.initEffortDropdown();
+            tiggomark.ticketsController.initStatusDropdown();
 
         <?php } else { ?>
-            leantime.generalController.makeInputReadonly(".nyroModalCont");
+            tiggomark.generalController.makeInputReadonly(".nyroModalCont");
 
         <?php } ?>
 
         <?php if ($login::userHasRole([$roles::$commenter])) { ?>
-            leantime.generalController.enableCommenterForms();
+            tiggomark.generalController.enableCommenterForms();
         <?php }?>
 
     });

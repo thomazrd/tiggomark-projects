@@ -1,12 +1,12 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\services;
-    use leantime\domain\services\auth;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\services;
+    use tiggomark\domain\services\auth;
 
     class moveTicket extends controller
     {

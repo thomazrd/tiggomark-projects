@@ -1,11 +1,11 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
+    use tiggomark\core;
     use pdo;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
 
     class plugins
     {
@@ -46,7 +46,7 @@ namespace leantime\domain\repositories {
             $stmn = $this->db->database->prepare($query);
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, "leantime\domain\models\plugins");
+            $stmn->setFetchMode(PDO::FETCH_CLASS, "tiggomark\domain\models\plugins");
             $allPlugins = $stmn->fetchAll();
 
             foreach ($allPlugins as &$row) { // Use reference so we can modify in place
@@ -56,7 +56,7 @@ namespace leantime\domain\repositories {
             return $allPlugins;
         }
 
-        public function addPlugin(\leantime\domain\models\plugins $plugin)
+        public function addPlugin(\tiggomark\domain\models\plugins $plugin)
         {
 
             $sql = "INSERT INTO zp_plugins (

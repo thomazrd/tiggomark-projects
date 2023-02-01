@@ -1,4 +1,4 @@
-leantime.menuController = (function () {
+tiggomark.menuController = (function () {
 
     //Variables
 
@@ -35,7 +35,7 @@ leantime.menuController = (function () {
 
         jQuery.ajax({
             type : 'PATCH',
-            url  : leantime.appUrl + '/api/submenu',
+            url  : tiggomark.appUrl + '/api/submenu',
             data : {
                 submenu : submenuName,
                 state   : submenuState
@@ -55,12 +55,12 @@ leantime.menuController = (function () {
             jQuery('.rightpanel').css({marginLeft: '240px'});
             jQuery('.header').css({marginLeft: '240px', width:'calc(100%-240px)'});
             jQuery('.logo, .leftpanel').css({marginLeft: 0});
-            leantime.menuRepository.updateUserMenuSettings("open");
+            tiggomark.menuRepository.updateUserMenuSettings("open");
         } else {
             jQuery('.rightpanel, .header').css({marginLeft: 0});
             jQuery('.header').css({marginLeft: 0, width:'100%'});
             jQuery('.logo, .leftpanel').css({marginLeft: '-240px'});
-            leantime.menuRepository.updateUserMenuSettings("closed");
+            tiggomark.menuRepository.updateUserMenuSettings("closed");
         }
 
         jQuery('.barmenu').click(function () {
@@ -78,7 +78,7 @@ leantime.menuController = (function () {
                 });
 
 
-                leantime.menuRepository.updateUserMenuSettings("open");
+                tiggomark.menuRepository.updateUserMenuSettings("open");
             } else {
                 jQuery('.rightpanel').animate({marginLeft: 0}, 'fast', function () {
                     jQuery('.barmenu').removeClass('open');
@@ -87,7 +87,7 @@ leantime.menuController = (function () {
                 jQuery('.header').animate({marginLeft: '0', width:'100%'}, 'fast');
                 jQuery('.logo, .leftpanel').animate({marginLeft: '-' + '240px'}, 'fast');
 
-                leantime.menuRepository.updateUserMenuSettings("closed");
+                tiggomark.menuRepository.updateUserMenuSettings("closed");
             }
         });
 

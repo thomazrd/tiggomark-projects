@@ -55,7 +55,7 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
         <?php } ?>
         <input type="submit" value="<?php echo $this->__("buttons.save")?>" id="primaryCanvasSubmitButton"/>
         <input type="submit" value="<?php echo $this->__("buttons.save_and_close")?>" id="saveAndClose"
-               onclick="leantime.ideasController.setCloseModal();"/>
+               onclick="tiggomark.ideasController.setCloseModal();"/>
 
         <?php if ($id !== '') { ?>
             <br/><br/>
@@ -72,9 +72,9 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
                             <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
                             <div class="col-md-12">
                                 <a href="javascript:void(0);"
-                                   onclick="leantime.ideasController.toggleMilestoneSelectors('new');"><?php echo $this->__("links.create_attach_milestone") ?></a>
+                                   onclick="tiggomark.ideasController.toggleMilestoneSelectors('new');"><?php echo $this->__("links.create_attach_milestone") ?></a>
                                 | <a href="javascript:void(0);"
-                                     onclick="leantime.ideasController.toggleMilestoneSelectors('existing');"><?php echo $this->__("links.attach_existing_milestone") ?></a>
+                                     onclick="tiggomark.ideasController.toggleMilestoneSelectors('existing');"><?php echo $this->__("links.attach_existing_milestone") ?></a>
                             </div>
                             <?php } ?>
                         </div>
@@ -86,7 +86,7 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
                                 <input type="button" value="<?php echo $this->__("buttons.save")?>" onclick="jQuery('#primaryCanvasSubmitButton').click()"
                                        class="btn btn-primary"/>
                                 <a href="javascript:void(0);"
-                                   onclick="leantime.ideasController.toggleMilestoneSelectors('hide');">
+                                   onclick="tiggomark.ideasController.toggleMilestoneSelectors('hide');">
                                     <i class="fas fa-times"></i> <?php echo $this->__("links.cancel") ?>
                                 </a>
                             </div>
@@ -112,7 +112,7 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
                                 <input type="button" value="<?php echo $this->__("buttons.save")?>" onclick="jQuery('#primaryCanvasSubmitButton').click()"
                                        class="btn btn-primary"/>
                                 <a href="javascript:void(0);"
-                                   onclick="leantime.ideasController.toggleMilestoneSelectors('hide');">
+                                   onclick="tiggomark.ideasController.toggleMilestoneSelectors('hide');">
                                     <i class="fas fa-times"></i> <?php echo $this->__("links.cancel")?>
                                 </a>
                             </div>
@@ -190,15 +190,15 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
 <script type="text/javascript">
     jQuery(document).ready(function(){
 
-        leantime.generalController.initSimpleEditor();
+        tiggomark.generalController.initSimpleEditor();
 
         <?php if (!$login::userIsAtLeast($roles::$editor)) { ?>
-        leantime.generalController.makeInputReadonly(".nyroModalCont");
+        tiggomark.generalController.makeInputReadonly(".nyroModalCont");
 
         <?php } ?>
 
         <?php if ($login::userHasRole([$roles::$commenter])) { ?>
-        leantime.generalController.enableCommenterForms();
+        tiggomark.generalController.enableCommenterForms();
         <?php }?>
 
 

@@ -155,7 +155,7 @@ $user = $this->get('user');
                                     <span class='field span6'>
                                         <select name="theme" id="theme" style="width: 220px">
                                             <?php
-                                            $themeCore = new \leantime\core\theme();
+                                            $themeCore = new \tiggomark\core\theme();
                                             $themeAll = $themeCore->getAll();
                                             foreach ($themeAll as $key => $name) {
                                                 ?>
@@ -251,14 +251,14 @@ $user = $this->get('user');
                             <span class="btn btn-file">
                                         <span class="fileupload-new"><?php echo $this->__('buttons.select_file') ?></span>
                                         <span class='fileupload-exists'><?php echo $this->__('buttons.change') ?></span>
-                                        <input type='file' name='file' onchange="leantime.usersController.readURL(this)"/>
+                                        <input type='file' name='file' onchange="tiggomark.usersController.readURL(this)"/>
                                     </span>
 
-                            <a href='#' class='btn fileupload-exists' data-dismiss='fileupload' onclick="leantime.usersController.clearCroppie()"><?php echo $this->__('buttons.remove') ?></a>
+                            <a href='#' class='btn fileupload-exists' data-dismiss='fileupload' onclick="tiggomark.usersController.clearCroppie()"><?php echo $this->__('buttons.remove') ?></a>
                         </div>
                         <p class='stdformbutton'>
                                     <span id="save-picture" class="btn btn-primary fileupload-exists ld-ext-right">
-                                        <span onclick="leantime.usersController.saveCroppie()"><?php echo $this->__('buttons.save') ?></span>
+                                        <span onclick="tiggomark.usersController.saveCroppie()"><?php echo $this->__('buttons.save') ?></span>
                                         <span class="ld ld-ring ld-spin"></span>
                                     </span>
                             <input type="hidden" name="profileImage" value="1" />
@@ -277,7 +277,7 @@ $user = $this->get('user');
 
     jQuery(document).ready(function() {
 
-        leantime.usersController.checkPWStrength('newPassword');
+        tiggomark.usersController.checkPWStrength('newPassword');
 
         jQuery('.accountTabs').tabs();
 

@@ -70,8 +70,8 @@
             },
                     <?php endforeach; ?>];
 
-        leantime.calendarController.initCalendar(events);
-        leantime.calendarController.initExportModal();
+        tiggomark.calendarController.initCalendar(events);
+        tiggomark.calendarController.initExportModal();
 
     });
 

@@ -1,14 +1,14 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
     use Exception;
-    use leantime\domain\services\ldap;
+    use tiggomark\domain\services\ldap;
     use PDO;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
     use PDOException;
-    use leantime\core;
+    use tiggomark\core;
     use RobThree\Auth\TwoFactorAuth;
 
     class auth
@@ -136,7 +136,7 @@ namespace leantime\domain\repositories {
         {
 
             $this->db = core\db::getInstance();
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
             $this->userService = new services\users();
             $this->userRepo = new repositories\users();
         }

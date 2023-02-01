@@ -1,15 +1,15 @@
 
 <div align="center">
-<a href="https://leantime.io"><img src="https://leantime.io/logos/leantime-logo-transparentBg-landscape-1500.png" alt="Leantime Logo" width="300"/></a>
+<a href="https://tiggomark.io"><img src="https://tiggomark.io/logos/tiggomark-logo-transparentBg-landscape-1500.png" alt="tiggomark Logo" width="300"/></a>
 
-### Leantime&trade; ###
-Leantime is a lean open source project management system for startups and innovators. <br />It's an alternative to ClickUp, Notion, and Asana.<br />[https://leantime.io](https://leantime.io)<br />
+### tiggomark&trade; ###
+tiggomark is a lean open source project management system for startups and innovators. <br />It's an alternative to ClickUp, Notion, and Asana.<br />[https://tiggomark.io](https://tiggomark.io)<br />
 
-[![License Badge](https://img.shields.io/github/license/leantime/leantime?style=flat-square)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
-[![Version](https://img.shields.io/github/package-json/v/leantime/leantime/master?style=flat-square)](https://github.com/Leantime/leantime/releases)
-[![Docker Hub Badge](https://img.shields.io/docker/pulls/leantime/leantime?style=flat-square)](https://hub.docker.com/r/leantime/leantime)
+[![License Badge](https://img.shields.io/github/license/tiggomark/tiggomark?style=flat-square)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+[![Version](https://img.shields.io/github/package-json/v/tiggomark/tiggomark/master?style=flat-square)](https://github.com/tiggomark/tiggomark/releases)
+[![Docker Hub Badge](https://img.shields.io/docker/pulls/tiggomark/tiggomark?style=flat-square)](https://hub.docker.com/r/tiggomark/tiggomark)
 [![Discord Badge](https://img.shields.io/discord/990001288026677318?label=Discord&style=flat-square)](https://discord.gg/4zMzJtAq9z)
-[![Crowdin](https://badges.crowdin.net/leantime/localized.svg)](https://crowdin.com/project/leantime)
+[![Crowdin](https://badges.crowdin.net/tiggomark/localized.svg)](https://crowdin.com/project/tiggomark)
 <br />
 
   ![alt text](public/images/Screenshots/ProjectDashboard.png "Dashboard")
@@ -89,17 +89,17 @@ to load Javascript dependencies and finally run the grunt task to create the com
 
 ### Installation via Docker ###
 
-We maintain an official <a href="https://hub.docker.com/r/leantime/leantime">Docker image on dockerhub</a>. 
+We maintain an official <a href="https://hub.docker.com/r/tiggomark/tiggomark">Docker image on dockerhub</a>. 
 To run the image enter your MySQL credentials and execute
 
 ```
-docker run -d --restart unless-stopped -p 80:80 --network leantime-net \
--e LEAN_DB_HOST=mysql_leantime \
+docker run -d --restart unless-stopped -p 80:80 --network tiggomark-net \
+-e LEAN_DB_HOST=mysql_tiggomark \
 -e LEAN_DB_USER=admin \
 -e LEAN_DB_PASSWORD=321.qwerty \
--e LEAN_DB_DATABASE=leantime \
+-e LEAN_DB_DATABASE=tiggomark \
 -e LEAN_EMAIL_RETURN=changeme@local.local \
---name leantime leantime/leantime:latest
+--name tiggomark tiggomark/tiggomark:latest
 ```
 
 You can set any of the config variables in `config/configuration.php` when running the docker command.
@@ -113,11 +113,11 @@ Once started you can go to `<yourdomain.com>/install` and run the installation s
 * If there were any database changes, the system will redirect your to `<yourdomain.com>/update`
 
 ## LICENSE Exceptions ##
-This file forms part of the Leantime Software for which the following exception is added: Plugins within the `/app/plugins` directory which merely make function calls to the Leantime Software, and for that purpose include it by reference shall not be considered modifications of the software.
+This file forms part of the tiggomark Software for which the following exception is added: Plugins within the `/app/plugins` directory which merely make function calls to the tiggomark Software, and for that purpose include it by reference shall not be considered modifications of the software.
 
 ### Support ###
-* Documentation [https://docs.leantime.io](https://docs.leantime.io)
-* Community Forum [https://community.leantime.io](https://community.leantime.io)
+* Documentation [https://docs.tiggomark.io](https://docs.tiggomark.io)
+* Community Forum [https://community.tiggomark.io](https://community.tiggomark.io)
 * Discussions on [Discord](https://discord.gg/4zMzJtAq9z)
-* File a bug report [https://github.com/Leantime/leantime/issues/new](https://github.com/Leantime/leantime/issues/new)
-* Translations [https://crowdin.com/project/leantime](https://crowdin.com/project/leantime)
+* File a bug report [https://github.com/tiggomark/tiggomark/issues/new](https://github.com/tiggomark/tiggomark/issues/new)
+* Translations [https://crowdin.com/project/tiggomark](https://crowdin.com/project/tiggomark)

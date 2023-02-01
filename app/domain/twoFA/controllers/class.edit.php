@@ -1,11 +1,11 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
     use Endroid\QrCode\QrCode;
-    use leantime\domain\repositories;
-    use leantime\core;
-    use leantime\core\controller;
+    use tiggomark\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\core\controller;
     use RobThree\Auth\Providers\Qr\IQRCodeProvider;
     use RobThree\Auth\TwoFactorAuth;
 
@@ -27,7 +27,7 @@ namespace leantime\domain\controllers {
             $user = $this->userRepo->getUser($userId);
 
             $mp = new TwoFAQRCode();
-            $tfa = new TwoFactorAuth('Leantime', 6, 30, 'sha1', $mp);
+            $tfa = new TwoFactorAuth('tiggomark', 6, 30, 'sha1', $mp);
             $secret = $user['twoFASecret'];
 
             if (isset($_POST['disable'])) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace leantime\domain\events {
+namespace tiggomark\domain\events {
 
     class DashboardTest
     {
@@ -10,6 +10,6 @@ namespace leantime\domain\events {
         }
     }
 
-    \leantime\core\events::add_event_listener("core.application.start.beginning", new dashboardTest());
+    \tiggomark\core\events::add_event_listener("core.application.start.beginning", new dashboardTest());
 
 }

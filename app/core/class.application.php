@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\core;
+namespace tiggomark\core;
 
-use leantime\domain\services;
-use leantime\domain\repositories;
+use tiggomark\domain\services;
+use tiggomark\domain\repositories;
 
 class application
 {
@@ -58,7 +58,7 @@ class application
 
         $this->loadHeaders();
 
-        //Check if Leantime is installed
+        //Check if tiggomark is installed
         $this->checkIfInstalled();
 
         events::discover_listeners();
@@ -184,7 +184,7 @@ class application
     private function cronExec()
     {
 
-        $audit = new \leantime\domain\repositories\audit();
+        $audit = new \tiggomark\domain\repositories\audit();
 
         if (!isset($_SESSION['last_cron_call'])) {
             $lastEvent = $audit->getLastEvent('cron');
@@ -214,7 +214,7 @@ class application
     }
 
     /**
-     * Checks if leantime is installed
+     * Checks if tiggomark is installed
      *
      * @return void
      */

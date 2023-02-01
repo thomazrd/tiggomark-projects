@@ -4,9 +4,9 @@
  * Strategy Brief - Controller
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    class showCanvas extends \leantime\domain\controllers\canvas\showCanvas
+    class showCanvas extends \tiggomark\domain\controllers\canvas\showCanvas
     {
         protected const CANVAS_NAME = 'sb';
     }

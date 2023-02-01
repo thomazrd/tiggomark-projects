@@ -1,6 +1,6 @@
 <?php
 
-namespace leantime\core;
+namespace tiggomark\core;
 
 use PDO;
 

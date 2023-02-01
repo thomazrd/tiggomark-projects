@@ -5,7 +5,7 @@
  *
  */
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
     class modulemanager
     {

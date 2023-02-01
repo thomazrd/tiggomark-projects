@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
-    use leantime\core;
-    use leantime\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\domain\repositories;
 
     class canvas
     {
@@ -151,7 +151,7 @@ namespace leantime\domain\services {
                 return false;
             }
 
-            $canvasRepoName = "\\leantime\\domain\\repositories\\$canvasName";
+            $canvasRepoName = "\\tiggomark\\domain\\repositories\\$canvasName";
             $canvasRepo = new $canvasRepoName();
 
             // Check if canvas already exists?
@@ -196,7 +196,7 @@ namespace leantime\domain\services {
                 }
 
                 if (!isset($results[$row['canvasType']][$row['canvasId']])) {
-                    $classname = 'leantime\\domain\\repositories\\' . $row['canvasType'];
+                    $classname = 'tiggomark\\domain\\repositories\\' . $row['canvasType'];
 
 
                     $canvasTypeRepo = new $classname();
@@ -216,7 +216,7 @@ namespace leantime\domain\services {
 
             //Once the count is done calculate progress per canvastype Id
             foreach ($results as $key => &$canvas) {
-                $classname = 'leantime\\domain\\repositories\\' . $key;
+                $classname = 'tiggomark\\domain\\repositories\\' . $key;
                 $canvasTypeRepo = new $classname();
 
                 $numOfBoxes = count($canvasTypeRepo->getCanvasTypes());

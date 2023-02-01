@@ -4,9 +4,9 @@
  * Controller / Edit Canvas Item
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    class editCanvasItem extends \leantime\domain\controllers\canvas\editCanvasItem
+    class editCanvasItem extends \tiggomark\domain\controllers\canvas\editCanvasItem
     {
         protected const CANVAS_NAME = 'em';
     }

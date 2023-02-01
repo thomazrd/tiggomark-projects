@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\domain\services;
+namespace tiggomark\domain\services;
 
-use leantime\core\environment;
-use leantime\domain\repositories;
+use tiggomark\core\environment;
+use tiggomark\domain\repositories;
 
 class ldap
 {
@@ -45,7 +45,7 @@ class ldap
         $this->settingsRepo = new repositories\setting();
 
         if (!$differentConfig) {
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
             //Map config vars
             $this->useLdap = $this->config->useLdap;
 
@@ -196,15 +196,15 @@ class ldap
         $uname = isset($entries[0][$this->ldapKeys->email]) ? $entries[0][$this->ldapKeys->email][0] : '';
 
         if ($this->config->debug) {
-            error_log("LEANTIME: Testing the logging\n");
+            error_log("tiggomark: Testing the logging\n");
 
-            error_log("LEANTIME: >>>Attributes Begin>>>>>>\n");
-            error_log("LEANTIME: fn $firstname", 0);
-            error_log("LEANTIME: sn $lastname", 0);
-            error_log("LEANTIME: phone $phonenumber", 0);
-            error_log("LEANTIME: role $role", 0);
-            error_log("LEANTIME: username $uname ", 0);
-            error_log("LEANTIME: >>>Attributes End>>>>>>\n", 0);
+            error_log("tiggomark: >>>Attributes Begin>>>>>>\n");
+            error_log("tiggomark: fn $firstname", 0);
+            error_log("tiggomark: sn $lastname", 0);
+            error_log("tiggomark: phone $phonenumber", 0);
+            error_log("tiggomark: role $role", 0);
+            error_log("tiggomark: username $uname ", 0);
+            error_log("tiggomark: >>>Attributes End>>>>>>\n", 0);
         }
 
         return array(

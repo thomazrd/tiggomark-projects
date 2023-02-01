@@ -1,16 +1,16 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\models;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\models;
     use DateTime;
     use DateInterval;
-    use leantime\domain\services\auth;
+    use tiggomark\domain\services\auth;
 
     class editCompanySettings extends controller
     {
@@ -29,7 +29,7 @@ namespace leantime\domain\controllers {
 
             auth::authOrRedirect([roles::$owner, roles::$admin]);
 
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
             $this->settingsRepo = new repositories\setting();
         }
 

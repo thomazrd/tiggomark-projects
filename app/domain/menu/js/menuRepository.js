@@ -1,6 +1,6 @@
-var leantime = leantime || {};
+var tiggomark = tiggomark || {};
 
-leantime.menuRepository = (function () {
+tiggomark.menuRepository = (function () {
 
     // Variables (underscore for private variables)
     var publicThing = "not secret";
@@ -18,7 +18,7 @@ leantime.menuRepository = (function () {
         jQuery.ajax(
             {
                 type: 'PATCH',
-                url: leantime.appUrl + '/api/sessions',
+                url: tiggomark.appUrl + '/api/sessions',
                 data:
                     {
                         menuState : menuStateValue

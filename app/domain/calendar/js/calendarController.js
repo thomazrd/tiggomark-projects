@@ -1,4 +1,4 @@
-leantime.calendarController = (function () {
+tiggomark.calendarController = (function () {
 
     var closeModal = false;
 
@@ -35,32 +35,32 @@ leantime.calendarController = (function () {
                 day: 'dddd, MMM d, yyyy'
             },
             columnFormat: {
-                month: leantime.i18n.__("language.columnFormatMonth"),
-                week: leantime.i18n.__("language.columnFormatWeek"),
-                day: leantime.i18n.__("language.columnFormatday")
+                month: tiggomark.i18n.__("language.columnFormatMonth"),
+                week: tiggomark.i18n.__("language.columnFormatWeek"),
+                day: tiggomark.i18n.__("language.columnFormatday")
             },
             timeFormat: { // for event elements
-                '': leantime.i18n.__("language.jstimeformat") // default
+                '': tiggomark.i18n.__("language.jstimeformat") // default
             },
             // locale
-            isRTL: leantime.i18n.__("language.isRTL") == "false" ? 0 : 1,
-            firstDay: leantime.i18n.__("language.firstDayOfWeek"),
-            monthNames: leantime.i18n.__("language.monthNames").split(","),
-            monthNamesShort: leantime.i18n.__("language.monthNamesShort").split(","),
-            dayNames: leantime.i18n.__("language.dayNames").split(","),
-            dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
+            isRTL: tiggomark.i18n.__("language.isRTL") == "false" ? 0 : 1,
+            firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
+            monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+            monthNamesShort: tiggomark.i18n.__("language.monthNamesShort").split(","),
+            dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+            dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
             buttonText: {
                 prev: '&laquo;',
                 next: '&raquo;',
                 prevYear: '&nbsp;&lt;&lt;&nbsp;',
                 nextYear: '&nbsp;&gt;&gt;&nbsp;',
-                today: leantime.i18n.__("buttons.today"),
-                month: leantime.i18n.__("buttons.month"),
-                week: leantime.i18n.__("buttons.week"),
-                day: leantime.i18n.__("buttons.day")
+                today: tiggomark.i18n.__("buttons.today"),
+                month: tiggomark.i18n.__("buttons.month"),
+                week: tiggomark.i18n.__("buttons.week"),
+                day: tiggomark.i18n.__("buttons.day")
             },
             select: function (start, end, allDay) {
-                var title = prompt(leantime.i18n.__("label.event_title"));
+                var title = prompt(tiggomark.i18n.__("label.event_title"));
                 if (title) {
                     calendar.fullCalendar(
                         'renderEvent',
@@ -92,25 +92,25 @@ leantime.calendarController = (function () {
                     return false; } } }
         );
 
-        var dateFormat = leantime.i18n.__("language.jsdateformat"),
+        var dateFormat = tiggomark.i18n.__("language.jsdateformat"),
 
             from = jQuery("#event_date_from")
                 .datepicker(
                     {
                         numberOfMonths: 1,
-                        dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                        dayNames: leantime.i18n.__("language.dayNames").split(","),
-                        dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                        dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                        monthNames: leantime.i18n.__("language.monthNames").split(","),
-                        currentText: leantime.i18n.__("language.currentText"),
-                        closeText: leantime.i18n.__("language.closeText"),
-                        buttonText: leantime.i18n.__("language.buttonText"),
-                        isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                        nextText: leantime.i18n.__("language.nextText"),
-                        prevText: leantime.i18n.__("language.prevText"),
-                        weekHeader: leantime.i18n.__("language.weekHeader"),
-                        firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                        dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                        dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                        dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                        dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                        monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                        currentText: tiggomark.i18n.__("language.currentText"),
+                        closeText: tiggomark.i18n.__("language.closeText"),
+                        buttonText: tiggomark.i18n.__("language.buttonText"),
+                        isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                        nextText: tiggomark.i18n.__("language.nextText"),
+                        prevText: tiggomark.i18n.__("language.prevText"),
+                        weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                        firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
                     }
                 )
                 .on(
@@ -123,19 +123,19 @@ leantime.calendarController = (function () {
             to = jQuery("#event_date_to").datepicker(
                 {
                     numberOfMonths: 1,
-                    dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                    dayNames: leantime.i18n.__("language.dayNames").split(","),
-                    dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                    dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                    monthNames: leantime.i18n.__("language.monthNames").split(","),
-                    currentText: leantime.i18n.__("language.currentText"),
-                    closeText: leantime.i18n.__("language.closeText"),
-                    buttonText: leantime.i18n.__("language.buttonText"),
-                    isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                    nextText: leantime.i18n.__("language.nextText"),
-                    prevText: leantime.i18n.__("language.prevText"),
-                    weekHeader: leantime.i18n.__("language.weekHeader"),
-                    firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                    dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                    dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                    dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                    dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                    monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                    currentText: tiggomark.i18n.__("language.currentText"),
+                    closeText: tiggomark.i18n.__("language.closeText"),
+                    buttonText: tiggomark.i18n.__("language.buttonText"),
+                    isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                    nextText: tiggomark.i18n.__("language.nextText"),
+                    prevText: tiggomark.i18n.__("language.prevText"),
+                    weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                    firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
                 }
             )
                 .on(

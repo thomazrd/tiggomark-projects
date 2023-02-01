@@ -268,27 +268,27 @@
     <?php $this->dispatchTplEvent('scripts.afterOpen'); ?>
 
     jQuery(document).ready(function(){
-        leantime.ticketsController.initModals();
+        tiggomark.ticketsController.initModals();
     });
 
-    leantime.ticketsController.initTicketSearchSubmit("<?=BASE_URL ?>/tickets/showAll");
+    tiggomark.ticketsController.initTicketSearchSubmit("<?=BASE_URL ?>/tickets/showAll");
 
-    leantime.ticketsController.initUserSelectBox();
-    leantime.ticketsController.initStatusSelectBox();
+    tiggomark.ticketsController.initUserSelectBox();
+    tiggomark.ticketsController.initStatusSelectBox();
 
     <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
-    leantime.ticketsController.initUserDropdown();
-    leantime.ticketsController.initMilestoneDropdown();
-    leantime.ticketsController.initEffortDropdown();
-    leantime.ticketsController.initStatusDropdown();
-    leantime.ticketsController.initSprintDropdown();
-    leantime.ticketsController.initMilestoneDatesAsyncUpdate();
+    tiggomark.ticketsController.initUserDropdown();
+    tiggomark.ticketsController.initMilestoneDropdown();
+    tiggomark.ticketsController.initEffortDropdown();
+    tiggomark.ticketsController.initStatusDropdown();
+    tiggomark.ticketsController.initSprintDropdown();
+    tiggomark.ticketsController.initMilestoneDatesAsyncUpdate();
 
     <?php } else { ?>
-        leantime.generalController.makeInputReadonly(".maincontentinner");
+        tiggomark.generalController.makeInputReadonly(".maincontentinner");
     <?php } ?>
 
-    leantime.ticketsController.initMilestoneTable("<?=$searchCriteria["groupBy"] ?>");
+    tiggomark.ticketsController.initMilestoneTable("<?=$searchCriteria["groupBy"] ?>");
 
     <?php $this->dispatchTplEvent('scripts.beforeClose'); ?>
 

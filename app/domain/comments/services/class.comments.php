@@ -1,11 +1,11 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
-    use leantime\core;
-    use leantime\domain\models\notifications\notification;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
+    use tiggomark\core;
+    use tiggomark\domain\models\notifications\notification;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
 
     class comments
     {

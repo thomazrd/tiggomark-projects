@@ -1,9 +1,9 @@
 <?php
-/** @var leantime\services\auth $login */
-/** @var leantime\core\language $language */
-$module = \leantime\core\frontcontroller::getModuleName('');
-$action = \leantime\core\frontcontroller::getActionName('');
-$maxSize = \leantime\core\fileupload::getMaximumFileUploadSize();
+/** @var tiggomark\services\auth $login */
+/** @var tiggomark\core\language $language */
+$module = \tiggomark\core\frontcontroller::getModuleName('');
+$action = \tiggomark\core\frontcontroller::getActionName('');
+$maxSize = \tiggomark\core\fileupload::getMaximumFileUploadSize();
 $moduleId = $_GET['id'] ?? '';
 ?>
 <div id="fileManager">

@@ -158,7 +158,7 @@ function createTreeView($array, $currentParent, $currLevel = 0, $prevLevel = -1,
                                         <a class="dropdown-toggle btn btn-default" data-toggle="dropdown" href="<?=BASE_URL?>/wiki/show/<?=$currentArticle->id; ?>&projectId=<?=$_SESSION["currentProject"]; ?>"><i class="fa fa-link"></i></a>
                                         <div class="dropdown-menu padding-md">
                                             <input type="text" id="wikiURL" value="<?=BASE_URL?>/wiki/show/<?=$currentArticle->id; ?>&projectId=<?=$_SESSION["currentProject"]; ?>" />
-                                            <button class="btn btn-primary" onclick="leantime.generalController.copyUrl('wikiURL');"><?=$this->__('links.copy_url') ?></button>
+                                            <button class="btn btn-primary" onclick="tiggomark.generalController.copyUrl('wikiURL');"><?=$this->__('links.copy_url') ?></button>
                                         </div>
                                     </div>
 
@@ -270,14 +270,14 @@ function createTreeView($array, $currentParent, $currLevel = 0, $prevLevel = -1,
 
    jQuery(document).ready(function() {
        <?php if ($currentArticle) {?>
-        leantime.wikiController.initTree("#article-toc-wrapper", <?=$currentArticle->id ?>);
+        tiggomark.wikiController.initTree("#article-toc-wrapper", <?=$currentArticle->id ?>);
        <?php } ?>
 
-       leantime.wikiController.wikiModal();
-       leantime.wikiController.articleModal();
+       tiggomark.wikiController.wikiModal();
+       tiggomark.wikiController.articleModal();
 
        <?php if ($login::userHasRole([$roles::$commenter])) { ?>
-        leantime.generalController.enableCommenterForms();
+        tiggomark.generalController.enableCommenterForms();
        <?php }?>
 
     });

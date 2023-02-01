@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
+    use tiggomark\core;
     use PDO;
 
     class setting
@@ -91,7 +91,7 @@ namespace leantime\domain\repositories {
         }
 
         /**
-         * checkIfInstalled checks if zp user table exists (and assumes that leantime is installed)
+         * checkIfInstalled checks if zp user table exists (and assumes that tiggomark is installed)
          *
          * @access public
          * @return bool

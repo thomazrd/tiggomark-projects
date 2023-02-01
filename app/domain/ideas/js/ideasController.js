@@ -1,4 +1,4 @@
-leantime.ideasController = (function () {
+tiggomark.ideasController = (function () {
 
     var closeModal = false;
 
@@ -27,8 +27,8 @@ leantime.ideasController = (function () {
                         // General options
                         width: "100%",
                         height:"400px",
-                        skin_url: leantime.appUrl + '/css/libs/tinymceSkin/oxide',
-                        content_css: leantime.appUrl + '/css/libs/tinymceSkin/oxide/content.css',
+                        skin_url: tiggomark.appUrl + '/css/libs/tinymceSkin/oxide',
+                        content_css: tiggomark.appUrl + '/css/libs/tinymceSkin/oxide/content.css',
                         content_style: "body.mce-content-body{ font-size:14px; } img { max-width: 100%; }",
                         plugins : "emoticons,autolink,link,image,lists,table,save,preview,media,searchreplace,paste,directionality,fullscreen,noneditable,visualchars,template,advlist",
                         toolbar : "bold italic strikethrough | formatselect forecolor | alignleft aligncenter alignright | link unlink image media | bullist numlist | table | template | emoticons",
@@ -43,7 +43,7 @@ leantime.ideasController = (function () {
 
                             xhr = new XMLHttpRequest();
                             xhr.withCredentials = false;
-                            xhr.open('POST', leantime.appUrl + '/api/files');
+                            xhr.open('POST', tiggomark.appUrl + '/api/files');
 
                             xhr.onload = function () {
                                 var json;
@@ -73,7 +73,7 @@ leantime.ideasController = (function () {
                             };
 
                             jQuery.nmManual(
-                                leantime.appUrl + '/files/showAll&modalPopUp=true',
+                                tiggomark.appUrl + '/files/showAll&modalPopUp=true',
                                 {
                                     stack: true,
                                     callbacks: shortOptions,
@@ -180,7 +180,7 @@ leantime.ideasController = (function () {
             // POST to server using $.post or $.ajax
             jQuery.ajax({
                 type: 'POST',
-                url: leantime.appUrl + '/api/ideas',
+                url: tiggomark.appUrl + '/api/ideas',
                 data: {
                     action:"ideaSort",
                     payload: ideaSort
@@ -268,7 +268,7 @@ leantime.ideasController = (function () {
                     jQuery.ajax(
                         {
                             type: 'PATCH',
-                            url: leantime.appUrl + '/api/ideas',
+                            url: tiggomark.appUrl + '/api/ideas',
                             data:
                                 {
                                     id : canvasId,
@@ -277,9 +277,9 @@ leantime.ideasController = (function () {
                         }
                     ).done(
                         function () {
-                            jQuery("#userDropdownMenuLink" + canvasId + " span.text span#userImage" + canvasId + " img").attr("src", leantime.appUrl + "/api/users?profileImage=" + userId);
+                            jQuery("#userDropdownMenuLink" + canvasId + " span.text span#userImage" + canvasId + " img").attr("src", tiggomark.appUrl + "/api/users?profileImage=" + userId);
 
-                            jQuery.growl({message: leantime.i18n.__("short_notifications.user_updated")});
+                            jQuery.growl({message: tiggomark.i18n.__("short_notifications.user_updated")});
                         }
                     );
                 }
@@ -306,7 +306,7 @@ leantime.ideasController = (function () {
                     jQuery.ajax(
                         {
                             type: 'PATCH',
-                            url: leantime.appUrl + '/api/ideas',
+                            url: tiggomark.appUrl + '/api/ideas',
                             data:
                                 {
                                     id : canvasItemId,
@@ -317,7 +317,7 @@ leantime.ideasController = (function () {
                         function () {
                             jQuery("#statusDropdownMenuLink" + canvasItemId + " span.text").text(dataLabel);
                             jQuery("#statusDropdownMenuLink" + canvasItemId).removeClass().addClass("" + statusClass + " dropdown-toggle f-left status ");
-                            jQuery.growl({message: leantime.i18n.__("short_notifications.status_updated")});
+                            jQuery.growl({message: tiggomark.i18n.__("short_notifications.status_updated")});
 
                         }
                     );
@@ -380,7 +380,7 @@ leantime.ideasController = (function () {
                 // POST to server using $.post or $.ajax
                 jQuery.ajax({
                     type: 'POST',
-                    url: leantime.appUrl + '/api/ideas',
+                    url: tiggomark.appUrl + '/api/ideas',
                     data:statusPostData
                 });
 

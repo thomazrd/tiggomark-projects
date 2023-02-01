@@ -4,11 +4,11 @@
  * pdf class - Template - HTML code for PDF report
  */
 
-namespace leantime\domain\controllers\canvas {
+namespace tiggomark\domain\controllers\canvas {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\repositories;
 
     /**
      * Template class for generating PDF reports
@@ -40,7 +40,7 @@ namespace leantime\domain\controllers\canvas {
         private const PDF_HEADER_ROW_HEIGHT = 25;
 
         // Internal variables
-        protected \leantime\core\environment $config;
+        protected \tiggomark\core\environment $config;
         protected $canvasRepo;
         protected string $paperSize;
         protected array $canvasTypes;
@@ -62,9 +62,9 @@ namespace leantime\domain\controllers\canvas {
         public function init()
         {
 
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
 
-            $canvasRepoName = "\\leantime\\domain\\repositories\\" . static::CANVAS_NAME . static::CANVAS_TYPE;
+            $canvasRepoName = "\\tiggomark\\domain\\repositories\\" . static::CANVAS_NAME . static::CANVAS_TYPE;
             $this->canvasRepo = new $canvasRepoName();
 
             $this->paperSize = $this->language->__('language.pagesize');

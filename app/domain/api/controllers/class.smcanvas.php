@@ -4,7 +4,7 @@
  * - smcanvas class - Controller API
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
     class smcanvas extends api\canvas
     {

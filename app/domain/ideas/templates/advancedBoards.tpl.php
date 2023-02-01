@@ -294,17 +294,17 @@ foreach ($this->get('allCanvas') as $canvasRow) {
 
     jQuery(document).ready(function () {
 
-        leantime.ideasController.initBoardControlModal();
-        leantime.ideasController.setKanbanHeights();
+        tiggomark.ideasController.initBoardControlModal();
+        tiggomark.ideasController.setKanbanHeights();
 
         <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
         var ideaStatusList = [<?php foreach ($canvasLabels as $key => $statusRow) {
             echo "'" . $key . "',";
                               }?>];
-            leantime.ideasController.initIdeaKanban(ideaStatusList);
-            leantime.ideasController.initUserDropdown();
+            tiggomark.ideasController.initIdeaKanban(ideaStatusList);
+            tiggomark.ideasController.initUserDropdown();
         <?php } else { ?>
-            leantime.generalController.makeInputReadonly(".maincontentinner");
+            tiggomark.generalController.makeInputReadonly(".maincontentinner");
 
         <?php } ?>
 

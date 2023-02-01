@@ -76,6 +76,6 @@ $values = $this->get('values');
 
 <script type="text/javascript">
     jQuery(document).ready(function() {
-        leantime.calendarController.initEventDatepickers();
+        tiggomark.calendarController.initEventDatepickers();
     });
 </script>

@@ -1,10 +1,10 @@
 <?php
 
-namespace leantime\core;
+namespace tiggomark\core;
 
-use leantime\core\template;
-use leantime\core\events;
-use leantime\core\language;
+use tiggomark\core\template;
+use tiggomark\core\events;
+use tiggomark\core\language;
 
 abstract class controller
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\models;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\models;
 
     class login extends controller
     {
@@ -48,7 +48,7 @@ namespace leantime\domain\controllers {
                 $redirectUrl = BASE_URL . urldecode($_GET['redirect']);
             }
 
-            $config = \leantime\core\environment::getInstance();
+            $config = \tiggomark\core\environment::getInstance();
 
             if ($config->useLdap) {
                 $this->tpl->assign("inputPlaceholder", "input.placeholders.enter_email_or_username");

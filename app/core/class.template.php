@@ -5,10 +5,10 @@
  *
  */
 
-namespace leantime\core {
+namespace tiggomark\core {
 
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\services;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\services;
 
     class template
     {
@@ -189,7 +189,7 @@ namespace leantime\core {
         {
 
             //These variables are available in the template
-            $config = \leantime\core\environment::getInstance();
+            $config = \tiggomark\core\environment::getInstance();
             $settings = new appSettings();
             $login = services\auth::getInstance();
             $roles = new roles();
@@ -364,7 +364,7 @@ namespace leantime\core {
         {
 
             $frontController = frontcontroller::getInstance(ROOT);
-            $config = \leantime\core\environment::getInstance();
+            $config = \tiggomark\core\environment::getInstance();
             $settings = new appSettings();
             $login = services\auth::getInstance();
             $roles = new roles();

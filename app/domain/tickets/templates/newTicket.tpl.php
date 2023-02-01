@@ -45,8 +45,8 @@ $ticket = $this->get('ticket');
 
 <script type="text/javascript">
 
-    leantime.ticketsController.initTicketTabs();
-    leantime.ticketsController.initTagsInput();
+    tiggomark.ticketsController.initTicketTabs();
+    tiggomark.ticketsController.initTagsInput();
 
     jQuery(window).load(function () {
         jQuery(window).resize();

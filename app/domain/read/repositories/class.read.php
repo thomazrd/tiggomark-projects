@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
+    use tiggomark\core;
     use pdo;
 
     class read
@@ -30,7 +30,7 @@ namespace leantime\domain\repositories {
         public function isRead($module, $moduleId, $userId)
         {
 
-            $sql = "SELECT * FROM zp_read 
+            $sql = "SELECT * FROM zp_read
 					WHERE module=:module AND moduleId=:moduleId AND userId=:userId";
 
             $stmn = $this->db->database->prepare($sql);

@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\core {
+namespace tiggomark\core {
 
-    use leantime\core\events;
-    use function leantime\core\getLeantimeClassPath;
+    use tiggomark\core\events;
+    use function tiggomark\core\gettiggomarkClassPath;
 
     trait eventhelpers
     {
@@ -70,7 +70,7 @@ namespace leantime\core {
          */
         private static function set_class_context(): string
         {
-            $parts = getLeantimeClassPath(get_called_class());
+            $parts = gettiggomarkClassPath(get_called_class());
             $parts['path'] = str_replace("/", '.', $parts['path']);
 
             return implode('.', $parts);

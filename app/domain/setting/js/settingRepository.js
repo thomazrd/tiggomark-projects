@@ -1,4 +1,4 @@
-leantime.settingRepository = (function () {
+tiggomark.settingRepository = (function () {
 
     // Variables (underscore for private variables)
     var publicThing = "not secret";
@@ -17,7 +17,7 @@ leantime.settingRepository = (function () {
         jQuery.ajax(
             {
                 type: 'POST',
-                url: leantime.appUrl + '/api/setting',
+                url: tiggomark.appUrl + '/api/setting',
                 data: formData,
                 processData: false,
                 contentType: false,

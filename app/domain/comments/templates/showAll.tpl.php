@@ -1,5 +1,5 @@
 <?php
-$comments = new leantime\domain\repositories\comments();
+$comments = new tiggomark\domain\repositories\comments();
 $formUrl = CURRENT_URL;
 
 //Controller may not redirect. Make sure delComment is only added once
@@ -122,7 +122,7 @@ if (strpos($formUrl, '?delComment=') !== false) {
 <script type='text/javascript'>
 
 
-    leantime.generalController.initSimpleEditor();
+    tiggomark.generalController.initSimpleEditor();
 
     function toggleCommentBoxes(id) {
         <?php if ($login::userIsAtLeast($roles::$commenter)) { ?>
@@ -134,7 +134,7 @@ if (strpos($formUrl, '?delComment=') !== false) {
             jQuery('.commentBox').hide('fast', function () {
                 jQuery('.commentBox textarea').remove();
                 jQuery('#comment' + id + '').prepend('<textarea rows="5" cols="75" name="text" class="tinymceSimple"></textarea>');
-                leantime.generalController.initSimpleEditor();
+                tiggomark.generalController.initSimpleEditor();
             });
 
             jQuery('#comment' + id + '').show('fast');

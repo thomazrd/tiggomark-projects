@@ -4,9 +4,9 @@
  * Repository
  */
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    class sqcanvas extends \leantime\domain\repositories\canvas
+    class sqcanvas extends \tiggomark\domain\repositories\canvas
     {
         /**
          * Constant that must be redefined

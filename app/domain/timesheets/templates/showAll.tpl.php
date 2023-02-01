@@ -40,27 +40,27 @@ defined('RESTRICTED') or die('Restricted access');
             }
         });
 
-        leantime.timesheetsController.initTimesheetsTable();
+        tiggomark.timesheetsController.initTimesheetsTable();
 
         <?php if ($login::userIsAtLeast($roles::$manager)) { ?>
-            leantime.timesheetsController.initEditTimeModal();
+            tiggomark.timesheetsController.initEditTimeModal();
         <?php } ?>
 
 
         jQuery(".dateFrom, .dateTo").datepicker({
-            dateFormat:  leantime.i18n.__("language.jsdateformat"),
-            dayNames: leantime.i18n.__("language.dayNames").split(","),
-            dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-            dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-            monthNames: leantime.i18n.__("language.monthNames").split(","),
-            currentText: leantime.i18n.__("language.currentText"),
-            closeText: leantime.i18n.__("language.closeText"),
-            buttonText: leantime.i18n.__("language.buttonText"),
-            isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-            nextText: leantime.i18n.__("language.nextText"),
-            prevText: leantime.i18n.__("language.prevText"),
-            weekHeader: leantime.i18n.__("language.weekHeader"),
-            firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+            dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+            dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+            dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+            dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+            monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+            currentText: tiggomark.i18n.__("language.currentText"),
+            closeText: tiggomark.i18n.__("language.closeText"),
+            buttonText: tiggomark.i18n.__("language.buttonText"),
+            isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+            nextText: tiggomark.i18n.__("language.nextText"),
+            prevText: tiggomark.i18n.__("language.prevText"),
+            weekHeader: tiggomark.i18n.__("language.weekHeader"),
+            firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
         });
     });
 

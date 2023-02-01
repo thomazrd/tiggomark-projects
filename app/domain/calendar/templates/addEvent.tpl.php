@@ -79,7 +79,7 @@
     <?php $this->dispatchTplEvent('scripts.afterOpen'); ?>
 
     jQuery(document).ready(function() {
-        leantime.calendarController.initEventDatepickers();
+        tiggomark.calendarController.initEventDatepickers();
     });
 
     <?php $this->dispatchTplEvent('scripts.beforeClose'); ?>

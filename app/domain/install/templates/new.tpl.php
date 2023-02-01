@@ -5,7 +5,7 @@
 
 </div>
 <div class="regcontent"  id="login">
-    <p><?php echo $this->language->__("text.this_script_will_set_up_leantime"); ?></p><br />
+    <p><?php echo $this->language->__("text.this_script_will_set_up_tiggomark"); ?></p><br />
 
     <?php echo $this->displayInlineNotification(); ?>
 

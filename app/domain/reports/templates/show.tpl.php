@@ -238,15 +238,15 @@
 
    jQuery(document).ready(function() {
 
-       leantime.dashboardController.prepareHiddenDueDate();
-       leantime.ticketsController.initEffortDropdown();
-       leantime.ticketsController.initMilestoneDropdown();
-       leantime.ticketsController.initStatusDropdown();
+       tiggomark.dashboardController.prepareHiddenDueDate();
+       tiggomark.ticketsController.initEffortDropdown();
+       tiggomark.ticketsController.initMilestoneDropdown();
+       tiggomark.ticketsController.initStatusDropdown();
 
-       leantime.dashboardController.initProgressChart("chart-area", <?php echo round($projectProgress['percent']); ?>, <?php echo round((100 - $projectProgress['percent'])); ?>);
+       tiggomark.dashboardController.initProgressChart("chart-area", <?php echo round($projectProgress['percent']); ?>, <?php echo round((100 - $projectProgress['percent'])); ?>);
 
        <?php if ($sprintBurndown !== false) { ?>
-           var sprintBurndownChart = leantime.dashboardController.initBurndown([<?php foreach ($sprintBurndown as $value) {
+           var sprintBurndownChart = tiggomark.dashboardController.initBurndown([<?php foreach ($sprintBurndown as $value) {
                 echo "'" . $value['date'] . "',";
                                                                                 } ?>], [<?php foreach ($sprintBurndown as $value) {
                                                                                 echo "'" . round($value['plannedNum'], 2) . "',";
@@ -255,21 +255,21 @@
         echo "'" . $value['actualNum'] . "',";
     }
                                                                                 }  ?> ]);
-           leantime.dashboardController.initChartButtonClick('HourlyChartButtonSprint', '<?=$this->__('label.hours') ?>', [<?php foreach ($sprintBurndown as $value) {
+           tiggomark.dashboardController.initChartButtonClick('HourlyChartButtonSprint', '<?=$this->__('label.hours') ?>', [<?php foreach ($sprintBurndown as $value) {
                 echo "'" . $value['plannedHours'] . "',";
                                                                                          } ?>], [ <?php foreach ($sprintBurndown as $value) {
     if ($value['actualHours'] !== '') {
         echo "'" . round($value['actualHours']) . "',";
     }
                                                                                          }  ?> ], sprintBurndownChart);
-           leantime.dashboardController.initChartButtonClick('EffortChartButtonSprint', '<?=$this->__('label.effort') ?>', [<?php foreach ($sprintBurndown as $value) {
+           tiggomark.dashboardController.initChartButtonClick('EffortChartButtonSprint', '<?=$this->__('label.effort') ?>', [<?php foreach ($sprintBurndown as $value) {
                 echo "'" . $value['plannedEffort'] . "',";
                                                                                          } ?>], [ <?php foreach ($sprintBurndown as $value) {
     if ($value['actualEffort'] !== '') {
         echo "'" . $value['actualEffort'] . "',";
     }
                                                                                          }  ?> ], sprintBurndownChart);
-           leantime.dashboardController.initChartButtonClick('NumChartButtonSprint', '<?=$this->__('label.num_tickets') ?>', [<?php foreach ($sprintBurndown as $value) {
+           tiggomark.dashboardController.initChartButtonClick('NumChartButtonSprint', '<?=$this->__('label.num_tickets') ?>', [<?php foreach ($sprintBurndown as $value) {
                 echo "'" . $value['plannedNum'] . "',";
                                                                                       } ?>], [ <?php foreach ($sprintBurndown as $value) {
     if ($value['actualNum'] !== '') {
@@ -322,7 +322,7 @@
 
             ?>
 
-           var backlogBurndown = leantime.dashboardController.initBacklogBurndown([<?php foreach ($backlogBurndown as $value) {
+           var backlogBurndown = tiggomark.dashboardController.initBacklogBurndown([<?php foreach ($backlogBurndown as $value) {
                 echo "'" . $value['date'] . "',";
                                                                                    } ?>], statusBurnupNum);
 
@@ -331,7 +331,7 @@
 
             <?php
 
-            echo " 
+            echo "
            statusBurnupEffort['open'] = {
                         'label': 'Open',
                         'data':
@@ -343,7 +343,7 @@
             }
             echo"]};";
 
-            echo " 
+            echo "
            statusBurnupEffort['progress'] = {
                                 'label': 'Progress',
                                 'data':
@@ -355,7 +355,7 @@
             }
             echo"]};";
 
-            echo " 
+            echo "
            statusBurnupEffort['done'] = {
                                         'label': 'Done',
                                         'data':
@@ -373,7 +373,7 @@
 
             <?php
 
-            echo " 
+            echo "
        statusBurnupHours['open'] = {
                         'label': 'Open',
                         'data':
@@ -385,7 +385,7 @@
             }
             echo"]};";
 
-            echo " 
+            echo "
        statusBurnupHours['progress'] = {
                                 'label': 'Progress',
                                 'data':
@@ -397,7 +397,7 @@
             }
             echo"]};";
 
-            echo " 
+            echo "
        statusBurnupHours['done'] = {
                                         'label': 'Done',
                                         'data':
@@ -411,9 +411,9 @@
 
             ?>
 
-           leantime.dashboardController.initBacklogChartButtonClick('HourlyChartButtonBacklog', statusBurnupHours, '<?=$this->__('label.hours') ?>', backlogBurndown);
-           leantime.dashboardController.initBacklogChartButtonClick('EffortChartButtonBacklog', statusBurnupEffort, '<?=$this->__('label.effort') ?>', backlogBurndown);
-           leantime.dashboardController.initBacklogChartButtonClick('NumChartButtonBacklog', statusBurnupNum, '<?=$this->__('label.num_tickets') ?>', backlogBurndown);
+           tiggomark.dashboardController.initBacklogChartButtonClick('HourlyChartButtonBacklog', statusBurnupHours, '<?=$this->__('label.hours') ?>', backlogBurndown);
+           tiggomark.dashboardController.initBacklogChartButtonClick('EffortChartButtonBacklog', statusBurnupEffort, '<?=$this->__('label.effort') ?>', backlogBurndown);
+           tiggomark.dashboardController.initBacklogChartButtonClick('NumChartButtonBacklog', statusBurnupNum, '<?=$this->__('label.num_tickets') ?>', backlogBurndown);
 
        <?php } ?>
 

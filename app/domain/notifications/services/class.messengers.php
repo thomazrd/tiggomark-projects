@@ -1,13 +1,13 @@
 <?php
 
-namespace leantime\domain\services\notifications;
+namespace tiggomark\domain\services\notifications;
 
 use GuzzleHttp\Client;
 use League\HTMLToMarkdown\HtmlConverter;
-use leantime\core;
-use leantime\domain\repositories;
-use leantime\domain\services;
-use leantime\domain\models;
+use tiggomark\core;
+use tiggomark\domain\repositories;
+use tiggomark\domain\services;
+use tiggomark\domain\models;
 
 class messengers
 {
@@ -102,7 +102,7 @@ class messengers
 
 
             $data = array(
-                'username' => "Leantime",
+                'username' => "tiggomark",
                 "icon_url" => '',
                 'text' => '',
                 'attachments' => $message
@@ -215,8 +215,8 @@ class messengers
 
                 // For details on the JSON layout: https://birdie0.github.io/discord-webhooks-guide/index.html
                 $data_string = json_encode([
-                    'content' => 'Leantime' . ' - ' . $_SESSION["companysettings.sitename"],
-                    'avatar_url' => 'https://s3-us-west-2.amazonaws.com/leantime-website/wp-content/uploads/2019/03/22224016/logoIcon.png',
+                    'content' => 'tiggomark' . ' - ' . $_SESSION["companysettings.sitename"],
+                    'avatar_url' => 'https://s3-us-west-2.amazonaws.com/tiggomark-website/wp-content/uploads/2019/03/22224016/logoIcon.png',
                     'tts' => false,
                     'embeds' => [
                         [
@@ -227,7 +227,7 @@ class messengers
                             'timestamp' => $timestamp,
                             'color' => hexdec('1b75bb'),
                             'footer' => [
-                                'text' => 'Leantime',
+                                'text' => 'tiggomark',
                                 'icon_url' => $url_link,
                             ],
                             'author' => [
@@ -254,7 +254,7 @@ class messengers
         return true;
     }
 
-    public function prepareMessage(\leantime\domain\models\notifications\notification $notification): array
+    public function prepareMessage(\tiggomark\domain\models\notifications\notification $notification): array
     {
 
 

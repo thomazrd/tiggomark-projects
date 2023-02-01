@@ -8,7 +8,7 @@ $this->dispatchTplEvent('beforeOutput', $calendars, ['eol' => $eol]);
 echo "BEGIN:VCALENDAR" . $eol;
 echo "CALSCALE:GREGORIAN" . $eol;
 echo "METHOD:PUBLISH" . $eol;
-echo "PRODID:-//Leantime Cal//EN" . $eol;
+echo "PRODID:-//tiggomark Cal//EN" . $eol;
 echo "VERSION:2.0" . $eol;
 
 if ($calendars) {

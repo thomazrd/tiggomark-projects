@@ -1,16 +1,16 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
     use Exception;
-    use leantime\core\appSettings;
-    use leantime\core\environment;
-    use leantime\core\controller;
-    use leantime\core\theme;
+    use tiggomark\core\appSettings;
+    use tiggomark\core\environment;
+    use tiggomark\core\controller;
+    use tiggomark\core\theme;
 
     class header extends controller
     {
-        private \leantime\domain\repositories\setting $settingsRepo;
+        private \tiggomark\domain\repositories\setting $settingsRepo;
         private environment $config;
         private appSettings $appSettings;
         private theme $themeCore;
@@ -18,7 +18,7 @@ namespace leantime\domain\controllers {
         public function init()
         {
 
-            $this->settingsRepo = new \leantime\domain\repositories\setting();
+            $this->settingsRepo = new \tiggomark\domain\repositories\setting();
             $this->config = environment::getInstance();
             $this->appSettings = new appSettings();
             $this->themeCore = new theme();

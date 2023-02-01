@@ -1,14 +1,14 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\models\wiki;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\services\auth;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\models\wiki;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\services\auth;
 
     class articleDialog extends controller
     {
@@ -38,7 +38,7 @@ namespace leantime\domain\controllers {
                 if ($results) {
                     $this->tpl->setNotification($this->language->__('notifications.milestone_detached'), "success");
                 }
-                
+
             }
 
             if ($_SESSION['currentWiki'] != '') {

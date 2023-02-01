@@ -49,15 +49,15 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
 <script type="text/javascript">
     jQuery(document).ready(function(){
 
-        leantime.generalController.initSimpleEditor();
+        tiggomark.generalController.initSimpleEditor();
 
         <?php if (!$login::userIsAtLeast($roles::$editor)) { ?>
-            leantime.generalController.makeInputReadonly(".nyroModalCont");
+            tiggomark.generalController.makeInputReadonly(".nyroModalCont");
 
         <?php } ?>
 
         <?php if ($login::userHasRole([$roles::$commenter])) { ?>
-            leantime.generalController.enableCommenterForms();
+            tiggomark.generalController.enableCommenterForms();
         <?php }?>
 
     })

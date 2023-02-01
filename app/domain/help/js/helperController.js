@@ -1,4 +1,4 @@
-leantime.helperController = (function () {
+tiggomark.helperController = (function () {
 
     //Variables
 
@@ -17,7 +17,7 @@ leantime.helperController = (function () {
 
         jQuery(document).ready(function () {
             jQuery.nmManual(
-                leantime.appUrl + "/help/showOnboardingDialog?module=" + module,
+                tiggomark.appUrl + "/help/showOnboardingDialog?module=" + module,
                 {sizes: {
                     minW: minW || 200,
                     minH: minH || 500,
@@ -26,7 +26,7 @@ leantime.helperController = (function () {
                     autoSizable: true,
                     callbacks: {
                         beforeShowCont: function () {
-                            leantime.replaceSVGColors();
+                            tiggomark.replaceSVGColors();
                         }
                     }
                 }
@@ -38,14 +38,14 @@ leantime.helperController = (function () {
     //Functions
     var hideAndKeepHidden = function (module) {
 
-        leantime.helperRepository.updateUserModalSettings(module);
+        tiggomark.helperRepository.updateUserModalSettings(module);
         jQuery.nmTop().close();
 
     };
 
     var startDashboardTour = function () {
 
-        leantime.helperRepository.startingTour();
+        tiggomark.helperRepository.startingTour();
 
         jQuery.nmTop().close();
 
@@ -62,18 +62,18 @@ leantime.helperController = (function () {
         tour.addStep(
             'Left Nav',
             {
-                title: leantime.i18n.__("tour.left_navigation"),
-                text: leantime.i18n.__("tour.left_nav_text"),
+                title: tiggomark.i18n.__("tour.left_navigation"),
+                text: tiggomark.i18n.__("tour.left_nav_text"),
                 attachTo: '.leftmenu ul right',
                 advanceOn: '.headmenu click',
                 buttons: [
                 {
-                    text: leantime.i18n.__("tour.cancel"),
+                    text: tiggomark.i18n.__("tour.cancel"),
                     classes: 'shepherd-button-secondary',
                     action: tour.cancel
                 },
                 {
-                    text: leantime.i18n.__("tour.next"),
+                    text: tiggomark.i18n.__("tour.next"),
                     action: tour.next
                 }
                 ]
@@ -83,17 +83,17 @@ leantime.helperController = (function () {
         tour.addStep(
             'Project Selection',
             {
-                title: leantime.i18n.__("tour.project_selection"),
-                text: leantime.i18n.__("tour.project_selection_text"),
+                title: tiggomark.i18n.__("tour.project_selection"),
+                text: tiggomark.i18n.__("tour.project_selection_text"),
                 attachTo: '.project-selector right',
                 buttons: [
                 {
-                    text: leantime.i18n.__("tour.back"),
+                    text: tiggomark.i18n.__("tour.back"),
                     classes: 'shepherd-button-secondary',
                     action: tour.back
                 },
                 {
-                    text: leantime.i18n.__("tour.next"),
+                    text: tiggomark.i18n.__("tour.next"),
                     action: tour.next
                 }
                 ]
@@ -103,18 +103,18 @@ leantime.helperController = (function () {
         tour.addStep(
             'Header Navigation',
             {
-                title: leantime.i18n.__("tour.top_navigation"),
-                text: leantime.i18n.__("tour.top_navigation_text"),
+                title: tiggomark.i18n.__("tour.top_navigation"),
+                text: tiggomark.i18n.__("tour.top_navigation_text"),
                 attachTo: '.headmenu bottom',
                 advanceOn: '#sprintBurndownChart click',
                 buttons: [
                     {
-                        text: leantime.i18n.__("tour.back"),
+                        text: tiggomark.i18n.__("tour.back"),
                         classes: 'shepherd-button-secondary',
                         action: tour.back
                 },
                     {
-                        text: leantime.i18n.__("tour.next"),
+                        text: tiggomark.i18n.__("tour.next"),
                         action: tour.next
                 }
                 ]
@@ -124,18 +124,18 @@ leantime.helperController = (function () {
         tour.addStep(
             'Project Status',
             {
-                title: leantime.i18n.__("tour.project_progress"),
-                text: leantime.i18n.__("tour.project_progress_text"),
+                title: tiggomark.i18n.__("tour.project_progress"),
+                text: tiggomark.i18n.__("tour.project_progress_text"),
                 attachTo: '#projectProgressContainer left',
                 advanceOn: '.headmenu click',
                 buttons: [
                     {
-                        text: leantime.i18n.__("tour.back"),
+                        text: tiggomark.i18n.__("tour.back"),
                         classes: 'shepherd-button-secondary',
                         action: tour.back
                 },
                     {
-                        text: leantime.i18n.__("tour.next"),
+                        text: tiggomark.i18n.__("tour.next"),
                         action: tour.next
                 }
                 ]
@@ -147,18 +147,18 @@ leantime.helperController = (function () {
         tour.addStep(
             'Your Todos',
             {
-                title: leantime.i18n.__("tour.your_todos"),
-                text: leantime.i18n.__("tour.your_todos_text"),
+                title: tiggomark.i18n.__("tour.your_todos"),
+                text: tiggomark.i18n.__("tour.your_todos_text"),
                 attachTo: '#yourToDoContainer top',
                 advanceOn: '.headmenu click',
                 buttons: [
                     {
-                        text: leantime.i18n.__("tour.back"),
+                        text: tiggomark.i18n.__("tour.back"),
                         classes: 'shepherd-button-secondary',
                         action: tour.back
                 },
                     {
-                        text: leantime.i18n.__("tour.next"),
+                        text: tiggomark.i18n.__("tour.next"),
                         action: tour.next
                 }
                 ]
@@ -168,18 +168,18 @@ leantime.helperController = (function () {
         tour.addStep(
             'Your Todos',
             {
-                title: leantime.i18n.__("tour.congratulations"),
-                text: leantime.i18n.__("tour.congratulations_dashboard_text"),
+                title: tiggomark.i18n.__("tour.congratulations"),
+                text: tiggomark.i18n.__("tour.congratulations_dashboard_text"),
                 buttons:[
                 {
-                    text:leantime.i18n.__("tour.close"),
+                    text:tiggomark.i18n.__("tour.close"),
                     action:tour.cancel
                 },
                 {
-                    text: leantime.i18n.__("tour.goto_projects"),
+                    text: tiggomark.i18n.__("tour.goto_projects"),
                     events: {
                         'click': function () {
-                            window.location.href = leantime.appUrl + "/projects/newProject/";
+                            window.location.href = tiggomark.appUrl + "/projects/newProject/";
                         }
                     }
                 }
@@ -207,8 +207,8 @@ leantime.helperController = (function () {
         tour.addStep(
             'Left Nav',
             {
-                title: leantime.i18n.__("tour.kanban"),
-                text: leantime.i18n.__("tour.kanban_text"),
+                title: tiggomark.i18n.__("tour.kanban"),
+                text: tiggomark.i18n.__("tour.kanban_text"),
                 attachTo: '.column right',
                 advanceOn: '.headmenu click',
                 buttons: [
@@ -227,18 +227,18 @@ leantime.helperController = (function () {
         tour.addStep(
             'Left Nav',
             {
-                title: leantime.i18n.__("tour.drag_drop"),
-                text: leantime.i18n.__("tour.drag_drop_text"),
+                title: tiggomark.i18n.__("tour.drag_drop"),
+                text: tiggomark.i18n.__("tour.drag_drop_text"),
                 attachTo: '.ticketBox h4 right',
                 advanceOn: '.ticketBox click',
                 buttons: [
                     {
-                        text: leantime.i18n.__("tour.back"),
+                        text: tiggomark.i18n.__("tour.back"),
                         classes: 'shepherd-button-secondary',
                         action: tour.back
                 },
                     {
-                        text: leantime.i18n.__("tour.next"),
+                        text: tiggomark.i18n.__("tour.next"),
                         action: tour.next
                 }
                 ]
@@ -248,18 +248,18 @@ leantime.helperController = (function () {
         tour.addStep(
             'Change Views',
             {
-                title: leantime.i18n.__("tour.change_views"),
-                text: leantime.i18n.__("tour.change_views_text"),
+                title: tiggomark.i18n.__("tour.change_views"),
+                text: tiggomark.i18n.__("tour.change_views_text"),
                 attachTo: '.btn-group .fa-columns left',
                 advanceOn: '.ticketBox click',
                 buttons: [
                     {
-                        text: leantime.i18n.__("tour.back"),
+                        text: tiggomark.i18n.__("tour.back"),
                         classes: 'shepherd-button-secondary',
                         action: tour.back
                 },
                     {
-                        text: leantime.i18n.__("tour.next"),
+                        text: tiggomark.i18n.__("tour.next"),
                         action: tour.next
                 }
                 ]
@@ -269,11 +269,11 @@ leantime.helperController = (function () {
         tour.addStep(
             'Your Todos',
             {
-                title: leantime.i18n.__("tour.congratulations"),
-                text: leantime.i18n.__("tour.congratulations_kanban_text"),
+                title: tiggomark.i18n.__("tour.congratulations"),
+                text: tiggomark.i18n.__("tour.congratulations_kanban_text"),
                 buttons:[
                 {
-                    text:leantime.i18n.__("tour.close"),
+                    text:tiggomark.i18n.__("tour.close"),
                     action:tour.complete
                 }
                 ],
@@ -284,7 +284,7 @@ leantime.helperController = (function () {
         tour.on(
             'complete',
             function () {
-                leantime.helperRepository.stopTour();
+                tiggomark.helperRepository.stopTour();
             }
         );
 
@@ -318,7 +318,7 @@ leantime.helperController = (function () {
             jQuery(".onboardingModal").nyroModal(onboardingModal);
 
             jQuery.nmManual(
-                leantime.appUrl + "/help/firstLogin?step=project",
+                tiggomark.appUrl + "/help/firstLogin?step=project",
                 onboardingModal
             );
         });

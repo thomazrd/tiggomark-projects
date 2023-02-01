@@ -1,14 +1,14 @@
 <?php
 
-namespace leantime\command;
+namespace tiggomark\command;
 
-use leantime\domain\repositories\setting;
+use tiggomark\domain\repositories\setting;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Completion\CompletionInput;
 use Symfony\Component\Console\Output\OutputInterface;
-use leantime\domain\models\auth\roles;
+use tiggomark\domain\models\auth\roles;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 class saveSettingCommand extends Command

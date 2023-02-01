@@ -4,11 +4,11 @@
  * XML export
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\domain\repositories;
+    use tiggomark\domain\repositories;
 
-    class export extends \leantime\domain\controllers\canvas\export
+    class export extends \tiggomark\domain\controllers\canvas\export
     {
         protected const CANVAS_NAME = 'minempathy';
     }

@@ -1,12 +1,12 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\models;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\models;
 
     class i18n extends controller
     {
@@ -26,19 +26,19 @@ namespace leantime\domain\controllers {
 
             $result = $decodedString ? $decodedString : '{}';
 
-            echo "var leantime = leantime || {};
-                var leantime = {
+            echo "var tiggomark = tiggomark || {};
+                var tiggomark = {
                     i18n: {
                         dictionary: " . $result . ",
-                        __: function(index){ return leantime.i18n.dictionary[index];  }
+                        __: function(index){ return tiggomark.i18n.dictionary[index];  }
                     }
                 };";
 /*
-            echo "var leantime = leantime || {};
-                var leantime = {
+            echo "var tiggomark = tiggomark || {};
+                var tiggomark = {
                     i18n: {
                         dictionary: " . $decodedString ? $decodedString : '{}' .",
-                        __: function(index){ return leantime.i18n.dictionary[index];  }
+                        __: function(index){ return tiggomark.i18n.dictionary[index];  }
                     }
                 };
             ";

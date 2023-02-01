@@ -1,6 +1,6 @@
 <?php
 
-namespace leantime\domain\models\wiki {
+namespace tiggomark\domain\models\wiki {
 
     class article
     {

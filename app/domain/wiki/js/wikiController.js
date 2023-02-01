@@ -1,4 +1,4 @@
-leantime.wikiController = (function () {
+tiggomark.wikiController = (function () {
 
     //Constructor
     (function () {
@@ -86,7 +86,7 @@ leantime.wikiController = (function () {
                 afterShowCont: function () {
                     jQuery('textarea.complexEditor').tinymce().save();
                     jQuery('textarea.complexEditor').tinymce().remove();
-                    leantime.generalController.initComplexEditor();
+                    tiggomark.generalController.initComplexEditor();
                     jQuery(".formModal").nyroModal(articleModalConfig);
 
                 },

@@ -1,5 +1,5 @@
 <?php
-$comments = new leantime\domain\repositories\comments();
+$comments = new tiggomark\domain\repositories\comments();
 $formUrl = CURRENT_URL;
 
 //Controller may not redirect. Make sure delComment is only added once
@@ -60,7 +60,7 @@ if (strpos($formUrl, '?delComment=') !== false) {
                                                 <?php } ?>
                                                 <?php
                                                 if (isset($this->get('ticket')->id)) {?>
-                                                        <li><a href="javascript:void(0);" onclick="leantime.ticketsController.addCommentTimesheetContent(<?=$row['id'] ?>, <?=$this->get('ticket')->id ?>);"><?=$this->__("links.add_to_timesheets"); ?></a></li>
+                                                        <li><a href="javascript:void(0);" onclick="tiggomark.ticketsController.addCommentTimesheetContent(<?=$row['id'] ?>, <?=$this->get('ticket')->id ?>);"><?=$this->__("links.add_to_timesheets"); ?></a></li>
                                                 <?php } ?>
                                             </ul>
                                         </div>
@@ -148,7 +148,7 @@ if (strpos($formUrl, '?delComment=') !== false) {
 
 <script type='text/javascript'>
 
-    leantime.generalController.initSimpleEditor();
+    tiggomark.generalController.initSimpleEditor();
 
     function toggleCommentBoxes(id) {
 
@@ -163,7 +163,7 @@ if (strpos($formUrl, '?delComment=') !== false) {
             jQuery('.commentBox').hide('fast', function () {});
 
             jQuery('#comment' + id + ' .commentReply').prepend('<textarea rows="5" cols="75" name="text" class="tinymceSimple"></textarea>');
-            leantime.generalController.initSimpleEditor();
+            tiggomark.generalController.initSimpleEditor();
 
             jQuery('#comment' + id + '').show('fast');
             jQuery('#father').val(id);

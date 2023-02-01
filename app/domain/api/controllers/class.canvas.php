@@ -4,13 +4,13 @@
  * canvas class - Generic canvas API controller
  */
 
-namespace leantime\domain\controllers\api {
+namespace tiggomark\domain\controllers\api {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\models;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\models;
 
     class canvas extends controller
     {
@@ -31,7 +31,7 @@ namespace leantime\domain\controllers\api {
         {
 
             $this->projects = new repositories\projects();
-            $canvasRepoName = "leantime\\domain\\repositories\\" . static::CANVAS_NAME . 'canvas';
+            $canvasRepoName = "tiggomark\\domain\\repositories\\" . static::CANVAS_NAME . 'canvas';
             $this->canvasRepo = new $canvasRepoName();
         }
 

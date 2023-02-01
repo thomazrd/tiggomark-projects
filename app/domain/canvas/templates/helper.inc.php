@@ -29,7 +29,7 @@
             <p>
              </p>
             <a href="javascript:void(0);"  onclick="jQuery.nmTop().close()"><?php echo $this->__('links.close') ?></a><br />
-            <a href="javascript:void(0);" onclick="leantime.helperController.hideAndKeepHidden('<?=$canvasName ?>Canvas')">
+            <a href="javascript:void(0);" onclick="tiggomark.helperController.hideAndKeepHidden('<?=$canvasName ?>Canvas')">
                 <?php echo $this->__('links.close_dont_show_again') ?></a>
         </div>
     </div>

@@ -1,4 +1,4 @@
-leantime.usersController = (function () {
+tiggomark.usersController = (function () {
 
     // Variables (underscore for private variables)
     var publicThing = "not secret";
@@ -63,7 +63,7 @@ leantime.usersController = (function () {
 
         jQuery('#save-picture').addClass('running');
 
-        jQuery('#profileImg').attr('src', leantime.appUrl + '/images/loaders/loader28.gif');
+        jQuery('#profileImg').attr('src', tiggomark.appUrl + '/images/loaders/loader28.gif');
         _uploadResult.croppie(
             'result',
             {
@@ -72,7 +72,7 @@ leantime.usersController = (function () {
             }
         ).then(
             function (result) {
-                    leantime.usersService.saveUserPhoto(result);
+                    tiggomark.usersService.saveUserPhoto(result);
             }
         );
     };
@@ -85,27 +85,27 @@ leantime.usersController = (function () {
 
             var allUsersTable = jQuery("#allUsersTable").DataTable({
                 "language": {
-                    "decimal":        leantime.i18n.__("datatables.decimal"),
-                    "emptyTable":     leantime.i18n.__("datatables.emptyTable"),
-                    "info":           leantime.i18n.__("datatables.info"),
-                    "infoEmpty":      leantime.i18n.__("datatables.infoEmpty"),
-                    "infoFiltered":   leantime.i18n.__("datatables.infoFiltered"),
-                    "infoPostFix":    leantime.i18n.__("datatables.infoPostFix"),
-                    "thousands":      leantime.i18n.__("datatables.thousands"),
-                    "lengthMenu":     leantime.i18n.__("datatables.lengthMenu"),
-                    "loadingRecords": leantime.i18n.__("datatables.loadingRecords"),
-                    "processing":     leantime.i18n.__("datatables.processing"),
-                    "search":         leantime.i18n.__("datatables.search"),
-                    "zeroRecords":    leantime.i18n.__("datatables.zeroRecords"),
+                    "decimal":        tiggomark.i18n.__("datatables.decimal"),
+                    "emptyTable":     tiggomark.i18n.__("datatables.emptyTable"),
+                    "info":           tiggomark.i18n.__("datatables.info"),
+                    "infoEmpty":      tiggomark.i18n.__("datatables.infoEmpty"),
+                    "infoFiltered":   tiggomark.i18n.__("datatables.infoFiltered"),
+                    "infoPostFix":    tiggomark.i18n.__("datatables.infoPostFix"),
+                    "thousands":      tiggomark.i18n.__("datatables.thousands"),
+                    "lengthMenu":     tiggomark.i18n.__("datatables.lengthMenu"),
+                    "loadingRecords": tiggomark.i18n.__("datatables.loadingRecords"),
+                    "processing":     tiggomark.i18n.__("datatables.processing"),
+                    "search":         tiggomark.i18n.__("datatables.search"),
+                    "zeroRecords":    tiggomark.i18n.__("datatables.zeroRecords"),
                     "paginate": {
-                        "first":      leantime.i18n.__("datatables.first"),
-                        "last":       leantime.i18n.__("datatables.last"),
-                        "next":       leantime.i18n.__("datatables.next"),
-                        "previous":   leantime.i18n.__("datatables.previous"),
+                        "first":      tiggomark.i18n.__("datatables.first"),
+                        "last":       tiggomark.i18n.__("datatables.last"),
+                        "next":       tiggomark.i18n.__("datatables.next"),
+                        "previous":   tiggomark.i18n.__("datatables.previous"),
                     },
                     "aria": {
-                        "sortAscending":  leantime.i18n.__("datatables.sortAscending"),
-                        "sortDescending":leantime.i18n.__("datatables.sortDescending"),
+                        "sortAscending":  tiggomark.i18n.__("datatables.sortAscending"),
+                        "sortDescending":tiggomark.i18n.__("datatables.sortDescending"),
                     }
 
                 },
@@ -180,13 +180,13 @@ leantime.usersController = (function () {
         {
             if (strongPassword.test(PasswordParameter)) {
                 strengthBadge.style.backgroundColor = "#468847";
-                strengthBadge.textContent = leantime.i18n.__('label.strong');
+                strengthBadge.textContent = tiggomark.i18n.__('label.strong');
             } else if (mediumPassword.test(PasswordParameter)) {
                 strengthBadge.style.backgroundColor = '#f89406';
-                strengthBadge.textContent = leantime.i18n.__('label.medium');
+                strengthBadge.textContent = tiggomark.i18n.__('label.medium');
             } else {
                 strengthBadge.style.backgroundColor = '#b94a48';
-                strengthBadge.textContent = leantime.i18n.__('label.weak');
+                strengthBadge.textContent = tiggomark.i18n.__('label.weak');
             }
         }
 

@@ -1,19 +1,19 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
     use GuzzleHttp\Exception\RequestException;
-    use leantime\core;
-    use leantime\core\eventhelpers;
-    use leantime\domain\models\notification;
-    use leantime\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\core\eventhelpers;
+    use tiggomark\domain\models\notification;
+    use tiggomark\domain\repositories;
     use DateTime;
     use DateInterval;
     use League\HTMLToMarkdown\HtmlConverter;
     use GuzzleHttp\Client;
-    use leantime\domain\services\notifications\messengers;
+    use tiggomark\domain\services\notifications\messengers;
     use Psr\Http\Message\ResponseInterface;
-    use leantime\domain\models\auth\roles;
+    use tiggomark\domain\models\auth\roles;
 
     class projects
     {
@@ -159,7 +159,7 @@ namespace leantime\domain\services {
         }
 
         //TODO Split and move to notifications
-        public function notifyProjectUsers(\leantime\domain\models\notifications\notification $notification)
+        public function notifyProjectUsers(\tiggomark\domain\models\notifications\notification $notification)
         {
 
             //Email

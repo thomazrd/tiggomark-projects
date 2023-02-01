@@ -1,14 +1,14 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
     use Exception;
-    use leantime\core\appSettings;
+    use tiggomark\core\appSettings;
     use PDO;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
     use PDOException;
-    use leantime\core;
+    use tiggomark\core;
 
     class install
     {
@@ -108,7 +108,7 @@ namespace leantime\domain\repositories {
             //Some scripts might take a long time to execute. Set timeout to 5minutes
             ini_set('max_execution_time', 300);
 
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
             $this->settings = new core\appSettings();
 
             $this->user = $this->config->dbUser;
@@ -132,7 +132,7 @@ namespace leantime\domain\repositories {
         }
 
         /**
-         * checkIfInstalled checks if zp user table exists (and assumes that leantime is installed)
+         * checkIfInstalled checks if zp user table exists (and assumes that tiggomark is installed)
          *
          * @access public
          * @return bool
@@ -420,7 +420,7 @@ namespace leantime\domain\repositories {
                   PRIMARY KEY (`id`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-                insert  into `zp_projects`(`id`,`name`,`clientId`,`details`,`state`,`hourBudget`,`dollarBudget`,`active`, `menuType`, `psettings`) values (3,'Leantime Onboarding',1,'<p>This is your first project to get you started</p>',0,'0',0,NULL, '" . repositories\menu::DEFAULT_MENU . "',NULL);
+                insert  into `zp_projects`(`id`,`name`,`clientId`,`details`,`state`,`hourBudget`,`dollarBudget`,`active`, `menuType`, `psettings`) values (3,'tiggomark Onboarding',1,'<p>This is your first project to get you started</p>',0,'0',0,NULL, '" . repositories\menu::DEFAULT_MENU . "',NULL);
 
                 CREATE TABLE `zp_punch_clock` (
                   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -505,7 +505,7 @@ namespace leantime\domain\repositories {
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
                 insert  into `zp_tickets`(`id`,`projectId`,`headline`,`description`,`acceptanceCriteria`,`date`,`dateToFinish`,`priority`,`status`,`userId`,`os`,`browser`,`resolution`,`component`,`version`,`url`,`dependingTicketId`,`editFrom`,`editTo`,`editorId`,`planHours`,`hourRemaining`,`type`,`production`,`staging`,`storypoints`,`sprint`,`sortindex`,`kanbanSortIndex`) values
-                (9,3,'Getting Started with Leantime','Look around and make yourself familiar with the system. ','','2015-11-30 00:00:00','1969-12-31 00:00:00',NULL,3,1,NULL,NULL,NULL,NULL,'',NULL,NULL,'1969-12-31 00:00:00','1969-12-31 00:00:00',1,0,0,'Story',0,0,0,0,NULL,NULL);
+                (9,3,'Getting Started with tiggomark','Look around and make yourself familiar with the system. ','','2015-11-30 00:00:00','1969-12-31 00:00:00',NULL,3,1,NULL,NULL,NULL,NULL,'',NULL,NULL,'1969-12-31 00:00:00','1969-12-31 00:00:00',1,0,0,'Story',0,0,0,0,NULL,NULL);
 
                 CREATE TABLE `zp_timesheets` (
                   `id` int(255) NOT NULL AUTO_INCREMENT,

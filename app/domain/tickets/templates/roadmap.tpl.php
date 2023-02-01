@@ -108,7 +108,7 @@ if (isset($_SESSION['userdata']['settings']['views']['roadmap'])) {
 
     jQuery(document).ready(function(){
 
-    leantime.ticketsController.initModals();
+    tiggomark.ticketsController.initModals();
 
     <?php if (isset($_GET['showMilestoneModal'])) {
         if ($_GET['showMilestoneModal'] == "") {
@@ -118,7 +118,7 @@ if (isset($_SESSION['userdata']['settings']['views']['roadmap'])) {
         }
         ?>
 
-        leantime.ticketsController.openMilestoneModalManually("<?=BASE_URL ?>/tickets/editMilestone<?php echo $modalUrl; ?>");
+        tiggomark.ticketsController.openMilestoneModalManually("<?=BASE_URL ?>/tickets/editMilestone<?php echo $modalUrl; ?>");
         window.history.pushState({},document.title, '<?=BASE_URL ?>/tickets/roadmap');
 
     <?php } ?>
@@ -152,9 +152,9 @@ if (isset($_SESSION['userdata']['settings']['views']['roadmap'])) {
 
 
         <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
-        leantime.ticketsController.initGanttChart(tasks, '<?=$roadmapView; ?>', false);
+        tiggomark.ticketsController.initGanttChart(tasks, '<?=$roadmapView; ?>', false);
         <?php } else { ?>
-        leantime.ticketsController.initGanttChart(tasks, '<?=$roadmapView; ?>', true);
+        tiggomark.ticketsController.initGanttChart(tasks, '<?=$roadmapView; ?>', true);
         <?php } ?>
 
     <?php } ?>

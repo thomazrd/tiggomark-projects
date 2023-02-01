@@ -39,7 +39,7 @@ if (is_array($currentLink)) {
                             foreach ($this->get('allAssignedProjects') as $projectRow) {
                                 if ($lastClient != $projectRow['clientName']) {
                                     $lastClient = $projectRow['clientName'];
-                                    echo "<li class='nav-header border openToggle' onclick='leantime.menuController.toggleClientList(" . $projectRow['clientId'] . ", this)'>" . $this->escape($projectRow['clientName']) . " <i class=\"fas fa-angle-down\"></i></li>";
+                                    echo "<li class='nav-header border openToggle' onclick='tiggomark.menuController.toggleClientList(" . $projectRow['clientId'] . ", this)'>" . $this->escape($projectRow['clientName']) . " <i class=\"fas fa-angle-down\"></i></li>";
                                 }
                                 echo "<li class='client_" . $projectRow['clientId'] . "";
                                 if ($this->get('currentProject') == $projectRow["id"]) {
@@ -78,7 +78,7 @@ if (is_array($currentLink)) {
                      </li>
                 <?php } ?>
                 <?php if ($menuItem['type'] == 'submenu') { ?>
-                    <li><a href="javascript:<?php echo $menuItem['visual'] == 'always' ? 'void(0)' : 'leantime.menuController.toggleSubmenu(\'' . $menuItem['id'] . '\')'; ?>;"><strong><?=$this->__($menuItem['title']) ?></strong> <i class="fa fa-angle-<?php echo $menuItem['visual'] == 'closed' ? 'up' : 'down'; ?>" id="submenu-icon-<?=$menuItem['id'] ?>"></i></a></li>
+                    <li><a href="javascript:<?php echo $menuItem['visual'] == 'always' ? 'void(0)' : 'tiggomark.menuController.toggleSubmenu(\'' . $menuItem['id'] . '\')'; ?>;"><strong><?=$this->__($menuItem['title']) ?></strong> <i class="fa fa-angle-<?php echo $menuItem['visual'] == 'closed' ? 'up' : 'down'; ?>" id="submenu-icon-<?=$menuItem['id'] ?>"></i></a></li>
                     <ul style="display: <?php echo $menuItem['visual'] == 'closed' ? 'none' : 'block'; ?>;" id="submenu-<?=$menuItem['id'] ?>">
                     <?php foreach ($menuItem['submenu'] as $subkey => $submenuItem) { ?>
                         <?php if ($submenuItem['type'] == 'header') { ?>

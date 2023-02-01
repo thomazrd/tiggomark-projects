@@ -1,12 +1,12 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core\controller;
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\services\auth;
+    use tiggomark\core\controller;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\services\auth;
 
     class newUser extends controller
     {

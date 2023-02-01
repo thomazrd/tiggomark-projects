@@ -1,10 +1,10 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
     use DateTime;
-    use leantime\core;
-    use leantime\core\repository;
+    use tiggomark\core;
+    use tiggomark\core\repository;
     use pdo;
 
     class timesheets extends repository

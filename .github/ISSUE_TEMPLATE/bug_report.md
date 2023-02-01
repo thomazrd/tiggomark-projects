@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-*If you have problems with the installation please use our [community forum](https://community.leantime.io)*
+*If you have problems with the installation please use our [community forum](https://community.tiggomark.io)*
 
 **Describe the bug**
 A clear and concise description of what the bug is.
@@ -22,8 +22,8 @@ Steps to reproduce the behavior:
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Leantime Version**
-Which Leantime version are you using
+**tiggomark Version**
+Which tiggomark version are you using
 
 **Server**
 Apache, nginx, IIS etc

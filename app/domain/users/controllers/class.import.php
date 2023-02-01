@@ -2,14 +2,14 @@
 
 /* Not production ready yet. Prepping for future version */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\services\auth;
-    use leantime\domain\models\auth\roles;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\services\auth;
+    use tiggomark\domain\models\auth\roles;
 
     class import extends controller
     {

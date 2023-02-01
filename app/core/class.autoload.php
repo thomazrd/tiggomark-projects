@@ -1,30 +1,30 @@
 <?php
 
-namespace leantime\core;
+namespace tiggomark\core;
 
 require_once ROOT . '/../vendor/autoload.php';
 
-spl_autoload_register(__NAMESPACE__ . "\\leantimeAutoloader", true, true);
+spl_autoload_register(__NAMESPACE__ . "\\tiggomarkAutoloader", true, true);
 
 /**
- * the leantime autoloader function
+ * the tiggomark autoloader function
  *
  * Note:
  * Possible Namespace Structures
- *  - leantime \ base \ CLASS|TRAIT
- *  - leantime \ core \ CLASS|TRAIT
- *  - leantime \ domain \ MVC FOLDER \ CLASS|TRAIT
- *  - leantime \ domain \ MVC FOLDER \ MODULE \ CLASS|TRAIT
- *  - leantime \ plugin \ MVC FOLDER \ CLASS|TRAIT
+ *  - tiggomark \ base \ CLASS|TRAIT
+ *  - tiggomark \ core \ CLASS|TRAIT
+ *  - tiggomark \ domain \ MVC FOLDER \ CLASS|TRAIT
+ *  - tiggomark \ domain \ MVC FOLDER \ MODULE \ CLASS|TRAIT
+ *  - tiggomark \ plugin \ MVC FOLDER \ CLASS|TRAIT
  *
  * @param string $class
  *
  * @return void
  */
-function leantimeAutoloader($class)
+function tiggomarkAutoloader($class)
 {
 
-    $parts = getLeantimeClassPath($class);
+    $parts = gettiggomarkClassPath($class);
     $path = $parts['path'];
     $class = $parts['class'];
 
@@ -54,7 +54,7 @@ function leantimeAutoloader($class)
 
 require_once '../vendor/autoload.php';
 
-function getLeantimeClassPath($class)
+function gettiggomarkClassPath($class)
 {
     $mvcFolder = $module = $path = "";
 

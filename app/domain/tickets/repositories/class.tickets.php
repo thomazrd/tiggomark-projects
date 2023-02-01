@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
+    use tiggomark\core;
     use pdo;
 
     class tickets
@@ -573,7 +573,7 @@ namespace leantime\domain\repositories {
             $stmn->bindValue(':projectId', $projectId, PDO::PARAM_INT);
 
             $stmn->execute();
-            $values = $stmn->fetchAll(PDO::FETCH_CLASS, '\leantime\domain\models\tickets');
+            $values = $stmn->fetchAll(PDO::FETCH_CLASS, '\tiggomark\domain\models\tickets');
             $stmn->closeCursor();
 
             return $values;
@@ -584,7 +584,7 @@ namespace leantime\domain\repositories {
          *
          * @access public
          * @param  $id
-         * @return \leantime\domain\models\tickets|bool
+         * @return \tiggomark\domain\models\tickets|bool
          */
         public function getTicket($id)
         {
@@ -633,7 +633,7 @@ namespace leantime\domain\repositories {
             $stmn->bindValue(':ticketId', $id, PDO::PARAM_INT);
 
             $stmn->execute();
-            $values = $stmn->fetchObject('\leantime\domain\models\tickets');
+            $values = $stmn->fetchObject('\tiggomark\domain\models\tickets');
             $stmn->closeCursor();
 
             return $values;
@@ -790,7 +790,7 @@ namespace leantime\domain\repositories {
             $stmn->bindValue(':projectId', $projectId, PDO::PARAM_INT);
 
             $stmn->execute();
-            $values = $stmn->fetchAll(PDO::FETCH_CLASS, 'leantime\domain\models\tickets');
+            $values = $stmn->fetchAll(PDO::FETCH_CLASS, 'tiggomark\domain\models\tickets');
             $stmn->closeCursor();
 
             return $values;
@@ -865,7 +865,7 @@ namespace leantime\domain\repositories {
             $stmn->bindValue(':projectId', $projectId, PDO::PARAM_INT);
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, 'leantime\domain\models\tickets');
+            $stmn->setFetchMode(PDO::FETCH_CLASS, 'tiggomark\domain\models\tickets');
             $values = $stmn->fetch();
             $stmn->closeCursor();
 

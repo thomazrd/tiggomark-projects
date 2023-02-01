@@ -1,12 +1,12 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
     use DateTime;
-    use leantime\core;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\models;
+    use tiggomark\core;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\models;
 
     class tickets
     {
@@ -188,7 +188,7 @@ namespace leantime\domain\services {
                 $_SESSION["currentSprint"] = $searchCriteria["sprint"];
             }
 
-            $config = \leantime\core\environment::getInstance();
+            $config = \tiggomark\core\environment::getInstance();
             setcookie(
                 "searchCriteria",
                 serialize($searchCriteria),

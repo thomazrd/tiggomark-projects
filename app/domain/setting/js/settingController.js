@@ -1,4 +1,4 @@
-leantime.settingController = (function () {
+tiggomark.settingController = (function () {
 
     // Variables (underscore for private variables)
     var publicThing = "not secret";
@@ -64,7 +64,7 @@ leantime.settingController = (function () {
 
         jQuery('#save-logo').addClass('running');
 
-        jQuery('#logoImg').attr('src', leantime.appUrl + '/images/loaders/loader28.gif');
+        jQuery('#logoImg').attr('src', tiggomark.appUrl + '/images/loaders/loader28.gif');
         _uploadResult.croppie(
             'result',
             {
@@ -76,7 +76,7 @@ leantime.settingController = (function () {
             }
         ).then(
             function (result) {
-                    leantime.settingService.saveLogo(result);
+                    tiggomark.settingService.saveLogo(result);
             }
         );
     };

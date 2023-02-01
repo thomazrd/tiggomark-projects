@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-md-12 align-center">
             <a href="javascript:void(0);"  onclick="jQuery.nmTop().close()"><?php echo $this->__('links.close') ?></a><br />
-            <a href="javascript:void(0);" onclick="leantime.helperController.hideAndKeepHidden('newProject')"><?php echo $this->__('links.close_dont_show_again') ?></a>
+            <a href="javascript:void(0);" onclick="tiggomark.helperController.hideAndKeepHidden('newProject')"><?php echo $this->__('links.close_dont_show_again') ?></a>
         </div>
     </div>
 

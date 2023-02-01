@@ -4,9 +4,9 @@
  * Controller / Delete Canvas Item
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    class delCanvasItem extends \leantime\domain\controllers\canvas\delCanvasItem
+    class delCanvasItem extends \tiggomark\domain\controllers\canvas\delCanvasItem
     {
         protected const CANVAS_NAME = 'cp';
     }

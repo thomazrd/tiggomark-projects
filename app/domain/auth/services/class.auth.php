@@ -1,12 +1,12 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
     use Exception;
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\repositories;
-    use leantime\core;
-    use leantime\core\eventhelpers;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\core\eventhelpers;
     use RobThree\Auth\TwoFactorAuth;
 
     class auth
@@ -133,7 +133,7 @@ namespace leantime\domain\services {
          */
         protected function __construct($sessionid)
         {
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
             $this->cookieTime = $this->config->sessionExpiration;
             $this->language = core\language::getInstance();
             $this->settingsRepo = new repositories\setting();
@@ -196,7 +196,7 @@ namespace leantime\domain\services {
 
             //different identity providers can live here
             //they all need to
-            ////A: ensure the user is in leantime (with a valid role) and if not create the user
+            ////A: ensure the user is in tiggomark (with a valid role) and if not create the user
             ////B: set the session variables
             ////C: update users from the identity provider
             //Try Ldap
@@ -415,7 +415,7 @@ namespace leantime\domain\services {
                         $actual_link = "" . BASE_URL . "/auth/resetPw/" . $resetLink;
                         $mailer->setHtml(sprintf($this->language->__('email_notifications.password_reset_message'), $actual_link));
                         $to = array($username);
-                        $mailer->sendMail($to, "Leantime System");
+                        $mailer->sendMail($to, "tiggomark System");
 
                         return true;
                     }
@@ -504,7 +504,7 @@ namespace leantime\domain\services {
 
         public function verify2FA($code)
         {
-            $tfa = new TwoFactorAuth('Leantime');
+            $tfa = new TwoFactorAuth('tiggomark');
             return $tfa->verifyCode($_SESSION['userdata']['twoFASecret'], $code);
         }
 

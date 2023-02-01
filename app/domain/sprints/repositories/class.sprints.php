@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
+    use tiggomark\core;
     use pdo;
 
     class sprints
@@ -40,7 +40,7 @@ namespace leantime\domain\repositories {
             $stmn = $this->db->database->prepare($query);
             $stmn->bindValue(':id', $id, PDO::PARAM_INT);
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, "leantime\domain\models\sprints");
+            $stmn->setFetchMode(PDO::FETCH_CLASS, "tiggomark\domain\models\sprints");
             $value = $stmn->fetch();
 
             $stmn->closeCursor();
@@ -64,7 +64,7 @@ namespace leantime\domain\repositories {
 					zp_sprints.projectId,
 					zp_sprints.startDate,
 					zp_sprints.endDate
-				FROM zp_sprints 
+				FROM zp_sprints
 				WHERE zp_sprints.projectId = :id
 				ORDER BY zp_sprints.startDate DESC";
 
@@ -72,7 +72,7 @@ namespace leantime\domain\repositories {
             $stmn->bindValue(':id', $projectId, PDO::PARAM_INT);
             $stmn->execute();
 
-            $value = $stmn->fetchAll(PDO::FETCH_CLASS, "leantime\domain\models\sprints");
+            $value = $stmn->fetchAll(PDO::FETCH_CLASS, "tiggomark\domain\models\sprints");
 
             $stmn->closeCursor();
 
@@ -95,15 +95,15 @@ namespace leantime\domain\repositories {
 					zp_sprints.projectId,
 					zp_sprints.startDate,
 					zp_sprints.endDate
-				FROM zp_sprints 
-				WHERE zp_sprints.projectId = :id AND zp_sprints.endDate > NOW() 
+				FROM zp_sprints
+				WHERE zp_sprints.projectId = :id AND zp_sprints.endDate > NOW()
 				ORDER BY zp_sprints.startDate DESC";
 
             $stmn = $this->db->database->prepare($query);
             $stmn->bindValue(':id', $projectId, PDO::PARAM_INT);
             $stmn->execute();
 
-            $value = $stmn->fetchAll(PDO::FETCH_CLASS, "leantime\domain\models\sprints");
+            $value = $stmn->fetchAll(PDO::FETCH_CLASS, "tiggomark\domain\models\sprints");
 
             $stmn->closeCursor();
 
@@ -125,14 +125,14 @@ namespace leantime\domain\repositories {
 					zp_sprints.projectId,
 					zp_sprints.startDate,
 					zp_sprints.endDate
-				FROM zp_sprints 
+				FROM zp_sprints
 				WHERE zp_sprints.projectId = :id
 				AND zp_sprints.startDate < NOW() AND zp_sprints.endDate > NOW() ORDER BY zp_sprints.startDate  LIMIT 1";
 
             $stmn = $this->db->database->prepare($query);
             $stmn->bindValue(':id', $projectId, PDO::PARAM_INT);
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, "leantime\domain\models\sprints");
+            $stmn->setFetchMode(PDO::FETCH_CLASS, "tiggomark\domain\models\sprints");
 
             $value = $stmn->fetch();
 
@@ -156,14 +156,14 @@ namespace leantime\domain\repositories {
 					zp_sprints.projectId,
 					zp_sprints.startDate,
 					zp_sprints.endDate
-				FROM zp_sprints 
+				FROM zp_sprints
 				WHERE zp_sprints.projectId = :id
 				AND zp_sprints.startDate > NOW() ORDER BY zp_sprints.startDate ASC LIMIT 1";
 
             $stmn = $this->db->database->prepare($query);
             $stmn->bindValue(':id', $projectId, PDO::PARAM_INT);
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, "leantime\domain\models\sprints");
+            $stmn->setFetchMode(PDO::FETCH_CLASS, "tiggomark\domain\models\sprints");
 
             $value = $stmn->fetch();
 
@@ -193,11 +193,11 @@ namespace leantime\domain\repositories {
         public function editSprint($sprint)
         {
 
-            $query = "UPDATE zp_sprints 
-                      SET 
-                        name = :name, 
-                        projectId = :projectId, 
-                        startDate = :startDate, 
+            $query = "UPDATE zp_sprints
+                      SET
+                        name = :name,
+                        projectId = :projectId,
+                        startDate = :startDate,
                         endDate = :endDate
                         WHERE id = :id";
 
@@ -219,7 +219,7 @@ namespace leantime\domain\repositories {
         {
 
             $query = "UPDATE zp_tickets
-                SET 
+                SET
                     sprint = ''
                 WHERE sprint = :id";
 

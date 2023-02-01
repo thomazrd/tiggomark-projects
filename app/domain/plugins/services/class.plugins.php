@@ -1,11 +1,11 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
     use GuzzleHttp\Client;
     use GuzzleHttp\Promise\PromiseInterface;
-    use leantime\core;
-    use leantime\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\domain\repositories;
     use Ramsey\Uuid\Uuid;
 
     class plugins
@@ -71,7 +71,7 @@ namespace leantime\domain\services {
                         $json = file_get_contents($pluginJsonFile);
 
                         $pluginFile = json_decode($json, true);
-                        $plugin = new \leantime\domain\models\plugins();
+                        $plugin = new \tiggomark\domain\models\plugins();
                         $plugin->name = $pluginFile['name'];
                         $plugin->enabled = 0;
                         $plugin->description = $pluginFile['description'];
@@ -99,7 +99,7 @@ namespace leantime\domain\services {
                 $json = file_get_contents($pluginJsonFile);
 
                 $pluginFile = json_decode($json, true);
-                $plugin = new \leantime\domain\models\plugins();
+                $plugin = new \tiggomark\domain\models\plugins();
                 $plugin->name = $pluginFile['name'];
                 $plugin->enabled = 0;
                 $plugin->description = $pluginFile['description'];

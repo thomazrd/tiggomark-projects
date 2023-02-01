@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\domain\events;
+namespace tiggomark\domain\events;
 
-use leantime\domain\services\notifications;
+use tiggomark\domain\services\notifications;
 
 class addNotification
 {
@@ -30,4 +30,4 @@ class addNotification
     }
 }
 
-\leantime\core\events::add_event_listener("domain.services.projects.notifyProjectUsers", new addNotification());
+\tiggomark\core\events::add_event_listener("domain.services.projects.notifyProjectUsers", new addNotification());

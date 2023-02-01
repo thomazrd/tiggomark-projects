@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\core;
+namespace tiggomark\core;
 
-use leantime\core\eventhelpers;
+use tiggomark\core\eventhelpers;
 use Aws\S3\Exception\S3Exception;
 use Aws\S3;
 use Aws\S3\S3Client;
@@ -87,7 +87,7 @@ class fileupload
     public function __construct()
     {
 
-        $this->config = \leantime\core\environment::getInstance();
+        $this->config = \tiggomark\core\environment::getInstance();
         $this->path = $this->config->userFilePath;
 
         if ($this->config->useS3 == true) {

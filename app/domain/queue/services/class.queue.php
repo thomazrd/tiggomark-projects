@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
-    use leantime\core;
-    use leantime\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\domain\repositories;
 
     class queue
     {
@@ -20,9 +20,9 @@ namespace leantime\domain\services {
 
             // We need users and settings and a mailer
             $this->userRepo = new repositories\users();
-            $this->settingsRepo = new \leantime\domain\repositories\setting();
-            $this->mailer = new \leantime\core\mailer();
-            $this->language = \leantime\core\language::getInstance();
+            $this->settingsRepo = new \tiggomark\domain\repositories\setting();
+            $this->mailer = new \tiggomark\core\mailer();
+            $this->language = \tiggomark\core\language::getInstance();
         }
 
         // Fake template to be replaced by something better
@@ -111,7 +111,7 @@ namespace leantime\domain\services {
                 }
                 $this->mailer->setHtml($formattedHTML);
                 $to = array($recipient);
-                $this->mailer->sendMail($to, "Leantime System");
+                $this->mailer->sendMail($to, "tiggomark System");
 
                 // Delete the corresponding messages from the queue when the mail is sent
                 // TODO here : only delete these if the send was successful

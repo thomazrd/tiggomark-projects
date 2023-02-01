@@ -1,12 +1,12 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
     use DOMDocument;
-    use leantime\core;
+    use tiggomark\core;
     use pdo;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
 
     class notifications
     {

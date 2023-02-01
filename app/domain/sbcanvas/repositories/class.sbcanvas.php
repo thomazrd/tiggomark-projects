@@ -4,9 +4,9 @@
  * Strategy Brief - Repository
  */
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    class sbcanvas extends \leantime\domain\repositories\canvas
+    class sbcanvas extends \tiggomark\domain\repositories\canvas
     {
         /**
          * Constant that must be redefined

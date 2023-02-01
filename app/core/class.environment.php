@@ -1,6 +1,6 @@
 <?php
 
-namespace leantime\core;
+namespace tiggomark\core;
 
 class environment
 {
@@ -18,7 +18,7 @@ class environment
     private function __construct()
     {
 
-        $defaultConfiguration = new \leantime\core\config();
+        $defaultConfiguration = new \tiggomark\core\config();
 
         $this->dotenv = \Dotenv\Dotenv::createImmutable(ROOT . "/../config");
         $this->dotenv->safeLoad();
@@ -29,7 +29,7 @@ class environment
         }
 
         /* General */
-        $this->sitename = $this->environmentHelper("LEAN_SITENAME", $defaultConfiguration->sitename ?? 'Leantime');
+        $this->sitename = $this->environmentHelper("LEAN_SITENAME", $defaultConfiguration->sitename ?? 'tiggomark');
         $this->language = $this->environmentHelper("LEAN_LANGUAGE", $defaultConfiguration->language ?? 'en-US');
         $this->logoPath = $this->environmentHelper("LEAN_LOGO_PATH", $defaultConfiguration->logoPath ?? '/images/logo.png');
         $this->printLogoURL = $this->environmentHelper("LEAN_PRINT_LOGO_URL", $defaultConfiguration->printLogoURL ?? '');
@@ -104,8 +104,8 @@ class environment
         } else {
             /*
              * Basically, here, we are doing the fetch order of
-             * environment -> .env file -> yaml file -> user default -> leantime default
-             * This allows us to use any one or a combination of those methods to configure leantime.
+             * environment -> .env file -> yaml file -> user default -> tiggomark default
+             * This allows us to use any one or a combination of those methods to configure tiggomark.
              */
             $found = null;
             $found = $this->tryGetFromYaml($envVar, $found);

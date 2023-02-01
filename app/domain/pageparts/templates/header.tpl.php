@@ -3,7 +3,7 @@
 
     $appSettings = $this->get('appSettings');
     $debugRenderer = $this->get('debugRenderer');
-    $themeCore = new \leantime\core\theme();
+    $themeCore = new \tiggomark\core\theme();
     $theme = $this->get('theme');
 ?>
 

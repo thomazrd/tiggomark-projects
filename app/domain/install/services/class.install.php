@@ -1,11 +1,11 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
     use Exception;
     use PDO;
-    use leantime\domain\repositories;
-    use leantime\core;
+    use tiggomark\domain\repositories;
+    use tiggomark\core;
     use PDOException;
 
     class install

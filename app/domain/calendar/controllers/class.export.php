@@ -5,13 +5,13 @@
  *
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\repositories;
-    use leantime\domain\services\auth;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services\auth;
     use Ramsey\Uuid\Uuid;
 
     class export extends controller
@@ -25,7 +25,7 @@ namespace leantime\domain\controllers {
         public function init()
         {
 
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
             $this->settingsRepo = new repositories\setting();
         }
 

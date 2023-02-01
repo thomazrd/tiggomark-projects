@@ -63,7 +63,7 @@
 
     jQuery(document).ready(function() {
 
-        leantime.clientsController.initClientTable();
+        tiggomark.clientsController.initClientTable();
 
 
     });

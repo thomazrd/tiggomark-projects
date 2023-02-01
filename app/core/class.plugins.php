@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\core;
+namespace tiggomark\core;
 
-use leantime\core\environment;
-use leantime\core\eventhelpers;
+use tiggomark\core\environment;
+use tiggomark\core\eventhelpers;
 
 class plugins
 {
@@ -22,7 +22,7 @@ class plugins
      */
     public function __construct()
     {
-        $config = \leantime\core\environment::getInstance();
+        $config = \tiggomark\core\environment::getInstance();
 
         if (isset($config->plugins)) {
             $plugins = json_decode($config->plugins);

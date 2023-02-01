@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
-    use leantime\core;
-    use leantime\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\domain\repositories;
 
     class setting
     {

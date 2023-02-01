@@ -433,7 +433,7 @@
                                         </div>
                                         <div class="remove">
                                             <br />
-                                            <a href="javascript:void(0);" onclick="leantime.projectsController.removeStatus(<?=$key?>)" class="delete"><span class="fa fa-trash"></span></a>
+                                            <a href="javascript:void(0);" onclick="tiggomark.projectsController.removeStatus(<?=$key?>)" class="delete"><span class="fa fa-trash"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -442,7 +442,7 @@
                         <?php } ?>
                     </ul>
 
-                    <a href="javascript:void(0);" onclick="leantime.projectsController.addToDoStatus();" class="quickAddLink" style="text-align:left;"><?=$this->__('links.add_status'); ?></a>
+                    <a href="javascript:void(0);" onclick="tiggomark.projectsController.addToDoStatus();" class="quickAddLink" style="text-align:left;"><?=$this->__('links.add_status'); ?></a>
                     <br />
                     <input type="submit" value="<?=$this->__('buttons.save')?>" name="submitSettings" class="btn btn-primary"/>
                 </form>
@@ -501,7 +501,7 @@
         </div>
         <div class="remove">
             <br />
-            <a href="javascript:void(0);" onclick="leantime.projectsController.removeStatus('XXNEWKEYXX')" class="delete"><span class="fa fa-trash"></span></a>
+            <a href="javascript:void(0);" onclick="tiggomark.projectsController.removeStatus('XXNEWKEYXX')" class="delete"><span class="fa fa-trash"></span></a>
         </div>
     </div>
 </div>
@@ -514,11 +514,11 @@
             window.history.pushState({},document.title, '<?=BASE_URL ?>/projects/showProject/<?php echo (int)$project['id']; ?>');
         <?php } ?>
 
-        leantime.projectsController.initProjectTabs();
-        leantime.projectsController.initDuplicateProjectModal();
-        leantime.projectsController.initTodoStatusSortable("#todoStatusList");
-        leantime.projectsController.initSelectFields();
-        leantime.usersController.initUserEditModal();
+        tiggomark.projectsController.initProjectTabs();
+        tiggomark.projectsController.initDuplicateProjectModal();
+        tiggomark.projectsController.initTodoStatusSortable("#todoStatusList");
+        tiggomark.projectsController.initSelectFields();
+        tiggomark.usersController.initUserEditModal();
 
     });
 

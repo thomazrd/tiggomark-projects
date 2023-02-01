@@ -117,7 +117,7 @@
                         <?php $this->dispatchTplEvent('filters.afterRighthandSectionOpen'); ?>
 
                         <div id="tableButtons" style="display:inline-block"></div>
-                        <a onclick="leantime.ticketsController.toggleFilterBar();" class="btn btn-default"><?=$this->__("links.filter") ?> (<?=$this->get('numOfFilters') ?>)</a>
+                        <a onclick="tiggomark.ticketsController.toggleFilterBar();" class="btn btn-default"><?=$this->__("links.filter") ?> (<?=$this->get('numOfFilters') ?>)</a>
                         <div class="btn-group viewDropDown">
                             <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"><?=$this->__("links.group_by") ?></button>
                             <ul class="dropdown-menu">
@@ -506,10 +506,10 @@
                             <input type="text" title="<?php echo $this->__("label.due"); ?>" value="<?php echo $date ?>" class="duedates secretInput" data-id="<?php echo $row['id'];?>" name="date" />
                         </td>
                         <td data-order="<?=$this->e($row['planHours']); ?>">
-                            <input type="text" value="<?=$this->e($row['planHours']); ?>" name="planHours" class="small-input secretInput" onchange="leantime.ticketsController.updatePlannedHours(this, '<?=$row['id']?>'); jQuery(this).parent().attr('data-order',jQuery(this).val());" />
+                            <input type="text" value="<?=$this->e($row['planHours']); ?>" name="planHours" class="small-input secretInput" onchange="tiggomark.ticketsController.updatePlannedHours(this, '<?=$row['id']?>'); jQuery(this).parent().attr('data-order',jQuery(this).val());" />
                         </td>
                         <td data-order="<?=$this->e($row['hourRemaining']); ?>">
-                            <input type="text" value="<?=$this->e($row['hourRemaining']); ?>" name="remainingHours" class="small-input secretInput" onchange="leantime.ticketsController.updateRemainingHours(this, '<?=$row['id']?>');" />
+                            <input type="text" value="<?=$this->e($row['hourRemaining']); ?>" name="remainingHours" class="small-input secretInput" onchange="tiggomark.ticketsController.updateRemainingHours(this, '<?=$row['id']?>');" />
                         </td>
 
                         <td data-order="<?php if ($row['bookedHours'] === null || $row['bookedHours'] == "") {
@@ -577,29 +577,29 @@
         <?php $this->dispatchTplEvent('scripts.afterOpen'); ?>
 
 
-        leantime.ticketsController.initModals();
+        tiggomark.ticketsController.initModals();
 
 
-        leantime.ticketsController.initTicketSearchSubmit("<?=BASE_URL ?>/tickets/showAll");
+        tiggomark.ticketsController.initTicketSearchSubmit("<?=BASE_URL ?>/tickets/showAll");
 
 
-        leantime.ticketsController.initUserSelectBox();
-        leantime.ticketsController.initStatusSelectBox();
+        tiggomark.ticketsController.initUserSelectBox();
+        tiggomark.ticketsController.initStatusSelectBox();
 
         <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
-            leantime.ticketsController.initUserDropdown();
-            leantime.ticketsController.initMilestoneDropdown();
-            leantime.ticketsController.initEffortDropdown();
-            leantime.ticketsController.initPriorityDropdown();
-            leantime.ticketsController.initSprintDropdown();
-            leantime.ticketsController.initStatusDropdown();
+            tiggomark.ticketsController.initUserDropdown();
+            tiggomark.ticketsController.initMilestoneDropdown();
+            tiggomark.ticketsController.initEffortDropdown();
+            tiggomark.ticketsController.initPriorityDropdown();
+            tiggomark.ticketsController.initSprintDropdown();
+            tiggomark.ticketsController.initStatusDropdown();
         <?php } else { ?>
-        leantime.generalController.makeInputReadonly(".maincontentinner");
+        tiggomark.generalController.makeInputReadonly(".maincontentinner");
         <?php } ?>
 
 
 
-        leantime.ticketsController.initTicketsTable("<?=$searchCriteria["groupBy"] ?>");
+        tiggomark.ticketsController.initTicketsTable("<?=$searchCriteria["groupBy"] ?>");
 
         <?php $this->dispatchTplEvent('scripts.beforeClose'); ?>
 

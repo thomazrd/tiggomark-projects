@@ -4,7 +4,7 @@
  * - insightscanvas class - Controller API
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
     class insightscanvas extends api\canvas
     {

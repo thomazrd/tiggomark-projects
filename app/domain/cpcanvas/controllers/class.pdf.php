@@ -4,11 +4,11 @@
  * HTML code for PDF report
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\domain\repositories;
+    use tiggomark\domain\repositories;
 
-    class pdf extends \leantime\domain\controllers\canvas\pdf
+    class pdf extends \tiggomark\domain\controllers\canvas\pdf
     {
         protected const CANVAS_NAME = 'cp';
 

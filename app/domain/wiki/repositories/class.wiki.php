@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
-    use leantime\domain\models\wiki\article;
+    use tiggomark\core;
+    use tiggomark\domain\models\wiki\article;
     use pdo;
 
     class wiki
@@ -80,7 +80,7 @@ namespace leantime\domain\repositories {
             }
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, "leantime\domain\models\wiki\article");
+            $stmn->setFetchMode(PDO::FETCH_CLASS, "tiggomark\domain\models\wiki\article");
             $value = $stmn->fetch();
 
             $stmn->closeCursor();
@@ -107,7 +107,7 @@ namespace leantime\domain\repositories {
 
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, "leantime\domain\models\wiki");
+            $stmn->setFetchMode(PDO::FETCH_CLASS, "tiggomark\domain\models\wiki");
             $values = $stmn->fetchAll();
 
             $stmn->closeCursor();
@@ -135,7 +135,7 @@ namespace leantime\domain\repositories {
 
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, "leantime\domain\models\wiki");
+            $stmn->setFetchMode(PDO::FETCH_CLASS, "tiggomark\domain\models\wiki");
             $values = $stmn->fetch();
 
             $stmn->closeCursor();
@@ -167,7 +167,7 @@ namespace leantime\domain\repositories {
 
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, "leantime\domain\models\wiki\article");
+            $stmn->setFetchMode(PDO::FETCH_CLASS, "tiggomark\domain\models\wiki\article");
             $values = $stmn->fetchAll();
 
             $stmn->closeCursor();

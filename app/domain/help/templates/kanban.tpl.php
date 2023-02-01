@@ -21,9 +21,9 @@
         <div class="col-md-12">
             <p>
              </p>
-            <a href="javascript:void(0);"  onclick="leantime.helperController.startKanbanTour();" class="btn btn-primary"><?php echo $this->__('buttons.take_kanban_tour') ?></a><br />
+            <a href="javascript:void(0);"  onclick="tiggomark.helperController.startKanbanTour();" class="btn btn-primary"><?php echo $this->__('buttons.take_kanban_tour') ?></a><br />
             <a href="javascript:void(0);"  onclick="jQuery.nmTop().close()"><?php echo $this->__('links.close') ?></a><br />
-            <a href="javascript:void(0);" onclick="leantime.helperController.hideAndKeepHidden('kanban')"><?php echo $this->__('links.close_dont_show_again') ?></a>
+            <a href="javascript:void(0);" onclick="tiggomark.helperController.hideAndKeepHidden('kanban')"><?php echo $this->__('links.close_dont_show_again') ?></a>
         </div>
     </div>
 

@@ -181,14 +181,14 @@ $companySettings = $this->get('companySettings');
                                     <span class="btn btn-default btn-file">
                                         <span class="fileupload-new"><?=$this->__("buttons.select_file")?></span>
                                         <span class='fileupload-exists'><?=$this->__("buttons.change")?></span>
-                                        <input type='file' name='file' onchange="leantime.settingController.readURL(this)" />
+                                        <input type='file' name='file' onchange="tiggomark.settingController.readURL(this)" />
                                     </span>
 
-                                    <a href='#' style="margin-left:5px;" class='btn btn-default fileupload-exists' data-dismiss='fileupload' onclick="leantime.usersController.clearCroppie()"><?=$this->__("buttons.remove")?></a>
+                                    <a href='#' style="margin-left:5px;" class='btn btn-default fileupload-exists' data-dismiss='fileupload' onclick="tiggomark.usersController.clearCroppie()"><?=$this->__("buttons.remove")?></a>
                                 </div>
                                 <p class='stdformbutton'>
                                     <span id="save-logo" class="btn btn-primary fileupload-exists ld-ext-right">
-                                        <span onclick="leantime.settingController.saveCroppie()"><?=$this->__("buttons.save")?></span>
+                                        <span onclick="tiggomark.settingController.saveCroppie()"><?=$this->__("buttons.save")?></span>
                                         <span class="ld ld-ring ld-spin"> </span>
                                     </span>
 

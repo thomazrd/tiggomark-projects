@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
+    use tiggomark\core;
     use pdo;
 
     class users
@@ -64,7 +64,7 @@ namespace leantime\domain\repositories {
         {
 
             $this->db = core\db::getInstance();
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
         }
 
         /**

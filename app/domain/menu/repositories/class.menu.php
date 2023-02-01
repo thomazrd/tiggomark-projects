@@ -4,12 +4,12 @@
  * menu class - Menu definitions
  */
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\models\auth\roles;
+    use tiggomark\core;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\models\auth\roles;
 
     class menu
     {
@@ -70,7 +70,7 @@ namespace leantime\domain\repositories {
         {
 
             $language = core\language::getInstance();
-            $config = \leantime\core\environment::getInstance();
+            $config = \tiggomark\core\environment::getInstance();
 
             if (!isset($config->enableMenuType) || (isset($config->enableMenuType) && $config->enableMenuType === false)) {
                 return [self::DEFAULT_MENU => $language->__('label.menu_type.' . self::DEFAULT_MENU)];

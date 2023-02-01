@@ -56,8 +56,8 @@ if (isset($currentArticle->id)) {
                             <div class="row" id="milestoneSelectors">
                                 <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
                                     <div class="col-md-12">
-                                        <a href="javascript:void(0);" onclick="leantime.leanCanvasController.toggleMilestoneSelectors('new');"><?=$this->__("links.create_attach_milestone") ?></a>
-                                        | <a href="javascript:void(0);" onclick="leantime.leanCanvasController.toggleMilestoneSelectors('existing');"><?=$this->__("links.attach_existing_milestone") ?></a>
+                                        <a href="javascript:void(0);" onclick="tiggomark.leanCanvasController.toggleMilestoneSelectors('new');"><?=$this->__("links.create_attach_milestone") ?></a>
+                                        | <a href="javascript:void(0);" onclick="tiggomark.leanCanvasController.toggleMilestoneSelectors('existing');"><?=$this->__("links.attach_existing_milestone") ?></a>
 
                                     </div>
                                 <?php } ?>
@@ -68,7 +68,7 @@ if (isset($currentArticle->id)) {
                                     <input type="hidden" name="type" value="milestone" />
                                     <input type="hidden" name="leancanvasitemid" value="<?php echo $id; ?> " />
                                     <input type="button" value="<?=$this->__("buttons.save") ?>" onclick="jQuery('#primaryArticleSubmitButton').click()" class="btn btn-primary" />
-                                    <a href="javascript:void(0);" onclick="leantime.leanCanvasController.toggleMilestoneSelectors('hide');">
+                                    <a href="javascript:void(0);" onclick="tiggomark.leanCanvasController.toggleMilestoneSelectors('hide');">
                                         <i class="fas fa-times"></i> <?=$this->__("links.cancel") ?>
                                     </a>
                                 </div>
@@ -94,7 +94,7 @@ if (isset($currentArticle->id)) {
                                     <input type="hidden" name="type" value="milestone" />
                                     <input type="hidden" name="articleId" value="<?php echo $id; ?> " />
                                     <input type="button" value="Save" onclick="jQuery('#primaryArticleSubmitButton').click()" class="btn btn-primary" />
-                                    <a href="javascript:void(0);"  onclick="leantime.leanCanvasController.toggleMilestoneSelectors('hide');">
+                                    <a href="javascript:void(0);"  onclick="tiggomark.leanCanvasController.toggleMilestoneSelectors('hide');">
                                         <i class="fas fa-times"></i> <?=$this->__("links.cancel") ?>
                                     </a>
                                 </div>
@@ -213,7 +213,7 @@ if (isset($currentArticle->id)) {
             jQuery.nmTop().close();
         <?php } ?>
 
-        leantime.generalController.initComplexEditor();
+        tiggomark.generalController.initComplexEditor();
 
 
         jQuery('.iconpicker-container').iconpicker({
@@ -298,7 +298,7 @@ if (isset($currentArticle->id)) {
            jQuery(".articleIcon").val(event.iconpickerValue);
         });
 
-        leantime.ticketsController.initTagsInput();
+        tiggomark.ticketsController.initTagsInput();
 
 
     });

@@ -410,29 +410,29 @@
     }
 
    jQuery(document).ready(function() {
-       leantime.ticketsController.initModals();
+       tiggomark.ticketsController.initModals();
 
        jQuery('.todaysDate').text(moment().format('LLLL'));
 
        <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
-           leantime.dashboardController.prepareHiddenDueDate();
-           leantime.ticketsController.initEffortDropdown();
-           leantime.ticketsController.initMilestoneDropdown();
-           leantime.ticketsController.initStatusDropdown();
-           leantime.ticketsController.initDueDateTimePickers();
+           tiggomark.dashboardController.prepareHiddenDueDate();
+           tiggomark.ticketsController.initEffortDropdown();
+           tiggomark.ticketsController.initMilestoneDropdown();
+           tiggomark.ticketsController.initStatusDropdown();
+           tiggomark.ticketsController.initDueDateTimePickers();
        <?php } else { ?>
-            leantime.generalController.makeInputReadonly(".maincontentinner");
+            tiggomark.generalController.makeInputReadonly(".maincontentinner");
        <?php } ?>
 
        <?php if ($this->get('completedOnboarding') === false) { ?>
-           leantime.helperController.firstLoginModal();
+           tiggomark.helperController.firstLoginModal();
        <?php } ?>
 
 
        <?php
         if ($this->get('completedOnboarding') == "1" && (isset($_SESSION['userdata']['settings']["modals"]["dashboard"]) === false || $_SESSION['userdata']['settings']["modals"]["dashboard"] == 0)) {  ?>
 
-            leantime.helperController.showHelperModal("dashboard", 500, 700);
+            tiggomark.helperController.showHelperModal("dashboard", 500, 700);
 
              <?php
             //Only show once per session

@@ -81,7 +81,7 @@ if ($remainingHours < 0) {
                     ";
         } ?>
 
-        leantime.ticketsController.initTimeSheetChart(labels, d2, d3, "canvas")
+        tiggomark.ticketsController.initTimeSheetChart(labels, d2, d3, "canvas")
 
     });
 

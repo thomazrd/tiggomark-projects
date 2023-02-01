@@ -1,17 +1,17 @@
 <?php
 
-namespace leantime\command;
+namespace tiggomark\command;
 
-use leantime\domain\models\auth\roles;
+use tiggomark\domain\models\auth\roles;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Completion\CompletionInput;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use leantime\domain\repositories\install;
+use tiggomark\domain\repositories\install;
 use Exception;
-use leantime\domain\repositories\users;
+use tiggomark\domain\repositories\users;
 use array_values;
 
 class migrateCommand extends Command
@@ -56,11 +56,11 @@ class migrateCommand extends Command
 
                 if($silent) {
                     $setupConfig = array(
-                        "email" => "admin@leantime.io",
+                        "email" => "admin@tiggomark.io",
                         "password" => "",
                         "firstname" => "",
                         "lastname" => "",
-                        "company" => "Leantime"
+                        "company" => "tiggomark"
                     );
 
                 }else{

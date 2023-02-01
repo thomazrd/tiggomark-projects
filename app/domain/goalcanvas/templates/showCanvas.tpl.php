@@ -26,7 +26,7 @@ $elementName = 'goal';
                                 $filterStatus == $row['status']) && ($filterRelates == 'all' ||
                                 $filterRelates == $row['relates'])
                             ) {
-                                $comments = new \leantime\domain\repositories\comments();
+                                $comments = new \tiggomark\domain\repositories\comments();
                                 $nbcomments = $comments->countComments(moduleId: $row['id']);
                                 ?>
                             <div class="col-md-4">

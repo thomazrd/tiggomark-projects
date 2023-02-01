@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
-    use leantime\domain\models\auth\roles;
+    use tiggomark\core;
+    use tiggomark\domain\models\auth\roles;
     use pdo;
     use DateInterval;
     use DatePeriod;
@@ -48,7 +48,7 @@ namespace leantime\domain\repositories {
 
         public function __construct()
         {
-            $config = \leantime\core\environment::getInstance();
+            $config = \tiggomark\core\environment::getInstance();
             $this->db = core\db::getInstance();
         }
 

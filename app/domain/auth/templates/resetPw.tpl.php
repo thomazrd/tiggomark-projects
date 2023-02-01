@@ -38,5 +38,5 @@
 </div>
 
 <script>
-    leantime.usersController.checkPWStrength('password');
+    tiggomark.usersController.checkPWStrength('password');
 </script>

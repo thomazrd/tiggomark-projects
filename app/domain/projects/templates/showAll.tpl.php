@@ -85,7 +85,7 @@
                         <?php echo $this->displayLink('clients.showClient', $this->escape($row['clientName']), array('id' => $row['clientId']), null, true) ?>
                     </td>
                     <?php if ($config->enableMenuType) {
-                        ?><td><?php echo $menuTypes[$row['menuType']] ?? \leantime\domain\repositories\menu::DEFAULT_MENU ?><?php
+                        ?><td><?php echo $menuTypes[$row['menuType']] ?? \tiggomark\domain\repositories\menu::DEFAULT_MENU ?><?php
                     } ?>
                     <td><?php if ($row['state'] == -1) {
                         echo $this->__('label.closed');
@@ -111,7 +111,7 @@
 
 
 
-            leantime.projectsController.initProjectTable();
+            tiggomark.projectsController.initProjectTable();
 
         }
     );

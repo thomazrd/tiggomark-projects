@@ -1,6 +1,6 @@
 <?php
 
-namespace leantime\core;
+namespace tiggomark\core;
 
 class config
 {
@@ -11,7 +11,7 @@ class config
     public $logoPath = '/images/logo.png';                //Default logo path, can be changed later
     public $printLogoURL = '/images/logo.png';            //Default logo URL use for printing (must be jpg or png format)
     public $appUrl = '';                                  //Base URL, trailing slash not needed
-    public $appUrlRoot = '';                              //Base of application withotu trailing slash (used for cookies), e.g, /leantime
+    public $appUrlRoot = '';                              //Base of application withotu trailing slash (used for cookies), e.g, /tiggomark
     public $defaultTheme = 'default';                     //Default theme
     public $primarycolor = '#1b75bb';                     //Primary Theme color
     public $secondarycolor = '#81B1A8';                   //Secondary Theme Color
@@ -114,5 +114,5 @@ class config
             "ldapRole":"administrators"
           }
         }';
-    public $ldapDefaultRoleKey = 20;           //Default Leantime Role on creation. (set to editor)
+    public $ldapDefaultRoleKey = 20;           //Default tiggomark Role on creation. (set to editor)
 }

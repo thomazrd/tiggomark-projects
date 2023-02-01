@@ -5,11 +5,11 @@
  *
  */
 
-namespace leantime\core;
+namespace tiggomark\core;
 
 use PDO;
 use PDOException;
-use leantime\core\eventhelpers;
+use tiggomark\core\eventhelpers;
 
 class db
 {
@@ -59,7 +59,7 @@ class db
     {
 
             //Get configuration-object for connection-details
-            $config = \leantime\core\environment::getInstance();
+            $config = \tiggomark\core\environment::getInstance();
 
             $this->user = $config->dbUser;
             $this->password = $config->dbPassword;

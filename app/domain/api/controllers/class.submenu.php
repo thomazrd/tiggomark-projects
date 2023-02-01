@@ -4,10 +4,10 @@
    * AJAX class - Save menu state in a persistent way
    */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\domain\repositories;
-    use leantime\core\controller;
+    use tiggomark\domain\repositories;
+    use tiggomark\core\controller;
 
     class submenu extends controller
     {

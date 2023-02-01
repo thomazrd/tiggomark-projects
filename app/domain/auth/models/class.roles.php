@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\domain\models\auth {
+namespace tiggomark\domain\models\auth {
 
-    use leantime\core\eventhelpers;
+    use tiggomark\core\eventhelpers;
 
     class roles
     {

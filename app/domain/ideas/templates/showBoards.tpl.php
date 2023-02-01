@@ -290,15 +290,15 @@ foreach ($this->get('allCanvas') as $canvasRow) {
 
         //new SlimSelect({ select: '#searchCanvas' });
 
-        leantime.ideasController.initMasonryWall();
-        leantime.ideasController.initBoardControlModal();
-        leantime.ideasController.initWallImageModals();
+        tiggomark.ideasController.initMasonryWall();
+        tiggomark.ideasController.initBoardControlModal();
+        tiggomark.ideasController.initWallImageModals();
 
         <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
-            leantime.ideasController.initStatusDropdown();
-            leantime.ideasController.initUserDropdown();
+            tiggomark.ideasController.initStatusDropdown();
+            tiggomark.ideasController.initUserDropdown();
         <?php } else { ?>
-        leantime.generalController.makeInputReadonly(".maincontentinner");
+        tiggomark.generalController.makeInputReadonly(".maincontentinner");
 
         <?php } ?>
 
@@ -310,7 +310,7 @@ foreach ($this->get('allCanvas') as $canvasRow) {
             }
             ?>
 
-        leantime.ideasController.openModalManually("<?=BASE_URL ?>/ideas/ideaDialog<?php echo $modalUrl; ?>");
+        tiggomark.ideasController.openModalManually("<?=BASE_URL ?>/ideas/ideaDialog<?php echo $modalUrl; ?>");
         window.history.pushState({}, document.title, '<?=BASE_URL ?>/ideas/showBoards');
 
         <?php } ?>

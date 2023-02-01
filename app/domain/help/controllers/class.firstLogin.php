@@ -1,13 +1,13 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
     use Exception;
-    use leantime\core\controller;
-    use leantime\core\theme;
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\services\auth;
-    use leantime\domain\services\projects;
+    use tiggomark\core\controller;
+    use tiggomark\core\theme;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\services\auth;
+    use tiggomark\domain\services\projects;
 
     class firstLogin extends controller
     {
@@ -39,7 +39,7 @@ namespace leantime\domain\controllers {
          */
         public function post($params)
         {
-            $settingsRepo = new \leantime\domain\repositories\setting();
+            $settingsRepo = new \tiggomark\domain\repositories\setting();
 
             if (isset($_POST['step']) && $_POST['step'] == 1) {
                 if (isset($_POST['projectname'])) {
@@ -76,8 +76,8 @@ namespace leantime\domain\controllers {
             }
 
             if (isset($_POST['step']) && $_POST['step'] == 3) {
-                $userService = new \leantime\domain\services\users();
-                $projectsRepo = new \leantime\domain\repositories\projects();
+                $userService = new \tiggomark\domain\services\users();
+                $projectsRepo = new \tiggomark\domain\repositories\projects();
 
 
                 for ($i = 1; $i <= 3; $i++) {

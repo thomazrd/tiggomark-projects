@@ -18,7 +18,7 @@
 
         <?php echo $this->displayInlineNotification(); ?>
 
-        <p><?php echo $this->language->__("text.welcome_to_leantime"); ?><br /><br /></p>
+        <p><?php echo $this->language->__("text.welcome_to_tiggomark"); ?><br /><br /></p>
 
         <div class="">
             <input type="text" name="firstname" id="firstname" placeholder="<?php echo $this->language->__("input.placeholders.firstname"); ?>" value="<?=$this->escape($user['firstname']); ?>" />
@@ -48,5 +48,5 @@
 </div>
 
 <script>
-    leantime.usersController.checkPWStrength('password');
+    tiggomark.usersController.checkPWStrength('password');
 </script>

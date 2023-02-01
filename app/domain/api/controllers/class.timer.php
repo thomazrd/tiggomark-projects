@@ -1,10 +1,10 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\services;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\services;
 
     class timer extends controller
     {

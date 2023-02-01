@@ -78,9 +78,9 @@ $roles = $this->get('roles');
 
 <script type="text/javascript">
     jQuery(document).ready(function() {
-            leantime.usersController.initUserTable();
-            leantime.usersController._initModals();
-            leantime.usersController.initUserEditModal();
+            tiggomark.usersController.initUserTable();
+            tiggomark.usersController._initModals();
+            tiggomark.usersController.initUserEditModal();
 
         }
     );

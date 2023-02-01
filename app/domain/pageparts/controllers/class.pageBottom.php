@@ -1,10 +1,10 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
     use DebugBar\StandardDebugBar;
-    use leantime\core;
-    use leantime\core\controller;
+    use tiggomark\core;
+    use tiggomark\core\controller;
 
     class pageBottom extends controller
     {

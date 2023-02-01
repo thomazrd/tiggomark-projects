@@ -1,6 +1,6 @@
 <?php
-/** @var leantime\services\auth $login */
-/** @var leantime\core\language $language */
+/** @var tiggomark\services\auth $login */
+/** @var tiggomark\core\language $language */
 ?>
 <div id="fileManager">
     <div >

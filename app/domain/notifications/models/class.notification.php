@@ -1,6 +1,6 @@
 <?php
 
-namespace leantime\domain\models\notifications;
+namespace tiggomark\domain\models\notifications;
 
 class notification
 {

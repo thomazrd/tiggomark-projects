@@ -1,11 +1,11 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
     use GuzzleHttp\Client;
     use GuzzleHttp\Promise\PromiseInterface;
-    use leantime\core;
-    use leantime\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\domain\repositories;
     use Ramsey\Uuid\Uuid;
 
     class reports
@@ -90,7 +90,7 @@ namespace leantime\domain\services {
             $this->clientRepository = new repositories\clients();
             $this->commentsRepository = new repositories\comments();
             $this->timesheetRepo = new repositories\timesheets();
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
 // Canvas: cp, dbm, ea, em, insights, lbm, lean, obm, retros, risks, sb, sm, sq, swot
             $this->cpCanvasRepo = new repositories\cpcanvas();
             $this->dbmCanvasRepo = new repositories\dbmcanvas();
@@ -187,7 +187,7 @@ namespace leantime\domain\services {
                     try {
                         $data_string = json_encode($telemetry);
 
-                        $promise = $httpClient->postAsync("https://telemetry.leantime.io", [
+                        $promise = $httpClient->postAsync("https://telemetry.tiggomark.io", [
                                     'form_params' => [
                                         'telemetry' => $data_string
                                     ],

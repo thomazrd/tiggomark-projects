@@ -1,4 +1,4 @@
-# Contributing to Leantime
+# Contributing to tiggomark
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
 - Reporting a bug
@@ -28,8 +28,8 @@ app/custome/*
 public/themes/*
 Files in these folders can have licenses that are not GPL-2.0. 
 
-## Report bugs using Github's [issues]([https://github.com/Leantime/leantime/issues](https://github.com/Leantime/leantime/issues))
-We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/Leantime/leantime/issues); it's that easy!
+## Report bugs using Github's [issues]([https://github.com/tiggomark/tiggomark/issues](https://github.com/tiggomark/tiggomark/issues))
+We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/tiggomark/tiggomark/issues); it's that easy!
 
 ## Write bug reports with detail, background, and sample code
 [This is an example](http://stackoverflow.com/q/12488905/180626) of a bug report, and we have modeled the issue templates after that. Here's [another example from Craig Hockenberry](http://www.openradar.me/11905408), an app developer whom I greatly respect.

@@ -4,7 +4,7 @@
  * core/theme - Engine for handling themes
  */
 
-namespace leantime\core {
+namespace tiggomark\core {
 
     use Exception;
 

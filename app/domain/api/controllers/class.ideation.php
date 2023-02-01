@@ -1,12 +1,12 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\core;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\models;
-    use leantime\core\controller;
+    use tiggomark\core;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\models;
+    use tiggomark\core\controller;
 
     class ideation extends controller
     {

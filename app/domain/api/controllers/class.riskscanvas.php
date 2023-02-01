@@ -4,7 +4,7 @@
  * - riskscanvas class - Controller API
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
     class riskscanvas extends api\canvas
     {

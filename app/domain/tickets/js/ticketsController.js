@@ -1,4 +1,4 @@
-leantime.ticketsController = (function () {
+tiggomark.ticketsController = (function () {
 
     //Variables
 
@@ -49,7 +49,7 @@ leantime.ticketsController = (function () {
             afterShowCont: function () {
                 jQuery('textarea.complexEditor').tinymce().save();
                 jQuery('textarea.complexEditor').tinymce().remove();
-                leantime.generalController.initComplexEditor();
+                tiggomark.generalController.initComplexEditor();
                 jQuery("#commentForm, .deleteComment, form.ticketModal").nyroModal(ticketModalConfig);
                 console.log("jquery afterShow?");
 
@@ -90,11 +90,11 @@ leantime.ticketsController = (function () {
 
     var updateRemainingHours = function (element, id) {
         var value = jQuery(element).val();
-        leantime.ticketsRepository.updateRemainingHours(
+        tiggomark.ticketsRepository.updateRemainingHours(
             id,
             value,
             function () {
-                jQuery.growl({message: leantime.i18n.__("short_notifications.remaining_hours_updated"), style: "success"});
+                jQuery.growl({message: tiggomark.i18n.__("short_notifications.remaining_hours_updated"), style: "success"});
             }
         );
 
@@ -102,18 +102,18 @@ leantime.ticketsController = (function () {
 
     var updatePlannedHours = function (element, id) {
         var value = jQuery(element).val();
-        leantime.ticketsRepository.updatePlannedHours(
+        tiggomark.ticketsRepository.updatePlannedHours(
             id,
             value,
             function () {
-                jQuery.growl({message: leantime.i18n.__("short_notifications.planned_hours_updated"), style: "success"});
+                jQuery.growl({message: tiggomark.i18n.__("short_notifications.planned_hours_updated"), style: "success"});
             }
         );
 
     };
 
     var triggerMilestoneModal = function (id) {
-        jQuery.nmManual(leantime.appUrl + '/tickets/editMilestone/' + id, milestoneModalConfig);
+        jQuery.nmManual(tiggomark.appUrl + '/tickets/editMilestone/' + id, milestoneModalConfig);
 
     };
 
@@ -155,7 +155,7 @@ leantime.ticketsController = (function () {
                             arrow_curve: 5,
                             padding:20,
                             view_mode: 'Month',
-                            date_format: leantime.i18n.__("language.momentJSDate"),
+                            date_format: tiggomark.i18n.__("language.momentJSDate"),
                             language: 'en', // or 'es', 'it', 'ru', 'ptBr', 'fr', 'tr', 'zh'
                             additional_rows: 5,
                             custom_popup_html: function (task) {
@@ -164,7 +164,7 @@ leantime.ticketsController = (function () {
                                 // dates and progress value
                                 var end_date = task._end;
 
-                                var dateTime = moment(new Date(end_date)).format(leantime.i18n.__("language.momentJSDate"));
+                                var dateTime = moment(new Date(end_date)).format(tiggomark.i18n.__("language.momentJSDate"));
 
 
 
@@ -172,14 +172,14 @@ leantime.ticketsController = (function () {
                                     '<small>' + task.type + ' #' + task.id + ' </small>';
 
                                 if (task.type === 'milestone') {
-                                    popUpHTML += '<h4><a href="' + leantime.appUrl + '/tickets/editMilestone/' + task.id + '" class="milestoneModal">' + htmlEntities(task.name) + '</a></h4><br /> ' +
-                                     '<p>' + leantime.i18n.__("text.expected_to_finish_by") + ' <strong>' + dateTime + '</strong><br /> ' +
+                                    popUpHTML += '<h4><a href="' + tiggomark.appUrl + '/tickets/editMilestone/' + task.id + '" class="milestoneModal">' + htmlEntities(task.name) + '</a></h4><br /> ' +
+                                     '<p>' + tiggomark.i18n.__("text.expected_to_finish_by") + ' <strong>' + dateTime + '</strong><br /> ' +
                                      '' + Math.round(task.progress) + '%</p> ' +
-                                     '<a href="' + leantime.appUrl + '/tickets/editMilestone/' + task.id + '" class="milestoneModal"><span class="fa fa-map"></span> ' + leantime.i18n.__("links.edit_milestone") + '</a> | ' +
-                                     '<a href="' + leantime.appUrl + '/tickets/showKanban&milestone=' + task.id + '"><span class="fa-pushpin"></span> ' + leantime.i18n.__("links.view_todos") + '</a> ';
+                                     '<a href="' + tiggomark.appUrl + '/tickets/editMilestone/' + task.id + '" class="milestoneModal"><span class="fa fa-map"></span> ' + tiggomark.i18n.__("links.edit_milestone") + '</a> | ' +
+                                     '<a href="' + tiggomark.appUrl + '/tickets/showKanban&milestone=' + task.id + '"><span class="fa-pushpin"></span> ' + tiggomark.i18n.__("links.view_todos") + '</a> ';
                                 } else {
-                                    popUpHTML += '<h4><a href="' + leantime.appUrl + '/tickets/showTicket/' + task.id + '" class="ticketModal">' + htmlEntities(task.name) + '</a></h4><br /> ' +
-                                     '<a href="' + leantime.appUrl + '/tickets/showTicket/' + task.id + '" class="ticketModal"><span class="fa fa-thumb-tack"></span> ' + leantime.i18n.__("links.edit_todo") + '</a> ';
+                                    popUpHTML += '<h4><a href="' + tiggomark.appUrl + '/tickets/showTicket/' + task.id + '" class="ticketModal">' + htmlEntities(task.name) + '</a></h4><br /> ' +
+                                     '<a href="' + tiggomark.appUrl + '/tickets/showTicket/' + task.id + '" class="ticketModal"><span class="fa fa-thumb-tack"></span> ' + tiggomark.i18n.__("links.edit_todo") + '</a> ';
                                 }
 
                                  popUpHTML += '</div>';
@@ -191,7 +191,7 @@ leantime.ticketsController = (function () {
                             },
                             on_date_change: function (task, start, end) {
 
-                                leantime.ticketsRepository.updateMilestoneDates(task.id, start, end);
+                                tiggomark.ticketsRepository.updateMilestoneDates(task.id, start, end);
                                 _initModals();
 
                             },
@@ -201,7 +201,7 @@ leantime.ticketsController = (function () {
                             },
                             on_view_change: function (mode) {
 
-                                leantime.usersRepository.updateUserViewSettings("roadmap", mode);
+                                tiggomark.usersRepository.updateUserViewSettings("roadmap", mode);
                                 _initModals();
                             },
                             on_popup_show: function (task) {
@@ -225,9 +225,9 @@ leantime.ticketsController = (function () {
                                 var end_date = task._end;
                                 return '<div class="details-container"> ' +
                                     '<h4>' + htmlEntities(task.name) + '</h4><br /> ' +
-                                    '<p>' + leantime.i18n.__("text.expected_to_finish_by") + ' <strong>' + end_date + '</strong><br /> ' +
+                                    '<p>' + tiggomark.i18n.__("text.expected_to_finish_by") + ' <strong>' + end_date + '</strong><br /> ' +
                                     '' + Math.round(task.progress) + '%</p> ' +
-                                    '<a class="milestoneModal" href="' + leantime.appUrl + '/tickets/showKanban&milestone=' + task.id + '"><span class="fa-pushpin"></span> ' + leantime.i18n.__("links.view_todos") + '</a> ' +
+                                    '<a class="milestoneModal" href="' + tiggomark.appUrl + '/tickets/showKanban&milestone=' + task.id + '"><span class="fa-pushpin"></span> ' + tiggomark.i18n.__("links.view_todos") + '</a> ' +
 
                                     '</div>';
                             },
@@ -244,7 +244,7 @@ leantime.ticketsController = (function () {
                             },
                             on_view_change: function (mode) {
 
-                                leantime.usersRepository.updateUserViewSettings("roadmap", mode);
+                                tiggomark.usersRepository.updateUserViewSettings("roadmap", mode);
                                 _initModals();
                             }
                         }
@@ -277,19 +277,19 @@ leantime.ticketsController = (function () {
 
         jQuery(".dates").datepicker(
             {
-                dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                dayNames: leantime.i18n.__("language.dayNames").split(","),
-                dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                monthNames: leantime.i18n.__("language.monthNames").split(","),
-                currentText: leantime.i18n.__("language.currentText"),
-                closeText: leantime.i18n.__("language.closeText"),
-                buttonText: leantime.i18n.__("language.buttonText"),
-                isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                nextText: leantime.i18n.__("language.nextText"),
-                prevText: leantime.i18n.__("language.prevText"),
-                weekHeader: leantime.i18n.__("language.weekHeader"),
-                firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                currentText: tiggomark.i18n.__("language.currentText"),
+                closeText: tiggomark.i18n.__("language.closeText"),
+                buttonText: tiggomark.i18n.__("language.buttonText"),
+                isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                nextText: tiggomark.i18n.__("language.nextText"),
+                prevText: tiggomark.i18n.__("language.prevText"),
+                weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
             }
         );
     };
@@ -310,25 +310,25 @@ leantime.ticketsController = (function () {
                     return false; } } }
         );
 
-        var dateFormat = leantime.i18n.__("language.jsdateformat"),
+        var dateFormat = tiggomark.i18n.__("language.jsdateformat"),
 
             from = jQuery("#sprintStart")
                 .datepicker(
                     {
                         numberOfMonths: 1,
-                        dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                        dayNames: leantime.i18n.__("language.dayNames").split(","),
-                        dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                        dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                        monthNames: leantime.i18n.__("language.monthNames").split(","),
-                        currentText: leantime.i18n.__("language.currentText"),
-                        closeText: leantime.i18n.__("language.closeText"),
-                        buttonText: leantime.i18n.__("language.buttonText"),
-                        isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                        nextText: leantime.i18n.__("language.nextText"),
-                        prevText: leantime.i18n.__("language.prevText"),
-                        weekHeader: leantime.i18n.__("language.weekHeader"),
-                        firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                        dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                        dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                        dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                        dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                        monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                        currentText: tiggomark.i18n.__("language.currentText"),
+                        closeText: tiggomark.i18n.__("language.closeText"),
+                        buttonText: tiggomark.i18n.__("language.buttonText"),
+                        isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                        nextText: tiggomark.i18n.__("language.nextText"),
+                        prevText: tiggomark.i18n.__("language.prevText"),
+                        weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                        firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
                     }
                 )
                 .on(
@@ -345,19 +345,19 @@ leantime.ticketsController = (function () {
                 {
                     defaultDate: "+1w",
                     numberOfMonths: 1,
-                    dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                    dayNames: leantime.i18n.__("language.dayNames").split(","),
-                    dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                    dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                    monthNames: leantime.i18n.__("language.monthNames").split(","),
-                    currentText: leantime.i18n.__("language.currentText"),
-                    closeText: leantime.i18n.__("language.closeText"),
-                    buttonText: leantime.i18n.__("language.buttonText"),
-                    isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                    nextText: leantime.i18n.__("language.nextText"),
-                    prevText: leantime.i18n.__("language.prevText"),
-                    weekHeader: leantime.i18n.__("language.weekHeader"),
-                    firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                    dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                    dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                    dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                    dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                    monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                    currentText: tiggomark.i18n.__("language.currentText"),
+                    closeText: tiggomark.i18n.__("language.closeText"),
+                    buttonText: tiggomark.i18n.__("language.buttonText"),
+                    isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                    nextText: tiggomark.i18n.__("language.nextText"),
+                    prevText: tiggomark.i18n.__("language.prevText"),
+                    weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                    firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
                 }
             )
             .on(
@@ -382,24 +382,24 @@ leantime.ticketsController = (function () {
     };
 
     var _initMilestoneDates = function () {
-        var dateFormat = leantime.i18n.__("language.jsdateformat"),
+        var dateFormat = tiggomark.i18n.__("language.jsdateformat"),
             from = jQuery("#milestoneEditFrom")
                 .datepicker(
                     {
                         numberOfMonths: 1,
-                        dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                        dayNames: leantime.i18n.__("language.dayNames").split(","),
-                        dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                        dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                        monthNames: leantime.i18n.__("language.monthNames").split(","),
-                        currentText: leantime.i18n.__("language.currentText"),
-                        closeText: leantime.i18n.__("language.closeText"),
-                        buttonText: leantime.i18n.__("language.buttonText"),
-                        isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                        nextText: leantime.i18n.__("language.nextText"),
-                        prevText: leantime.i18n.__("language.prevText"),
-                        weekHeader: leantime.i18n.__("language.weekHeader"),
-                        firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                        dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                        dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                        dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                        dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                        monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                        currentText: tiggomark.i18n.__("language.currentText"),
+                        closeText: tiggomark.i18n.__("language.closeText"),
+                        buttonText: tiggomark.i18n.__("language.buttonText"),
+                        isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                        nextText: tiggomark.i18n.__("language.nextText"),
+                        prevText: tiggomark.i18n.__("language.prevText"),
+                        weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                        firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
                     }
                 )
                 .on(
@@ -412,19 +412,19 @@ leantime.ticketsController = (function () {
                 {
                     defaultDate: "+1w",
                     numberOfMonths: 1,
-                    dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                    dayNames: leantime.i18n.__("language.dayNames").split(","),
-                    dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                    dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                    monthNames: leantime.i18n.__("language.monthNames").split(","),
-                    currentText: leantime.i18n.__("language.currentText"),
-                    closeText: leantime.i18n.__("language.closeText"),
-                    buttonText: leantime.i18n.__("language.buttonText"),
-                    isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                    nextText: leantime.i18n.__("language.nextText"),
-                    prevText: leantime.i18n.__("language.prevText"),
-                    weekHeader: leantime.i18n.__("language.weekHeader"),
-                    firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                    dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                    dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                    dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                    dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                    monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                    currentText: tiggomark.i18n.__("language.currentText"),
+                    closeText: tiggomark.i18n.__("language.closeText"),
+                    buttonText: tiggomark.i18n.__("language.buttonText"),
+                    isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                    nextText: tiggomark.i18n.__("language.nextText"),
+                    prevText: tiggomark.i18n.__("language.prevText"),
+                    weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                    firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
                 }
             )
                 .on(
@@ -450,24 +450,24 @@ leantime.ticketsController = (function () {
 
     var initMilestoneDatesAsyncUpdate = function () {
 
-        var dateFormat = leantime.i18n.__("language.jsdateformat"),
+        var dateFormat = tiggomark.i18n.__("language.jsdateformat"),
             from = jQuery(".milestoneEditFromAsync")
                 .datepicker(
                     {
                         numberOfMonths: 1,
-                        dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                        dayNames: leantime.i18n.__("language.dayNames").split(","),
-                        dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                        dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                        monthNames: leantime.i18n.__("language.monthNames").split(","),
-                        currentText: leantime.i18n.__("language.currentText"),
-                        closeText: leantime.i18n.__("language.closeText"),
-                        buttonText: leantime.i18n.__("language.buttonText"),
-                        isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                        nextText: leantime.i18n.__("language.nextText"),
-                        prevText: leantime.i18n.__("language.prevText"),
-                        weekHeader: leantime.i18n.__("language.weekHeader"),
-                        firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                        dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                        dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                        dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                        dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                        monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                        currentText: tiggomark.i18n.__("language.currentText"),
+                        closeText: tiggomark.i18n.__("language.closeText"),
+                        buttonText: tiggomark.i18n.__("language.buttonText"),
+                        isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                        nextText: tiggomark.i18n.__("language.nextText"),
+                        prevText: tiggomark.i18n.__("language.prevText"),
+                        weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                        firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
                     }
                 )
                 .on(
@@ -480,19 +480,19 @@ leantime.ticketsController = (function () {
                         var toDatePicker = jQuery(".toDateTicket-" + id);
                         toDatePicker.datepicker("option", "minDate", getDate(this));
 
-                        var dateTime = moment(date, leantime.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
+                        var dateTime = moment(date, tiggomark.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
 
                         var newDate = dateTime;
-                        leantime.ticketsRepository.updateEditFromDates(id, newDate, function () {
-                            jQuery.growl({message: leantime.i18n.__("short_notifications.date_updated"), style: "success"});
+                        tiggomark.ticketsRepository.updateEditFromDates(id, newDate, function () {
+                            jQuery.growl({message: tiggomark.i18n.__("short_notifications.date_updated"), style: "success"});
                         });
 
                         var dateTo = jQuery(".toDateTicket-" + id).val();
 
-                        var dateTimeTo = moment(dateTo, leantime.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
+                        var dateTimeTo = moment(dateTo, tiggomark.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
                         var newDateTo = dateTimeTo;
 
-                        leantime.ticketsRepository.updateEditToDates(id, newDateTo, function () {
+                        tiggomark.ticketsRepository.updateEditToDates(id, newDateTo, function () {
 
                         });
                     }
@@ -501,19 +501,19 @@ leantime.ticketsController = (function () {
                 {
                     defaultDate: "+1w",
                     numberOfMonths: 1,
-                    dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                    dayNames: leantime.i18n.__("language.dayNames").split(","),
-                    dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                    dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                    monthNames: leantime.i18n.__("language.monthNames").split(","),
-                    currentText: leantime.i18n.__("language.currentText"),
-                    closeText: leantime.i18n.__("language.closeText"),
-                    buttonText: leantime.i18n.__("language.buttonText"),
-                    isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                    nextText: leantime.i18n.__("language.nextText"),
-                    prevText: leantime.i18n.__("language.prevText"),
-                    weekHeader: leantime.i18n.__("language.weekHeader"),
-                    firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                    dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                    dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                    dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                    dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                    monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                    currentText: tiggomark.i18n.__("language.currentText"),
+                    closeText: tiggomark.i18n.__("language.closeText"),
+                    buttonText: tiggomark.i18n.__("language.buttonText"),
+                    isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                    nextText: tiggomark.i18n.__("language.nextText"),
+                    prevText: tiggomark.i18n.__("language.prevText"),
+                    weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                    firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
                 }
             )
                 .on(
@@ -526,18 +526,18 @@ leantime.ticketsController = (function () {
 
                         var date = jQuery(this).val();
 
-                        var dateTime = moment(date, leantime.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
+                        var dateTime = moment(date, tiggomark.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
 
                         var newDate = dateTime;
-                        leantime.ticketsRepository.updateEditToDates(id, newDate, function () {
-                            jQuery.growl({message: leantime.i18n.__("short_notifications.date_updated"), style: "success"});
+                        tiggomark.ticketsRepository.updateEditToDates(id, newDate, function () {
+                            jQuery.growl({message: tiggomark.i18n.__("short_notifications.date_updated"), style: "success"});
                         });
 
                         var dateFrom = jQuery(".fromDateTicket-" + id).val();
 
-                        var dateTimeFrom = moment(dateFrom, leantime.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
+                        var dateTimeFrom = moment(dateFrom, tiggomark.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
                         var newDateFrom = dateTimeFrom;
-                        leantime.ticketsRepository.updateEditFromDates(id, newDateFrom, function () {
+                        tiggomark.ticketsRepository.updateEditFromDates(id, newDateFrom, function () {
 
                         });
 
@@ -623,7 +623,7 @@ leantime.ticketsController = (function () {
                 jQuery.ajax(
                     {
                         type: 'PATCH',
-                        url: leantime.appUrl + '/api/tickets',
+                        url: tiggomark.appUrl + '/api/tickets',
                         data:
                         {
                             id : ticket[1],
@@ -661,7 +661,7 @@ leantime.ticketsController = (function () {
                 jQuery.ajax(
                     {
                         type: 'PATCH',
-                        url: leantime.appUrl + '/api/tickets',
+                        url: tiggomark.appUrl + '/api/tickets',
                         data:
                             {
                                 id: ticketId,
@@ -671,7 +671,7 @@ leantime.ticketsController = (function () {
                 ).done(
                     function () {
                         jQuery("#effortDropdownMenuLink" + ticketId + " span.text").text(storyPointLabels[effortId]);
-                        jQuery.growl({message: leantime.i18n.__("short_notifications.effort_updated"), style: "success"});
+                        jQuery.growl({message: tiggomark.i18n.__("short_notifications.effort_updated"), style: "success"});
 
                     }
                 );
@@ -703,7 +703,7 @@ leantime.ticketsController = (function () {
                 jQuery.ajax(
                     {
                         type: 'PATCH',
-                        url: leantime.appUrl + '/api/tickets',
+                        url: tiggomark.appUrl + '/api/tickets',
                         data:
                             {
                                 id: ticketId,
@@ -720,7 +720,7 @@ leantime.ticketsController = (function () {
                         jQuery("#priorityDropdownMenuLink" + ticketId + "").parents(".ticketBox").addClass("priority-border-" + priorityId);
 
 
-                        jQuery.growl({message: leantime.i18n.__("short_notifications.priority_updated"), style: "success"});
+                        jQuery.growl({message: tiggomark.i18n.__("short_notifications.priority_updated"), style: "success"});
 
                     }
                 );
@@ -748,7 +748,7 @@ leantime.ticketsController = (function () {
                 jQuery.ajax(
                     {
                         type: 'PATCH',
-                        url: leantime.appUrl + '/api/tickets',
+                        url: tiggomark.appUrl + '/api/tickets',
                         data:
                             {
                                 id : ticketId,
@@ -759,7 +759,7 @@ leantime.ticketsController = (function () {
                     function () {
                         jQuery("#milestoneDropdownMenuLink" + ticketId + " span.text").text(dataLabel);
                         jQuery("#milestoneDropdownMenuLink" + ticketId).css("backgroundColor", color);
-                        jQuery.growl({message: leantime.i18n.__("short_notifications.milestone_updated"), style: "success"});
+                        jQuery.growl({message: tiggomark.i18n.__("short_notifications.milestone_updated"), style: "success"});
                     }
                 );
             }
@@ -781,7 +781,7 @@ leantime.ticketsController = (function () {
                 jQuery.ajax(
                     {
                         type: 'PATCH',
-                        url: leantime.appUrl + '/api/tickets',
+                        url: tiggomark.appUrl + '/api/tickets',
                         data:
                             {
                                 id : ticketId,
@@ -792,7 +792,7 @@ leantime.ticketsController = (function () {
                     function () {
                         jQuery("#statusDropdownMenuLink" + ticketId + " span.text").text(dataLabel);
                         jQuery("#statusDropdownMenuLink" + ticketId).removeClass().addClass(className + " dropdown-toggle f-left status ");
-                        jQuery.growl({message: leantime.i18n.__("short_notifications.status_updated"), style: "success"});
+                        jQuery.growl({message: tiggomark.i18n.__("short_notifications.status_updated"), style: "success"});
 
                     }
                 );
@@ -816,7 +816,7 @@ leantime.ticketsController = (function () {
                 jQuery.ajax(
                     {
                         type: 'PATCH',
-                        url: leantime.appUrl + '/api/tickets',
+                        url: tiggomark.appUrl + '/api/tickets',
                         data:
                             {
                                 id : ticketId,
@@ -825,9 +825,9 @@ leantime.ticketsController = (function () {
                         }
                 ).done(
                     function () {
-                        jQuery("#userDropdownMenuLink" + ticketId + " span.text span#userImage" + ticketId + " img").attr("src", leantime.appUrl + "/api/users?profileImage=" + userId);
+                        jQuery("#userDropdownMenuLink" + ticketId + " span.text span#userImage" + ticketId + " img").attr("src", tiggomark.appUrl + "/api/users?profileImage=" + userId);
                         jQuery("#userDropdownMenuLink" + ticketId + " span.text span#user" + ticketId).text(dataLabel);
-                        jQuery.growl({message: leantime.i18n.__("short_notifications.user_updated"), style: "success"});
+                        jQuery.growl({message: tiggomark.i18n.__("short_notifications.user_updated"), style: "success"});
                     }
                 );
             }
@@ -847,7 +847,7 @@ leantime.ticketsController = (function () {
                 jQuery.ajax(
                     {
                         type: 'PATCH',
-                        url: leantime.appUrl + '/api/tickets',
+                        url: tiggomark.appUrl + '/api/tickets',
                         data:
                             {
                                 id : entityId,
@@ -857,7 +857,7 @@ leantime.ticketsController = (function () {
                     }
                 ).done(
                     function () {
-                        jQuery.growl({message: leantime.i18n.__("notifications.subtask_saved"), style: "success"});
+                        jQuery.growl({message: tiggomark.i18n.__("notifications.subtask_saved"), style: "success"});
                     }
                 );
             }
@@ -879,7 +879,7 @@ leantime.ticketsController = (function () {
                 jQuery.ajax(
                     {
                         type: 'PATCH',
-                        url: leantime.appUrl + '/api/tickets',
+                        url: tiggomark.appUrl + '/api/tickets',
                         data:
                             {
                                 id : ticketId,
@@ -889,7 +889,7 @@ leantime.ticketsController = (function () {
                 ).done(
                     function () {
                         jQuery("#sprintDropdownMenuLink" + ticketId + " span.text").text(dataLabel);
-                        jQuery.growl({message: leantime.i18n.__("short_notifications.sprint_updated"), style: "success"});
+                        jQuery.growl({message: tiggomark.i18n.__("short_notifications.sprint_updated"), style: "success"});
                     }
                 );
             }
@@ -919,34 +919,34 @@ leantime.ticketsController = (function () {
 
         jQuery(".quickDueDates").datepicker(
             {
-                dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                dayNames: leantime.i18n.__("language.dayNames").split(","),
-                dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                monthNames: leantime.i18n.__("language.monthNames").split(","),
-                currentText: leantime.i18n.__("language.currentText"),
-                closeText: leantime.i18n.__("language.closeText"),
-                buttonText: leantime.i18n.__("language.buttonText"),
-                isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                nextText: leantime.i18n.__("language.nextText"),
-                prevText: leantime.i18n.__("language.prevText"),
-                weekHeader: leantime.i18n.__("language.weekHeader"),
-                firstDay: leantime.i18n.__("language.firstDayOfWeek"),
+                dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                currentText: tiggomark.i18n.__("language.currentText"),
+                closeText: tiggomark.i18n.__("language.closeText"),
+                buttonText: tiggomark.i18n.__("language.buttonText"),
+                isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                nextText: tiggomark.i18n.__("language.nextText"),
+                prevText: tiggomark.i18n.__("language.prevText"),
+                weekHeader: tiggomark.i18n.__("language.weekHeader"),
+                firstDay: tiggomark.i18n.__("language.firstDayOfWeek"),
                 onClose: function (date) {
 
                     var newDate = "";
 
                     if (date == "") {
-                        jQuery(this).val(leantime.i18n.__("text.anytime"));
+                        jQuery(this).val(tiggomark.i18n.__("text.anytime"));
                     }
 
-                    var dateTime = moment(date, leantime.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
+                    var dateTime = moment(date, tiggomark.i18n.__("language.momentJSDate")).format("YYYY-MM-DD HH:mm:ss");
 
                     var id = jQuery(this).attr("data-id");
                     newDate = dateTime;
 
-                    leantime.ticketsRepository.updateDueDates(id, newDate, function () {
-                        jQuery.growl({message: leantime.i18n.__("short_notifications.duedate_updated"), style: "success"});
+                    tiggomark.ticketsRepository.updateDueDates(id, newDate, function () {
+                        jQuery.growl({message: tiggomark.i18n.__("short_notifications.duedate_updated"), style: "success"});
                     });
 
                 }
@@ -962,13 +962,13 @@ leantime.ticketsController = (function () {
             data: {
                 labels: labels,
                 datasets:[{
-                    label: leantime.i18n.__("label.booked_hours"),
+                    label: tiggomark.i18n.__("label.booked_hours"),
                     backgroundColor: 'rgba(201,48,44, 0.5)',
                     borderColor: 'rgb(201,48,44)',
                     data:d2
                 },
                     {
-                        label:leantime.i18n.__("label.planned_hours"),
+                        label:tiggomark.i18n.__("label.planned_hours"),
                         backgroundColor: 'rgba(54, 162, 235, 0.5)',
                         borderColor:'rgb(54, 162, 235)',
                         data:d3
@@ -980,7 +980,7 @@ leantime.ticketsController = (function () {
                         display: true,
                         title: {
                             display: true,
-                            text: leantime.i18n.__("label.booked_hours"),
+                            text: tiggomark.i18n.__("label.booked_hours"),
                         },
                         type: 'time',
                         time: {
@@ -991,7 +991,7 @@ leantime.ticketsController = (function () {
                         display: true,
                         title: {
                             display: true,
-                            text: leantime.i18n.__("label.planned_hours")
+                            text: tiggomark.i18n.__("label.planned_hours")
                         },
                         ticks: {
                             beginAtZero: true
@@ -1170,7 +1170,7 @@ leantime.ticketsController = (function () {
                 // POST to server using $.post or $.ajax
                 jQuery.ajax({
                     type: 'POST',
-                    url: leantime.appUrl + '/api/tickets',
+                    url: tiggomark.appUrl + '/api/tickets',
                     data: statusPostData
 
                 });
@@ -1315,31 +1315,31 @@ leantime.ticketsController = (function () {
 
             var allTickets = jQuery("#allTicketsTable").DataTable({
                 "language": {
-                    "decimal":        leantime.i18n.__("datatables.decimal"),
-                    "emptyTable":     leantime.i18n.__("datatables.emptyTable"),
-                    "info":           leantime.i18n.__("datatables.info"),
-                    "infoEmpty":      leantime.i18n.__("datatables.infoEmpty"),
-                    "infoFiltered":   leantime.i18n.__("datatables.infoFiltered"),
-                    "infoPostFix":    leantime.i18n.__("datatables.infoPostFix"),
-                    "thousands":      leantime.i18n.__("datatables.thousands"),
-                    "lengthMenu":     leantime.i18n.__("datatables.lengthMenu"),
-                    "loadingRecords": leantime.i18n.__("datatables.loadingRecords"),
-                    "processing":     leantime.i18n.__("datatables.processing"),
-                    "search":         leantime.i18n.__("datatables.search"),
-                    "zeroRecords":    leantime.i18n.__("datatables.zeroRecords"),
+                    "decimal":        tiggomark.i18n.__("datatables.decimal"),
+                    "emptyTable":     tiggomark.i18n.__("datatables.emptyTable"),
+                    "info":           tiggomark.i18n.__("datatables.info"),
+                    "infoEmpty":      tiggomark.i18n.__("datatables.infoEmpty"),
+                    "infoFiltered":   tiggomark.i18n.__("datatables.infoFiltered"),
+                    "infoPostFix":    tiggomark.i18n.__("datatables.infoPostFix"),
+                    "thousands":      tiggomark.i18n.__("datatables.thousands"),
+                    "lengthMenu":     tiggomark.i18n.__("datatables.lengthMenu"),
+                    "loadingRecords": tiggomark.i18n.__("datatables.loadingRecords"),
+                    "processing":     tiggomark.i18n.__("datatables.processing"),
+                    "search":         tiggomark.i18n.__("datatables.search"),
+                    "zeroRecords":    tiggomark.i18n.__("datatables.zeroRecords"),
                     "paginate": {
-                        "first":      leantime.i18n.__("datatables.first"),
-                        "last":       leantime.i18n.__("datatables.last"),
-                        "next":       leantime.i18n.__("datatables.next"),
-                        "previous":   leantime.i18n.__("datatables.previous"),
+                        "first":      tiggomark.i18n.__("datatables.first"),
+                        "last":       tiggomark.i18n.__("datatables.last"),
+                        "next":       tiggomark.i18n.__("datatables.next"),
+                        "previous":   tiggomark.i18n.__("datatables.previous"),
                     },
                     "aria": {
-                        "sortAscending":  leantime.i18n.__("datatables.sortAscending"),
-                        "sortDescending":leantime.i18n.__("datatables.sortDescending"),
+                        "sortAscending":  tiggomark.i18n.__("datatables.sortAscending"),
+                        "sortDescending":tiggomark.i18n.__("datatables.sortDescending"),
                     },
                     "buttons": {
-                        colvis: leantime.i18n.__("datatables.buttons.colvis"),
-                        csv: leantime.i18n.__("datatables.buttons.download")
+                        colvis: tiggomark.i18n.__("datatables.buttons.colvis"),
+                        csv: tiggomark.i18n.__("datatables.buttons.download")
                     }
 
                 },
@@ -1364,7 +1364,7 @@ leantime.ticketsController = (function () {
                 buttons: [
                     {
                         extend: 'csvHtml5',
-                        title: leantime.i18n.__("label.filename_fileexport"),
+                        title: tiggomark.i18n.__("label.filename_fileexport"),
                         charset: 'utf-8',
                         bom: true,
                         exportOptions: {
@@ -1504,31 +1504,31 @@ leantime.ticketsController = (function () {
 
             var allTickets = jQuery("#allTicketsTable").DataTable({
                 "language": {
-                    "decimal":        leantime.i18n.__("datatables.decimal"),
-                    "emptyTable":     leantime.i18n.__("datatables.emptyTable"),
-                    "info":           leantime.i18n.__("datatables.info"),
-                    "infoEmpty":      leantime.i18n.__("datatables.infoEmpty"),
-                    "infoFiltered":   leantime.i18n.__("datatables.infoFiltered"),
-                    "infoPostFix":    leantime.i18n.__("datatables.infoPostFix"),
-                    "thousands":      leantime.i18n.__("datatables.thousands"),
-                    "lengthMenu":     leantime.i18n.__("datatables.lengthMenu"),
-                    "loadingRecords": leantime.i18n.__("datatables.loadingRecords"),
-                    "processing":     leantime.i18n.__("datatables.processing"),
-                    "search":         leantime.i18n.__("datatables.search"),
-                    "zeroRecords":    leantime.i18n.__("datatables.zeroRecords"),
+                    "decimal":        tiggomark.i18n.__("datatables.decimal"),
+                    "emptyTable":     tiggomark.i18n.__("datatables.emptyTable"),
+                    "info":           tiggomark.i18n.__("datatables.info"),
+                    "infoEmpty":      tiggomark.i18n.__("datatables.infoEmpty"),
+                    "infoFiltered":   tiggomark.i18n.__("datatables.infoFiltered"),
+                    "infoPostFix":    tiggomark.i18n.__("datatables.infoPostFix"),
+                    "thousands":      tiggomark.i18n.__("datatables.thousands"),
+                    "lengthMenu":     tiggomark.i18n.__("datatables.lengthMenu"),
+                    "loadingRecords": tiggomark.i18n.__("datatables.loadingRecords"),
+                    "processing":     tiggomark.i18n.__("datatables.processing"),
+                    "search":         tiggomark.i18n.__("datatables.search"),
+                    "zeroRecords":    tiggomark.i18n.__("datatables.zeroRecords"),
                     "paginate": {
-                        "first":      leantime.i18n.__("datatables.first"),
-                        "last":       leantime.i18n.__("datatables.last"),
-                        "next":       leantime.i18n.__("datatables.next"),
-                        "previous":   leantime.i18n.__("datatables.previous"),
+                        "first":      tiggomark.i18n.__("datatables.first"),
+                        "last":       tiggomark.i18n.__("datatables.last"),
+                        "next":       tiggomark.i18n.__("datatables.next"),
+                        "previous":   tiggomark.i18n.__("datatables.previous"),
                     },
                     "aria": {
-                        "sortAscending":  leantime.i18n.__("datatables.sortAscending"),
-                        "sortDescending":leantime.i18n.__("datatables.sortDescending"),
+                        "sortAscending":  tiggomark.i18n.__("datatables.sortAscending"),
+                        "sortDescending":tiggomark.i18n.__("datatables.sortDescending"),
                     },
                     "buttons": {
-                        colvis: leantime.i18n.__("datatables.buttons.colvis"),
-                        csv: leantime.i18n.__("datatables.buttons.download")
+                        colvis: tiggomark.i18n.__("datatables.buttons.colvis"),
+                        csv: tiggomark.i18n.__("datatables.buttons.download")
                     }
 
                 },
@@ -1551,7 +1551,7 @@ leantime.ticketsController = (function () {
                 buttons: [
                     {
                         extend: 'csvHtml5',
-                        title: leantime.i18n.__("label.filename_fileexport"),
+                        title: tiggomark.i18n.__("label.filename_fileexport"),
                         charset: 'utf-8',
                         bom: true,
                         exportOptions: {

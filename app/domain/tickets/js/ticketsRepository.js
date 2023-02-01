@@ -1,6 +1,6 @@
-var leantime = leantime || {};
+var tiggomark = tiggomark || {};
 
-leantime.ticketsRepository = (function () {
+tiggomark.ticketsRepository = (function () {
 
     // Variables (underscore for private variables)
 
@@ -16,7 +16,7 @@ leantime.ticketsRepository = (function () {
         jQuery.ajax(
             {
                 type: 'PATCH',
-                url: leantime.appUrl + '/api/tickets',
+                url: tiggomark.appUrl + '/api/tickets',
                 data:
                 {
                     id : id,
@@ -38,7 +38,7 @@ leantime.ticketsRepository = (function () {
         jQuery.ajax(
             {
                 type: 'PATCH',
-                url: leantime.appUrl + '/api/tickets',
+                url: tiggomark.appUrl + '/api/tickets',
                 data:
                 {
                     id : id,
@@ -59,7 +59,7 @@ leantime.ticketsRepository = (function () {
         jQuery.ajax(
             {
                 type: 'PATCH',
-                url: leantime.appUrl + '/api/tickets',
+                url: tiggomark.appUrl + '/api/tickets',
                 data:
                     {
                         id : id,
@@ -80,7 +80,7 @@ leantime.ticketsRepository = (function () {
         jQuery.ajax(
             {
                 type: 'PATCH',
-                url: leantime.appUrl + '/api/tickets',
+                url: tiggomark.appUrl + '/api/tickets',
                 data:
                     {
                         id : id,
@@ -101,7 +101,7 @@ leantime.ticketsRepository = (function () {
         jQuery.ajax(
             {
                 type: 'PATCH',
-                url: leantime.appUrl + '/api/tickets',
+                url: tiggomark.appUrl + '/api/tickets',
                 data:
                     {
                         id : id,
@@ -122,7 +122,7 @@ leantime.ticketsRepository = (function () {
         jQuery.ajax(
             {
                 type: 'PATCH',
-                url: leantime.appUrl + '/api/tickets',
+                url: tiggomark.appUrl + '/api/tickets',
                 data:
                     {
                         id : id,

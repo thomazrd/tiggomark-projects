@@ -4,13 +4,13 @@
  * delCanvas class - Generic canvas controller / Delete Canvas
  */
 
-namespace leantime\domain\controllers\canvas {
+namespace tiggomark\domain\controllers\canvas {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\repositories;
-    use leantime\domain\services\auth;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services\auth;
 
     class delCanvas extends controller
     {
@@ -26,7 +26,7 @@ namespace leantime\domain\controllers\canvas {
          */
         public function init()
         {
-            $canvasRepoName = "leantime\\domain\\repositories\\" . static::CANVAS_NAME . 'canvas';
+            $canvasRepoName = "tiggomark\\domain\\repositories\\" . static::CANVAS_NAME . 'canvas';
             $this->canvasRepo = new $canvasRepoName();
         }
 

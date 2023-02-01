@@ -112,7 +112,7 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
 
         <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
             <input type="submit" value="<?=$this->__("buttons.save") ?>" id="primaryCanvasSubmitButton"/>
-            <input type="submit" value="<?=$this->__("buttons.save_and_close") ?>" id="saveAndClose" onclick="leantime.<?=$canvasName ?>CanvasController.setCloseModal();"/>
+            <input type="submit" value="<?=$this->__("buttons.save_and_close") ?>" id="saveAndClose" onclick="tiggomark.<?=$canvasName ?>CanvasController.setCloseModal();"/>
         <?php } ?>
 
         <?php if ($id !== '') { ?>
@@ -127,9 +127,9 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
                         <div class="row" id="milestoneSelectors">
                             <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
                             <div class="col-md-12">
-                                <a href="javascript:void(0);" onclick="leantime.<?=$canvasName ?>CanvasController.toggleMilestoneSelectors('new');"><?=$this->__("links.create_attach_milestone") ?></a>
+                                <a href="javascript:void(0);" onclick="tiggomark.<?=$canvasName ?>CanvasController.toggleMilestoneSelectors('new');"><?=$this->__("links.create_attach_milestone") ?></a>
                                 <?php if (count($this->get('milestones')) > 0) { ?>
-                                    | <a href="javascript:void(0);" onclick="leantime.<?=$canvasName ?>CanvasController.toggleMilestoneSelectors('existing');"><?=$this->__("links.attach_existing_milestone") ?></a>
+                                    | <a href="javascript:void(0);" onclick="tiggomark.<?=$canvasName ?>CanvasController.toggleMilestoneSelectors('existing');"><?=$this->__("links.attach_existing_milestone") ?></a>
                                 <?php } ?>
                              </div>
                             <?php } ?>
@@ -140,7 +140,7 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
                                 <input type="hidden" name="type" value="milestone" />
                                 <input type="hidden" name="<?=$canvasName ?>canvasitemid" value="<?php echo $id; ?> " />
                                 <input type="button" value="<?=$this->__("buttons.save") ?>" onclick="jQuery('#primaryCanvasSubmitButton').click()" class="btn btn-primary" />
-                                <input type="button" value="<?=$this->__("buttons.cancel") ?>" onclick="leantime.<?=$canvasName ?>CanvasController.toggleMilestoneSelectors('hide')" class="btn btn-primary" />
+                                <input type="button" value="<?=$this->__("buttons.cancel") ?>" onclick="tiggomark.<?=$canvasName ?>CanvasController.toggleMilestoneSelectors('hide')" class="btn btn-primary" />
                             </div>
                         </div>
 
@@ -162,7 +162,7 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
                                 <input type="hidden" name="type" value="milestone" />
                                 <input type="hidden" name="<?=$canvasName ?>canvasitemid" value="<?php echo $id; ?> " />
                                 <input type="button" value="<?=$this->__("buttons.save") ?>" onclick="jQuery('#primaryCanvasSubmitButton').click()" class="btn btn-primary" />
-                                <input type="button" value="<?=$this->__("buttons.cancel") ?>" onclick="leantime.<?=$canvasName ?>CanvasController.toggleMilestoneSelectors('hide')" class="btn btn-primary" />
+                                <input type="button" value="<?=$this->__("buttons.cancel") ?>" onclick="tiggomark.<?=$canvasName ?>CanvasController.toggleMilestoneSelectors('hide')" class="btn btn-primary" />
                             </div>
                         </div>
 
@@ -263,15 +263,15 @@ if (isset($canvasItem['id']) && $canvasItem['id'] != '') {
             });
         <?php } ?>
 
-        leantime.generalController.initSimpleEditor();
+        tiggomark.generalController.initSimpleEditor();
 
         <?php if (!$login::userIsAtLeast($roles::$editor)) { ?>
-            leantime.generalController.makeInputReadonly(".nyroModalCont");
+            tiggomark.generalController.makeInputReadonly(".nyroModalCont");
 
         <?php } ?>
 
         <?php if ($login::userHasRole([$roles::$commenter])) { ?>
-            leantime.generalController.enableCommenterForms();
+            tiggomark.generalController.enableCommenterForms();
         <?php }?>
 
     })

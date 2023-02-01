@@ -8,12 +8,12 @@
  * @license GNU/GPL, see license.txt
  */
 
-namespace leantime\core {
+namespace tiggomark\core {
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     use phpmailerException;
-    use leantime\core\eventhelpers;
+    use tiggomark\core\eventhelpers;
 
     class mailer
     {
@@ -61,12 +61,12 @@ namespace leantime\core {
         public function __construct()
         {
 
-            $config = \leantime\core\environment::getInstance();
+            $config = \tiggomark\core\environment::getInstance();
 
             if ($config->email != '') {
                 $this->emailDomain = $config->email;
             } else {
-                $host = $_SERVER['HTTP_HOST'] ?? "leantime";
+                $host = $_SERVER['HTTP_HOST'] ?? "tiggomark";
                 $this->emailDomain = "no-reply@" . $host;
             }
             //PHPMailer
@@ -222,7 +222,7 @@ namespace leantime\core {
 
             $this->mailAgent->isHTML(true); // Set email format to HTML
 
-            $this->mailAgent->setFrom($this->emailDomain, $from . " (Leantime)");
+            $this->mailAgent->setFrom($this->emailDomain, $from . " (tiggomark)");
 
             $this->mailAgent->Subject = $this->subject;
 

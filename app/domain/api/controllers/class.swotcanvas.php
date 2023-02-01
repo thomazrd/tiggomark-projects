@@ -4,7 +4,7 @@
  * - swotcanvas class - Controller API
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
     class swotcanvas extends api\canvas
     {

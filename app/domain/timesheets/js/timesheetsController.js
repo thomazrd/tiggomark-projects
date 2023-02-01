@@ -1,4 +1,4 @@
-leantime.timesheetsController = (function () {
+tiggomark.timesheetsController = (function () {
     var closeModal = false;
 
     //Constructor
@@ -29,15 +29,15 @@ leantime.timesheetsController = (function () {
                             action:"start"
                         },
                         type: 'POST',
-                        url: leantime.appUrl + '/api/timer'
+                        url: tiggomark.appUrl + '/api/timer'
                     }
                 ).done(function (msg) {
 
-                    jQuery.growl({message: leantime.i18n.__("short_notifications.timer_started")});
+                    jQuery.growl({message: tiggomark.i18n.__("short_notifications.timer_started")});
 
                 });
 
-                var currentdate = moment().format(leantime.i18n.__("language.jstimeformat"));
+                var currentdate = moment().format(tiggomark.i18n.__("language.jstimeformat"));
 
                 jQuery(".timerContainer .punchIn").hide();
                 jQuery("#timerContainer-" + ticketId + " .punchOut").show();
@@ -63,15 +63,15 @@ leantime.timesheetsController = (function () {
                                 action:"stop"
                         },
                         type: 'POST',
-                        url: leantime.appUrl + '/api/timer'
+                        url: tiggomark.appUrl + '/api/timer'
                     }
                 ).done(
                     function (hoursLogged) {
 
                         if (hoursLogged == 0) {
-                            jQuery.growl({message: leantime.i18n.__("short_notifications.not_enough_time_logged")});
+                            jQuery.growl({message: tiggomark.i18n.__("short_notifications.not_enough_time_logged")});
                         } else {
-                            jQuery.growl({message: leantime.i18n.__("short_notifications.logged_x_hours").replace("%1$s", hoursLogged)});
+                            jQuery.growl({message: tiggomark.i18n.__("short_notifications.logged_x_hours").replace("%1$s", hoursLogged)});
                         }
 
                     }
@@ -98,31 +98,31 @@ leantime.timesheetsController = (function () {
 
             var allTimesheets = jQuery("#allTimesheetsTable").DataTable({
                 "language": {
-                    "decimal":        leantime.i18n.__("datatables.decimal"),
-                    "emptyTable":     leantime.i18n.__("datatables.emptyTable"),
-                    "info":           leantime.i18n.__("datatables.info"),
-                    "infoEmpty":      leantime.i18n.__("datatables.infoEmpty"),
-                    "infoFiltered":   leantime.i18n.__("datatables.infoFiltered"),
-                    "infoPostFix":    leantime.i18n.__("datatables.infoPostFix"),
-                    "thousands":      leantime.i18n.__("datatables.thousands"),
-                    "lengthMenu":     leantime.i18n.__("datatables.lengthMenu"),
-                    "loadingRecords": leantime.i18n.__("datatables.loadingRecords"),
-                    "processing":     leantime.i18n.__("datatables.processing"),
-                    "search":         leantime.i18n.__("datatables.search"),
-                    "zeroRecords":    leantime.i18n.__("datatables.zeroRecords"),
+                    "decimal":        tiggomark.i18n.__("datatables.decimal"),
+                    "emptyTable":     tiggomark.i18n.__("datatables.emptyTable"),
+                    "info":           tiggomark.i18n.__("datatables.info"),
+                    "infoEmpty":      tiggomark.i18n.__("datatables.infoEmpty"),
+                    "infoFiltered":   tiggomark.i18n.__("datatables.infoFiltered"),
+                    "infoPostFix":    tiggomark.i18n.__("datatables.infoPostFix"),
+                    "thousands":      tiggomark.i18n.__("datatables.thousands"),
+                    "lengthMenu":     tiggomark.i18n.__("datatables.lengthMenu"),
+                    "loadingRecords": tiggomark.i18n.__("datatables.loadingRecords"),
+                    "processing":     tiggomark.i18n.__("datatables.processing"),
+                    "search":         tiggomark.i18n.__("datatables.search"),
+                    "zeroRecords":    tiggomark.i18n.__("datatables.zeroRecords"),
                     "paginate": {
-                        "first":      leantime.i18n.__("datatables.first"),
-                        "last":       leantime.i18n.__("datatables.last"),
-                        "next":       leantime.i18n.__("datatables.next"),
-                        "previous":   leantime.i18n.__("datatables.previous"),
+                        "first":      tiggomark.i18n.__("datatables.first"),
+                        "last":       tiggomark.i18n.__("datatables.last"),
+                        "next":       tiggomark.i18n.__("datatables.next"),
+                        "previous":   tiggomark.i18n.__("datatables.previous"),
                     },
                     "aria": {
-                        "sortAscending":  leantime.i18n.__("datatables.sortAscending"),
-                        "sortDescending":leantime.i18n.__("datatables.sortDescending"),
+                        "sortAscending":  tiggomark.i18n.__("datatables.sortAscending"),
+                        "sortDescending":tiggomark.i18n.__("datatables.sortDescending"),
                     },
                     "buttons": {
-                        colvis: leantime.i18n.__("datatables.buttons.colvis"),
-                        csv: leantime.i18n.__("datatables.buttons.download")
+                        colvis: tiggomark.i18n.__("datatables.buttons.colvis"),
+                        csv: tiggomark.i18n.__("datatables.buttons.download")
                     }
 
                 },
@@ -138,7 +138,7 @@ leantime.timesheetsController = (function () {
                 buttons: [
                     {
                         extend: 'csvHtml5',
-                        title: leantime.i18n.__("label.filename_fileexport"),
+                        title: tiggomark.i18n.__("label.filename_fileexport"),
                         charset: 'utf-8',
                         bom: true,
                         exportOptions: {

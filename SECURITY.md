@@ -2,4 +2,4 @@
 
 ## Reporting a Vulnerability
 
-Please e-mail all security issue findings to security@leantime.io
+Please e-mail all security issue findings to security@tiggomark.io

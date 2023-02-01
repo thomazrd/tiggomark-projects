@@ -1,8 +1,8 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
+    use tiggomark\core;
     use pdo;
 
     class calendar
@@ -64,7 +64,7 @@ namespace leantime\domain\repositories {
             $stmn->closeCursor();
             */
 
-            $ticketService = new \leantime\domain\services\tickets();
+            $ticketService = new \tiggomark\domain\services\tickets();
             $ticketArray =  $ticketService->getOpenUserTicketsThisWeekAndLater('', "");
 
             if (!empty($ticketArray)) {
@@ -168,7 +168,7 @@ namespace leantime\domain\repositories {
 
             //get user
 
-            $userRepo = new \leantime\domain\repositories\users();
+            $userRepo = new \tiggomark\domain\repositories\users();
             $user = $userRepo->getUserBySha($userHash);
 
 
@@ -177,7 +177,7 @@ namespace leantime\domain\repositories {
             }
 
             //Check if setting exists
-            $settingService = new \leantime\domain\repositories\setting();
+            $settingService = new \tiggomark\domain\repositories\setting();
             $hash = $settingService->getSetting("usersettings." . $user['id'] . ".icalSecret");
 
             if ($hash !== false && $calHash == $hash) {

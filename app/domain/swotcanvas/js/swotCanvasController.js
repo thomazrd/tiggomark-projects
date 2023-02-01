@@ -1,4 +1,4 @@
-leantime.swotCanvasController = (function () {
+tiggomark.swotCanvasController = (function () {
 
     var canvasName = 'swot';
 
@@ -119,7 +119,7 @@ leantime.swotCanvasController = (function () {
                     jQuery.ajax(
                         {
                             type: 'PATCH',
-                            url: leantime.appUrl + '/api/' + canvasName + 'canvas',
+                            url: tiggomark.appUrl + '/api/' + canvasName + 'canvas',
                             data:
                                 {
                                     id : canvasId,
@@ -128,8 +128,8 @@ leantime.swotCanvasController = (function () {
                         }
                     ).done(
                         function () {
-                            jQuery("#userDropdownMenuLink" + canvasId + " span.text span#userImage" + canvasId + " img").attr("src", leantime.appUrl + "/api/users?profileImage=" + userId);
-                            jQuery.growl({message: leantime.i18n.__("short_notifications.user_updated"), style: "success"});
+                            jQuery("#userDropdownMenuLink" + canvasId + " span.text span#userImage" + canvasId + " img").attr("src", tiggomark.appUrl + "/api/users?profileImage=" + userId);
+                            jQuery.growl({message: tiggomark.i18n.__("short_notifications.user_updated"), style: "success"});
                         }
                     );
                 }
@@ -156,7 +156,7 @@ leantime.swotCanvasController = (function () {
                     jQuery.ajax(
                         {
                             type: 'PATCH',
-                            url: leantime.appUrl + '/api/' + canvasName + 'canvas',
+                            url: tiggomark.appUrl + '/api/' + canvasName + 'canvas',
                             data:
                                 {
                                     id : canvasItemId,
@@ -167,7 +167,7 @@ leantime.swotCanvasController = (function () {
                         function () {
                             jQuery("#statusDropdownMenuLink" + canvasItemId + " span.text").text(dataLabel);
                             jQuery("#statusDropdownMenuLink" + canvasItemId).removeClass().addClass(statusClass + " dropdown-toggle f-left status ");
-                            jQuery.growl({message: leantime.i18n.__("short_notifications.status_updated")});
+                            jQuery.growl({message: tiggomark.i18n.__("short_notifications.status_updated")});
 
                         }
                     );
@@ -196,7 +196,7 @@ leantime.swotCanvasController = (function () {
                     jQuery.ajax(
                         {
                             type: 'PATCH',
-                            url: leantime.appUrl + '/api/' + canvasName + 'canvas',
+                            url: tiggomark.appUrl + '/api/' + canvasName + 'canvas',
                             data:
                                 {
                                     id : canvasItemId,
@@ -207,7 +207,7 @@ leantime.swotCanvasController = (function () {
                         function () {
                             jQuery("#relatesDropdownMenuLink" + canvasItemId + " span.text").text(dataLabel);
                             jQuery("#relatesDropdownMenuLink" + canvasItemId).removeClass().addClass(relatesClass + " dropdown-toggle f-left relates ");
-                            jQuery.growl({message: leantime.i18n.__("short_notifications.relates_updated")});
+                            jQuery.growl({message: tiggomark.i18n.__("short_notifications.relates_updated")});
 
                         }
                     );

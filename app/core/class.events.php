@@ -1,10 +1,10 @@
 <?php
 
-namespace leantime\core;
+namespace tiggomark\core;
 
 use PDO;
 use PDOException;
-use leantime\core\plugins;
+use tiggomark\core\plugins;
 
 class events
 {
@@ -121,7 +121,7 @@ class events
 
         $enabledPlugins = [];
         if ($_SESSION['isInstalled'] === true && $_SESSION['isUpdated'] === true) {
-            $pluginService = new \leantime\domain\services\plugins();
+            $pluginService = new \tiggomark\domain\services\plugins();
             $enabledPlugins = $pluginService->getEnabledPlugins();
         }
 

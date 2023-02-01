@@ -1,6 +1,6 @@
 <?php
 
-namespace leantime\domain\models {
+namespace tiggomark\domain\models {
 
     class sprints
     {

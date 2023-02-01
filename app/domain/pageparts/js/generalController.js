@@ -1,4 +1,4 @@
-leantime.generalController = (function () {
+tiggomark.generalController = (function () {
 
     //Variables
 
@@ -26,7 +26,7 @@ leantime.generalController = (function () {
             // Do your ajax call
             // When using multiple delimiters you can alter the query depending on the delimiter used
             if (delimiter === '@') {
-                jQuery.getJSON(leantime.appUrl + '/api/users?projectUsersAccess=current', function (data) {
+                jQuery.getJSON(tiggomark.appUrl + '/api/users?projectUsersAccess=current', function (data) {
                     //call process to show the result
                     let users = [];
                     for (let i = 0; i < data.length; i++) {
@@ -48,7 +48,7 @@ leantime.generalController = (function () {
             });
         },
         insert: function (item) {
-            return '<a class="userMention" data-tagged-user-id="' + item.id + '" href="javascript:void(0)"><img src="' + leantime.appUrl + '/api/users?profileImage=' + item.id + '" alt="' + item.name + ' Image"/>' + item.name + '</a>';
+            return '<a class="userMention" data-tagged-user-id="' + item.id + '" href="javascript:void(0)"><img src="' + tiggomark.appUrl + '/api/users?profileImage=' + item.id + '" alt="' + item.name + ' Image"/>' + item.name + '</a>';
         }
     };
 
@@ -85,8 +85,8 @@ leantime.generalController = (function () {
             {
                 // General options
                 width: "100%",
-                skin_url: leantime.appUrl + '/css/libs/tinymceSkin/oxide',
-                content_css: leantime.appUrl + '/theme/' + leantime.theme + '/css/theme.css,' + leantime.appUrl + '/css/libs/tinymceSkin/oxide/content.css,' + leantime.appUrl + '/css/components/wysiwyg-overrides.css,' + leantime.appUrl + '/css/libs/roboto.css',
+                skin_url: tiggomark.appUrl + '/css/libs/tinymceSkin/oxide',
+                content_css: tiggomark.appUrl + '/theme/' + tiggomark.theme + '/css/theme.css,' + tiggomark.appUrl + '/css/libs/tinymceSkin/oxide/content.css,' + tiggomark.appUrl + '/css/components/wysiwyg-overrides.css,' + tiggomark.appUrl + '/css/libs/roboto.css',
                 content_style: "body.mce-content-body{ font-size:14px; } img { max-width: 100%; }",
                 plugins : "shortlink,checklist,table,emoticons,autolink,image,lists,save,preview,media,searchreplace,paste,directionality,fullscreen,noneditable,visualchars,template,advlist,mention,slashcommands",
                 toolbar : "bold italic strikethrough | link unlink image | checklist bullist numlist | emoticons",
@@ -96,7 +96,7 @@ leantime.generalController = (function () {
                 paste_data_images: true,
                 menubar:false,
                 relative_urls : true,
-                document_base_url : leantime.appUrl + "/",
+                document_base_url : tiggomark.appUrl + "/",
                 default_link_target: '_blank',
 
                 mentions: mentionsConfig,
@@ -105,7 +105,7 @@ leantime.generalController = (function () {
 
                     xhr = new XMLHttpRequest();
                     xhr.withCredentials = false;
-                    xhr.open('POST', leantime.appUrl + '/api/files');
+                    xhr.open('POST', tiggomark.appUrl + '/api/files');
 
                     xhr.onload = function () {
                         var json;
@@ -135,7 +135,7 @@ leantime.generalController = (function () {
                     };
 
                     jQuery.nmManual(
-                        leantime.appUrl + '/files/showAll&modalPopUp=true',
+                        tiggomark.appUrl + '/files/showAll&modalPopUp=true',
                         {
                             stack: true,
                             callbacks: shortOptions,
@@ -163,7 +163,7 @@ leantime.generalController = (function () {
                         }
 
                         if (editor.getContent() === '') {
-                            editor.setContent("<p id='tinyPlaceholder'>" + leantime.i18n.__('placeholder.type_slash') + "</p>");
+                            editor.setContent("<p id='tinyPlaceholder'>" + tiggomark.i18n.__('placeholder.type_slash') + "</p>");
                         }
 
                     });
@@ -188,8 +188,8 @@ leantime.generalController = (function () {
             {
                 // General options
                 width: "100%",
-                skin_url: leantime.appUrl + '/css/libs/tinymceSkin/oxide',
-                content_css: leantime.appUrl + '/theme/' + leantime.theme + '/css/theme.css,' + leantime.appUrl + '/css/libs/tinymceSkin/oxide/content.css,' + leantime.appUrl + '/css/components/wysiwyg-overrides.css,' + leantime.appUrl + '/css/libs/roboto.css',
+                skin_url: tiggomark.appUrl + '/css/libs/tinymceSkin/oxide',
+                content_css: tiggomark.appUrl + '/theme/' + tiggomark.theme + '/css/theme.css,' + tiggomark.appUrl + '/css/libs/tinymceSkin/oxide/content.css,' + tiggomark.appUrl + '/css/components/wysiwyg-overrides.css,' + tiggomark.appUrl + '/css/libs/roboto.css',
                 content_style: "body.mce-content-body{ font-size:14px; } img { max-width: 100%; }",
                 plugins : "embed,autoresize,shortlink,checklist,bettertable,table,emoticons,autolink,image,lists,save,preview,media,searchreplace,paste,directionality,fullscreen,noneditable,visualchars,template,advlist,codesample,mention,slashcommands",
                 toolbar : "bold italic strikethrough | formatselect forecolor | alignleft aligncenter alignright | link unlink image media embed emoticons | checklist bullist numlist | table  | codesample",
@@ -200,7 +200,7 @@ leantime.generalController = (function () {
                 resizable: true,
                 paste_data_images: true,
                 relative_urls : true,
-                document_base_url: leantime.appUrl + "/",
+                document_base_url: tiggomark.appUrl + "/",
                 min_height: 400,
                 default_link_target: '_blank',
                 codesample_global_prismjs: true,
@@ -227,7 +227,7 @@ leantime.generalController = (function () {
 
                     xhr = new XMLHttpRequest();
                     xhr.withCredentials = false;
-                    xhr.open('POST', leantime.appUrl + '/api/files');
+                    xhr.open('POST', tiggomark.appUrl + '/api/files');
 
                     xhr.onload = function () {
                         var json;
@@ -257,7 +257,7 @@ leantime.generalController = (function () {
                     };
 
                     jQuery.nmManual(
-                        leantime.appUrl + '/files/showAll&modalPopUp=true',
+                        tiggomark.appUrl + '/files/showAll&modalPopUp=true',
                         {
                             stack: true,
                             callbacks: shortOptions,
@@ -285,7 +285,7 @@ leantime.generalController = (function () {
                         }
 
                         if (editor.getContent() === '') {
-                            editor.setContent("<p id='tinyPlaceholder'>" + leantime.i18n.__('placeholder.type_slash') + "</p>");
+                            editor.setContent("<p id='tinyPlaceholder'>" + tiggomark.i18n.__('placeholder.type_slash') + "</p>");
                         }
 
                     });
@@ -314,8 +314,8 @@ leantime.generalController = (function () {
                 inline: true,
                 fixed_toolbar_container: ".externalToolbar",
                 width: "100%",
-                skin_url: leantime.appUrl + '/css/libs/tinymceSkin/oxide',
-                content_css: leantime.appUrl + '/theme/' + leantime.theme + '/css/theme.css,' + leantime.appUrl + '/css/libs/tinymceSkin/oxide/content.css,' + leantime.appUrl + '/css/components/wysiwyg-overrides.css,' + leantime.appUrl + '/css/libs/roboto.css',
+                skin_url: tiggomark.appUrl + '/css/libs/tinymceSkin/oxide',
+                content_css: tiggomark.appUrl + '/theme/' + tiggomark.theme + '/css/theme.css,' + tiggomark.appUrl + '/css/libs/tinymceSkin/oxide/content.css,' + tiggomark.appUrl + '/css/components/wysiwyg-overrides.css,' + tiggomark.appUrl + '/css/libs/roboto.css',
                 content_style: "body.mce-content-body{ font-size:14px; } img { max-width: 100%; }",
                 height:"400",
                 content_style: "body.mce-content-body{ font-size:14px; } img { max-width: 100%; }",
@@ -335,7 +335,7 @@ leantime.generalController = (function () {
 
                     xhr = new XMLHttpRequest();
                     xhr.withCredentials = false;
-                    xhr.open('POST', leantime.appUrl + '/api/files');
+                    xhr.open('POST', tiggomark.appUrl + '/api/files');
 
                     xhr.onload = function () {
                         var json;
@@ -365,7 +365,7 @@ leantime.generalController = (function () {
                     };
 
                     jQuery.nmManual(
-                        leantime.appUrl + '/files/showAll&modalPopUp=true',
+                        tiggomark.appUrl + '/files/showAll&modalPopUp=true',
                         {
                             stack: true,
                             callbacks: shortOptions,
@@ -462,7 +462,7 @@ leantime.generalController = (function () {
         navigator.clipboard.writeText(copyText.value);
 
         // Alert the copied text
-        jQuery.growl({message: leantime.i18n.__("short_notifications.url_copied"), style: "success"});
+        jQuery.growl({message: tiggomark.i18n.__("short_notifications.url_copied"), style: "success"});
 
     };
 

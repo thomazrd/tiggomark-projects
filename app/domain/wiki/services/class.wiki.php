@@ -1,9 +1,9 @@
 <?php
 
-namespace leantime\domain\services {
+namespace tiggomark\domain\services {
 
-    use leantime\core;
-    use leantime\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\domain\repositories;
     use DatePeriod;
     use DateTime;
     use DateInterval;
@@ -58,22 +58,22 @@ namespace leantime\domain\services {
             return $this->wikiRepository->getWiki($id);
         }
 
-        public function createWiki(\leantime\domain\models\wiki $wiki)
+        public function createWiki(\tiggomark\domain\models\wiki $wiki)
         {
             return $this->wikiRepository->createWiki($wiki);
         }
 
-        public function updateWiki(\leantime\domain\models\wiki $wiki, $wikiId)
+        public function updateWiki(\tiggomark\domain\models\wiki $wiki, $wikiId)
         {
             return $this->wikiRepository->updateWiki($wiki, $wikiId);
         }
 
-        public function createArticle(\leantime\domain\models\wiki\article $article)
+        public function createArticle(\tiggomark\domain\models\wiki\article $article)
         {
             return $this->wikiRepository->createArticle($article);
         }
 
-        public function updateArticle(\leantime\domain\models\wiki\article $article)
+        public function updateArticle(\tiggomark\domain\models\wiki\article $article)
         {
             return $this->wikiRepository->updateArticle($article);
         }

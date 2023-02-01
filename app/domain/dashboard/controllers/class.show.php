@@ -1,12 +1,12 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\domain\models\auth\roles;
-    use leantime\domain\services;
-    use leantime\domain\repositories;
-    use leantime\core;
-    use leantime\core\controller;
+    use tiggomark\domain\models\auth\roles;
+    use tiggomark\domain\services;
+    use tiggomark\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\core\controller;
 
     class show extends controller
     {

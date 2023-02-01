@@ -5,12 +5,12 @@
  *
  */
 
-namespace leantime\core {
+namespace tiggomark\core {
 
     use Exception;
-    use leantime\domain\repositories\reports;
-    use leantime\domain\repositories\setting;
-    use leantime\core\eventhelpers;
+    use tiggomark\domain\repositories\reports;
+    use tiggomark\domain\repositories\setting;
+    use tiggomark\core\eventhelpers;
 
     class language
     {
@@ -68,7 +68,7 @@ namespace leantime\core {
         private function __construct()
         {
 
-            $this->config = \leantime\core\environment::getInstance();
+            $this->config = \tiggomark\core\environment::getInstance();
             $settingsRepo = new setting();
             $this->themeCore = new theme();
             $this->theme = $this->themeCore->getActive();
@@ -118,7 +118,7 @@ namespace leantime\core {
                         empty($_SESSION["usersettings." . $_SESSION["userdata"]["id"] . ".language"])
                 ) {
                     // User has a saved language
-                    $settingsRepo = new \leantime\domain\repositories\setting();
+                    $settingsRepo = new \tiggomark\domain\repositories\setting();
                     $languageSettings = $settingsRepo->getSetting("usersettings." . $_SESSION["userdata"]["id"] . ".language");
                     if ($languageSettings === false) {
                         if (isset($this->config->keepTheme) && $this->config->keepTheme) {

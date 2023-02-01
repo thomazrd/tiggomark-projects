@@ -5,9 +5,9 @@
  *
  */
 
-namespace leantime\core;
+namespace tiggomark\core;
 
-use leantime\core\eventhelpers;
+use tiggomark\core\eventhelpers;
 
 class session
 {
@@ -40,7 +40,7 @@ class session
     private function __construct()
     {
 
-        $config = \leantime\core\environment::getInstance();
+        $config = \tiggomark\core\environment::getInstance();
 
         ini_set('session.gc_maxlifetime', ($config->sessionExpiration * 2));
         ini_set('session.cookie_lifetime', ($config->sessionExpiration));
@@ -118,7 +118,7 @@ class session
     public static function destroySession()
     {
 
-        $config = \leantime\core\environment::getInstance();
+        $config = \tiggomark\core\environment::getInstance();
 
         if (isset($_COOKIE['sid'])) {
             unset($_COOKIE['sid']);

@@ -4,9 +4,9 @@
  * Generates an JSON-RPC 2.0 API
  */
 
-namespace leantime\domain\controllers;
+namespace tiggomark\domain\controllers;
 
-use leantime\core\controller;
+use tiggomark\core\controller;
 
 class jsonrpc extends controller
 {
@@ -119,7 +119,7 @@ class jsonrpc extends controller
 
         $methodparts = $this->parseMethodString(isset($params['method']) ? $params['method'] : '');
         $jsonRpcVer = isset($params['jsonrpc']) ? $params['jsonrpc'] : null;
-        $serviceName = "leantime\\domain\\services\\{$methodparts['service']}";
+        $serviceName = "tiggomark\\domain\\services\\{$methodparts['service']}";
         $methodName = $methodparts['method'];
         $paramsFromRequest = isset($params['params']) ? $params['params'] : [];
         $id = isset($params['id']) ? $params['id'] : null;
@@ -137,7 +137,7 @@ class jsonrpc extends controller
         }
 
         if ($jsonRpcVer !== '2.0') {
-            $this->returnInvalidRequest("Leantime only supports JSON-RPC version 2.0");
+            $this->returnInvalidRequest("tiggomark only supports JSON-RPC version 2.0");
         }
 
         $methodParams = $this->getMethodParameters($serviceName, $methodName);
@@ -162,7 +162,7 @@ class jsonrpc extends controller
     /**
      * Parses the method string
      *
-     * @param string $methodstring - leantime.rpc.service.method
+     * @param string $methodstring - tiggomark.rpc.service.method
      */
     private function parseMethodString(string $methodstring): array
     {
@@ -170,13 +170,13 @@ class jsonrpc extends controller
             $this->returnInvalidRequest("Must include method");
         }
 
-        if (!str_starts_with($methodstring, "leantime.rpc.")) {
-            $this->returnInvalidRequest("Method string doesn't start with \"leantime.rpc.\"");
+        if (!str_starts_with($methodstring, "tiggomark.rpc.")) {
+            $this->returnInvalidRequest("Method string doesn't start with \"tiggomark.rpc.\"");
         }
 
         $methodStringPieces = explode('.', $methodstring);
         if (count($methodStringPieces) !== 4) {
-            $this->returnInvalidRequest("Method is case sensitive and must follow the following naming convention: \"leantime.rpc.{servicename}.{methodname}\"");
+            $this->returnInvalidRequest("Method is case sensitive and must follow the following naming convention: \"tiggomark.rpc.{servicename}.{methodname}\"");
         }
 
         return [

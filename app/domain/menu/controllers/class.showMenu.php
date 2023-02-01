@@ -1,14 +1,14 @@
 <?php
 
-namespace leantime\domain\controllers;
+namespace tiggomark\domain\controllers;
 
 /**
  * menu Class displays the menu
  *
  */
 
-use leantime\core;
-use leantime\core\controller;
+use tiggomark\core;
+use tiggomark\core\controller;
 
 class showMenu extends controller
 {

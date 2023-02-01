@@ -1,4 +1,4 @@
-leantime.projectsController = (function () {
+tiggomark.projectsController = (function () {
 
     //Variables
 
@@ -19,18 +19,18 @@ leantime.projectsController = (function () {
 
         jQuery(".projectDateFrom, .projectDateTo").datepicker(
             {
-                dateFormat:  leantime.i18n.__("language.jsdateformat"),
-                dayNames: leantime.i18n.__("language.dayNames").split(","),
-                dayNamesMin:  leantime.i18n.__("language.dayNamesMin").split(","),
-                dayNamesShort: leantime.i18n.__("language.dayNamesShort").split(","),
-                monthNames: leantime.i18n.__("language.monthNames").split(","),
-                currentText: leantime.i18n.__("language.currentText"),
-                closeText: leantime.i18n.__("language.closeText"),
-                buttonText: leantime.i18n.__("language.buttonText"),
-                isRTL: JSON.parse(leantime.i18n.__("language.isRTL")),
-                nextText: leantime.i18n.__("language.nextText"),
-                prevText: leantime.i18n.__("language.prevText"),
-                weekHeader: leantime.i18n.__("language.weekHeader"),
+                dateFormat:  tiggomark.i18n.__("language.jsdateformat"),
+                dayNames: tiggomark.i18n.__("language.dayNames").split(","),
+                dayNamesMin:  tiggomark.i18n.__("language.dayNamesMin").split(","),
+                dayNamesShort: tiggomark.i18n.__("language.dayNamesShort").split(","),
+                monthNames: tiggomark.i18n.__("language.monthNames").split(","),
+                currentText: tiggomark.i18n.__("language.currentText"),
+                closeText: tiggomark.i18n.__("language.closeText"),
+                buttonText: tiggomark.i18n.__("language.buttonText"),
+                isRTL: JSON.parse(tiggomark.i18n.__("language.isRTL")),
+                nextText: tiggomark.i18n.__("language.nextText"),
+                prevText: tiggomark.i18n.__("language.prevText"),
+                weekHeader: tiggomark.i18n.__("language.weekHeader"),
             }
         );
     };
@@ -86,27 +86,27 @@ leantime.projectsController = (function () {
 
             var allProjects = jQuery("#allProjectsTable").DataTable({
                 "language": {
-                    "decimal":        leantime.i18n.__("datatables.decimal"),
-                    "emptyTable":     leantime.i18n.__("datatables.emptyTable"),
-                    "info":           leantime.i18n.__("datatables.info"),
-                    "infoEmpty":      leantime.i18n.__("datatables.infoEmpty"),
-                    "infoFiltered":   leantime.i18n.__("datatables.infoFiltered"),
-                    "infoPostFix":    leantime.i18n.__("datatables.infoPostFix"),
-                    "thousands":      leantime.i18n.__("datatables.thousands"),
-                    "lengthMenu":     leantime.i18n.__("datatables.lengthMenu"),
-                    "loadingRecords": leantime.i18n.__("datatables.loadingRecords"),
-                    "processing":     leantime.i18n.__("datatables.processing"),
-                    "search":         leantime.i18n.__("datatables.search"),
-                    "zeroRecords":    leantime.i18n.__("datatables.zeroRecords"),
+                    "decimal":        tiggomark.i18n.__("datatables.decimal"),
+                    "emptyTable":     tiggomark.i18n.__("datatables.emptyTable"),
+                    "info":           tiggomark.i18n.__("datatables.info"),
+                    "infoEmpty":      tiggomark.i18n.__("datatables.infoEmpty"),
+                    "infoFiltered":   tiggomark.i18n.__("datatables.infoFiltered"),
+                    "infoPostFix":    tiggomark.i18n.__("datatables.infoPostFix"),
+                    "thousands":      tiggomark.i18n.__("datatables.thousands"),
+                    "lengthMenu":     tiggomark.i18n.__("datatables.lengthMenu"),
+                    "loadingRecords": tiggomark.i18n.__("datatables.loadingRecords"),
+                    "processing":     tiggomark.i18n.__("datatables.processing"),
+                    "search":         tiggomark.i18n.__("datatables.search"),
+                    "zeroRecords":    tiggomark.i18n.__("datatables.zeroRecords"),
                     "paginate": {
-                        "first":      leantime.i18n.__("datatables.first"),
-                        "last":       leantime.i18n.__("datatables.last"),
-                        "next":       leantime.i18n.__("datatables.next"),
-                        "previous":   leantime.i18n.__("datatables.previous"),
+                        "first":      tiggomark.i18n.__("datatables.first"),
+                        "last":       tiggomark.i18n.__("datatables.last"),
+                        "next":       tiggomark.i18n.__("datatables.next"),
+                        "previous":   tiggomark.i18n.__("datatables.previous"),
                     },
                     "aria": {
-                        "sortAscending":  leantime.i18n.__("datatables.sortAscending"),
-                        "sortDescending":leantime.i18n.__("datatables.sortDescending"),
+                        "sortAscending":  tiggomark.i18n.__("datatables.sortAscending"),
+                        "sortDescending":tiggomark.i18n.__("datatables.sortDescending"),
                     }
 
                 },
@@ -198,9 +198,9 @@ leantime.projectsController = (function () {
         jQuery('#todoStatusList').append("<li>" + statusCopy.html() + "</li>");
 
         jQuery("#todosettings select.colorChosen").chosen("destroy");
-        leantime.projectsController.initSelectFields();
+        tiggomark.projectsController.initSelectFields();
         jQuery("#todoStatusList").sortable("destroy");
-        leantime.projectsController.initTodoStatusSortable("#todoStatusList");
+        tiggomark.projectsController.initTodoStatusSortable("#todoStatusList");
 
     };
 

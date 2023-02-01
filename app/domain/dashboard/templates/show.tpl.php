@@ -42,7 +42,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="<?=BASE_URL?>/project/changeCurrentProject/<?=$project['id']; ?>"><i class="fa fa-link"></i></a>
                         <div class="dropdown-menu padding-md">
                             <input type="text" id="projectUrl" value="<?=BASE_URL?>/projects/changeCurrentProject/<?=$project['id']; ?>" />
-                            <button class="btn btn-primary" onclick="leantime.generalController.copyUrl('projectUrl');"><?=$this->__('links.copy_url') ?></button>
+                            <button class="btn btn-primary" onclick="tiggomark.generalController.copyUrl('projectUrl');"><?=$this->__('links.copy_url') ?></button>
                         </div>
                     </div>
                     <h3><?php $this->e($_SESSION["currentProjectClient"]); ?></h3>
@@ -249,7 +249,7 @@
                         <input type="hidden" name="comment" value="1" />
                         <?php
 
-                        $comments = new leantime\domain\repositories\comments();
+                        $comments = new tiggomark\domain\repositories\comments();
                         $formUrl = CURRENT_URL;
 
                         //Controller may not redirect. Make sure delComment is only added once
@@ -321,7 +321,7 @@
                                                                     <?php } ?>
                                                                     <?php
                                                                     if (isset($this->get('ticket')->id)) {?>
-                                                                        <li><a href="javascript:void(0);" onclick="leantime.ticketsController.addCommentTimesheetContent(<?=$row['id'] ?>, <?=$this->get('ticket')->id ?>);"><?=$this->__("links.add_to_timesheets"); ?></a></li>
+                                                                        <li><a href="javascript:void(0);" onclick="tiggomark.ticketsController.addCommentTimesheetContent(<?=$row['id'] ?>, <?=$this->get('ticket')->id ?>);"><?=$this->__("links.add_to_timesheets"); ?></a></li>
                                                                     <?php } ?>
                                                                 </ul>
                                                             </div>
@@ -419,7 +419,7 @@
 
                         <script type='text/javascript'>
 
-                            leantime.generalController.initSimpleEditor();
+                            tiggomark.generalController.initSimpleEditor();
 
                             function toggleCommentBoxes(id) {
 
@@ -434,7 +434,7 @@
                                 jQuery('.commentBox').hide('fast', function () {});
 
                                 jQuery('#comment' + id + ' .commentReply').prepend('<textarea rows="5" cols="75" name="text" class="tinymceSimple"></textarea>');
-                                leantime.generalController.initSimpleEditor();
+                                tiggomark.generalController.initSimpleEditor();
 
                                 jQuery('#comment' + id + '').show('fast');
                                 jQuery('#father').val(id);
@@ -531,24 +531,24 @@
 
     jQuery(document).ready(function() {
 
-        leantime.ticketsController.initModals();
+        tiggomark.ticketsController.initModals();
 
         <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
-            leantime.dashboardController.prepareHiddenDueDate();
-            leantime.ticketsController.initEffortDropdown();
-            leantime.ticketsController.initMilestoneDropdown();
-            leantime.ticketsController.initStatusDropdown();
-            leantime.ticketsController.initDueDateTimePickers();
+            tiggomark.dashboardController.prepareHiddenDueDate();
+            tiggomark.ticketsController.initEffortDropdown();
+            tiggomark.ticketsController.initMilestoneDropdown();
+            tiggomark.ticketsController.initStatusDropdown();
+            tiggomark.ticketsController.initDueDateTimePickers();
 
         <?php } else { ?>
-            leantime.generalController.makeInputReadonly(".maincontentinner");
+            tiggomark.generalController.makeInputReadonly(".maincontentinner");
 
         <?php } ?>
 
-        leantime.dashboardController.initProgressChart("chart-area", <?php echo round($projectProgress['percent']); ?>, <?php echo round((100 - $projectProgress['percent'])); ?>);
+        tiggomark.dashboardController.initProgressChart("chart-area", <?php echo round($projectProgress['percent']); ?>, <?php echo round((100 - $projectProgress['percent'])); ?>);
 
         <?php if ($sprintBurndown != []) { ?>
-            //leantime.dashboardController.initBurndown([<?php foreach ($sprintBurndown as $value) {
+            //tiggomark.dashboardController.initBurndown([<?php foreach ($sprintBurndown as $value) {
                 echo "'" . $value['date'] . "',";
                                                          } ?>], [<?php foreach ($sprintBurndown as $value) {
                                                          echo "'" . round($value['plannedNum'], 2) . "',";
@@ -557,21 +557,21 @@
         echo "'" . $value['actualNum'] . "',";
     }
                                                          }  ?> ]);
-            leantime.dashboardController.initChartButtonClick('HourlyChartButton', [<?php foreach ($sprintBurndown as $value) {
+            tiggomark.dashboardController.initChartButtonClick('HourlyChartButton', [<?php foreach ($sprintBurndown as $value) {
                 echo "'" . $value['plannedHours'] . "',";
                                                                                     } ?>], [ <?php foreach ($sprintBurndown as $value) {
     if ($value['actualHours'] !== '') {
         echo "'" . round($value['actualHours']) . "',";
     }
                                                                                     }  ?> ]);
-            leantime.dashboardController.initChartButtonClick('EffortChartButton', [<?php foreach ($sprintBurndown as $value) {
+            tiggomark.dashboardController.initChartButtonClick('EffortChartButton', [<?php foreach ($sprintBurndown as $value) {
                 echo "'" . $value['plannedEffort'] . "',";
                                                                                     } ?>], [ <?php foreach ($sprintBurndown as $value) {
     if ($value['actualEffort'] !== '') {
         echo "'" . $value['actualEffort'] . "',";
     }
                                                                                     }  ?> ]);
-            leantime.dashboardController.initChartButtonClick('NumChartButton', [<?php foreach ($sprintBurndown as $value) {
+            tiggomark.dashboardController.initChartButtonClick('NumChartButton', [<?php foreach ($sprintBurndown as $value) {
                 echo "'" . $value['plannedNum'] . "',";
                                                                                  } ?>], [ <?php foreach ($sprintBurndown as $value) {
     if ($value['actualNum'] !== '') {
@@ -582,24 +582,24 @@
         <?php } ?>
 
         <?php if ($backlogBurndown != []) { ?>
-            //leantime.dashboardController.initBacklogBurndown([<?php foreach ($backlogBurndown as $value) {
+            //tiggomark.dashboardController.initBacklogBurndown([<?php foreach ($backlogBurndown as $value) {
                 echo "'" . $value['date'] . "',";
                                                                 } ?>], [ <?php foreach ($backlogBurndown as $value) {
     if ($value['actualNum'] !== '') {
         echo "'" . $value['actualNum'] . "',";
     }
                                                                 }  ?> ]);
-            //leantime.dashboardController.initBacklogChartButtonClick('HourlyChartButton', [ <?php foreach ($backlogBurndown as $value) {
+            //tiggomark.dashboardController.initBacklogChartButtonClick('HourlyChartButton', [ <?php foreach ($backlogBurndown as $value) {
                 if ($value['actualHours'] !== '') {
                     echo "'" . round($value['actualHours']) . "',";
                 }
                                                                                               }  ?> ]);
-            //leantime.dashboardController.initBacklogChartButtonClick('EffortChartButton', [ <?php foreach ($backlogBurndown as $value) {
+            //tiggomark.dashboardController.initBacklogChartButtonClick('EffortChartButton', [ <?php foreach ($backlogBurndown as $value) {
                 if ($value['actualEffort'] !== '') {
                     echo "'" . $value['actualEffort'] . "',";
                 }
                                                                                               }  ?> ]);
-            //leantime.dashboardController.initBacklogChartButtonClick('NumChartButton', [ <?php foreach ($backlogBurndown as $value) {
+            //tiggomark.dashboardController.initBacklogChartButtonClick('NumChartButton', [ <?php foreach ($backlogBurndown as $value) {
                 if ($value['actualNum'] !== '') {
                     echo "'" . $value['actualNum'] . "',";
                 }

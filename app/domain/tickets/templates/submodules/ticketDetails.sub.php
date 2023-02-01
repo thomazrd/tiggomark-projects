@@ -277,6 +277,6 @@
 </div>
 
 <script>
-    leantime.generalController.initComplexEditor();
+    tiggomark.generalController.initComplexEditor();
 </script>
 

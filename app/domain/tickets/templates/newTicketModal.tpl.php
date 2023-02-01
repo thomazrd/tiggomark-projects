@@ -33,12 +33,12 @@
 
     jQuery(function(){
 
-        leantime.ticketsController.initTicketTabs();
-        leantime.ticketsController.initTagsInput();
-        leantime.generalController.initComplexEditor();
+        tiggomark.ticketsController.initTicketTabs();
+        tiggomark.ticketsController.initTagsInput();
+        tiggomark.generalController.initComplexEditor();
 
-        leantime.ticketsController.initDueDateTimePickers();
-        leantime.ticketsController.initDates();
+        tiggomark.ticketsController.initDueDateTimePickers();
+        tiggomark.ticketsController.initDates();
 
     });
 

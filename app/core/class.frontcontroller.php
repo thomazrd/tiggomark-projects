@@ -5,7 +5,7 @@
  *
  */
 
-namespace leantime\core {
+namespace tiggomark\core {
 
     use Exception;
 
@@ -117,7 +117,7 @@ namespace leantime\core {
 
             // initialize plugin service to check
             if ($_SESSION['isInstalled'] === true && $_SESSION['isUpdated'] === true) {
-                $pluginService = new \leantime\domain\services\plugins();
+                $pluginService = new \tiggomark\domain\services\plugins();
             }
 
             // Check If Route Exists And Fetch Right Route Based On Priority
@@ -162,14 +162,14 @@ namespace leantime\core {
 
             // Execute The Route
             try {
-                $classname = "leantime\\" . $controllerNs . "\\controllers\\" . $actionName;
+                $classname = "tiggomark\\" . $controllerNs . "\\controllers\\" . $actionName;
                 $method = self::getRequestMethod();
                 $params = self::getRequestParams($method);
 
                 //Setting default response code to 200, can be changed in controller
                 self::setResponseCode(200);
 
-                if (is_subclass_of($classname, "leantime\\core\\controller")) {
+                if (is_subclass_of($classname, "tiggomark\\core\\controller")) {
                     new $classname($method, $params);
                 // TODO: Remove else after all controllers utilze base class
                 } else {

@@ -4,9 +4,9 @@
  * canvas class - Generic / Tempalate of canvas repository class
  */
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
+    use tiggomark\core;
     use pdo;
 
     class canvas

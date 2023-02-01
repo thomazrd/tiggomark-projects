@@ -1,11 +1,11 @@
 <?php
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    use leantime\core;
+    use tiggomark\core;
     use pdo;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
 
     class reports
     {
@@ -162,7 +162,7 @@ namespace leantime\domain\repositories {
             $stmn->bindValue(':projectId', $projectId, PDO::PARAM_INT);
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, \leantime\domain\models\reports::class);
+            $stmn->setFetchMode(PDO::FETCH_CLASS, \tiggomark\domain\models\reports::class);
             $value = $stmn->fetchAll();
 
             $stmn->closeCursor();
@@ -283,7 +283,7 @@ namespace leantime\domain\repositories {
             $stmn->bindValue(':sprint', $sprint, PDO::PARAM_INT);
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, \leantime\domain\models\reports::class);
+            $stmn->setFetchMode(PDO::FETCH_CLASS, \tiggomark\domain\models\reports::class);
             $value = $stmn->fetchAll();
 
             $stmn->closeCursor();
@@ -300,7 +300,7 @@ namespace leantime\domain\repositories {
             $stmn->bindValue(':project', $project, PDO::PARAM_INT);
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, \leantime\domain\models\reports::class);
+            $stmn->setFetchMode(PDO::FETCH_CLASS, \tiggomark\domain\models\reports::class);
             $value = $stmn->fetchAll();
 
             $stmn->closeCursor();
@@ -347,7 +347,7 @@ namespace leantime\domain\repositories {
             $stmn->bindValue(':project', $project, PDO::PARAM_INT);
 
             $stmn->execute();
-            $stmn->setFetchMode(PDO::FETCH_CLASS, \leantime\domain\models\reports::class);
+            $stmn->setFetchMode(PDO::FETCH_CLASS, \tiggomark\domain\models\reports::class);
             $value = $stmn->fetchAll();
 
             $stmn->closeCursor();

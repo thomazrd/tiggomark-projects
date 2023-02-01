@@ -1,4 +1,4 @@
-leantime.usersService = (function () {
+tiggomark.usersService = (function () {
 
     // Variables (underscore for private variables)
     var publicThing = "not secret";
@@ -12,7 +12,7 @@ leantime.usersService = (function () {
     //Functions
 
     var saveUserPhoto = function (photo) {
-        leantime.usersRepository.saveUserPhoto(photo);
+        tiggomark.usersRepository.saveUserPhoto(photo);
     };
 
     // Make public what you want to have public, everything else is private

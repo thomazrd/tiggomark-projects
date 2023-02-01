@@ -262,7 +262,7 @@ if (is_array($currentLink)) {
             jQuery.ajax(
                 {
                     type: 'PATCH',
-                    url: leantime.appUrl+'/api/notifications',
+                    url: tiggomark.appUrl+'/api/notifications',
                     data:
                         {
                             id : id,

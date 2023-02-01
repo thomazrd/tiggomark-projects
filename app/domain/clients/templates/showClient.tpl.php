@@ -294,7 +294,7 @@ $users = $this->get('users');
 
     jQuery(document).ready(function($)
         {
-            leantime.clientsController.initClientTabs();
+            tiggomark.clientsController.initClientTabs();
         }
     );
 

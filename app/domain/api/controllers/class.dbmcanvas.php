@@ -4,7 +4,7 @@
  * - dbmcanvas class - Controller API
  */
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
     class dbmcanvas extends api\canvas
     {

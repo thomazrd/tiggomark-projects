@@ -48,17 +48,17 @@
             new SlimSelect({ select: '#searchCanvas' });
         }
 
-        leantime.<?=$canvasName ?>CanvasController.setRowHeights();
-        leantime.canvasController.setCanvasName('<?=$canvasName ?>');
-        leantime.canvasController.initFilterBar();
+        tiggomark.<?=$canvasName ?>CanvasController.setRowHeights();
+        tiggomark.canvasController.setCanvasName('<?=$canvasName ?>');
+        tiggomark.canvasController.initFilterBar();
 
         <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
-            leantime.canvasController.initCanvasLinks();
-            leantime.canvasController.initUserDropdown();
-            leantime.canvasController.initStatusDropdown();
-            leantime.canvasController.initRelatesDropdown();
+            tiggomark.canvasController.initCanvasLinks();
+            tiggomark.canvasController.initUserDropdown();
+            tiggomark.canvasController.initStatusDropdown();
+            tiggomark.canvasController.initRelatesDropdown();
         <?php } else { ?>
-            leantime.generalController.makeInputReadonly(".maincontentinner");
+            tiggomark.generalController.makeInputReadonly(".maincontentinner");
 
         <?php } ?>
 
@@ -70,7 +70,7 @@
                 $modalUrl = "/" . (int)$_GET['showModal'];
             }
             ?>
-        leantime.canvasController.openModalManually("<?=BASE_URL?>/<?=$canvasName ?>canvas/editCanvasItem<?=$modalUrl ?>");
+        tiggomark.canvasController.openModalManually("<?=BASE_URL?>/<?=$canvasName ?>canvas/editCanvasItem<?=$modalUrl ?>");
         window.history.pushState({},document.title, '<?=BASE_URL?>/<?=$canvasName ?>canvas/showCanvas/');
 
         <?php } ?>

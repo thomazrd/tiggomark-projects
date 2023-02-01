@@ -18,22 +18,22 @@
         <li class="nav-header border"><?=$this->__("menu.help_support")?></li>
         <li>
             <a href='javascript:void(0);'
-               onclick="leantime.helperController.showHelperModal('<?php echo $this->get('modal'); ?>', 300, 500);">
+               onclick="tiggomark.helperController.showHelperModal('<?php echo $this->get('modal'); ?>', 300, 500);">
                 <?=$this->__("menu.what_is_this_page")?>
             </a>
         </li>
         <li>
-            <a href='https://docs.leantime.io' target="_blank">
+            <a href='https://docs.tiggomark.io' target="_blank">
                 <?=$this->__("menu.knowledge_base")?>
             </a>
         </li>
         <li>
-            <a href='https://community.leantime.io' target="_blank">
+            <a href='https://community.tiggomark.io' target="_blank">
                 <?=$this->__("menu.community")?>
             </a>
         </li>
         <li>
-            <a href='https://leantime.io/contact-us' target="_blank">
+            <a href='https://tiggomark.io/contact-us' target="_blank">
                 <?=$this->__("menu.contact_us")?>
             </a>
         </li>

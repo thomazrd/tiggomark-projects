@@ -1,11 +1,11 @@
 <?php
 
-namespace leantime\domain\controllers {
+namespace tiggomark\domain\controllers {
 
-    use leantime\domain\repositories;
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\services\auth;
+    use tiggomark\domain\repositories;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\services\auth;
 
     class editOwn extends controller
     {
@@ -19,11 +19,11 @@ namespace leantime\domain\controllers {
         {
 
             $this->language = core\language::getInstance();
-            $this->settingsService = new \leantime\domain\services\setting();
+            $this->settingsService = new \tiggomark\domain\services\setting();
             $this->userRepo = new repositories\users();
-            $this->settingsRepo = new \leantime\domain\repositories\setting();
-            $this->themeCore = new \leantime\core\theme();
-            $this->userService = new \leantime\domain\services\users();
+            $this->settingsRepo = new \tiggomark\domain\repositories\setting();
+            $this->themeCore = new \tiggomark\core\theme();
+            $this->userService = new \tiggomark\domain\services\users();
 
             $this->userId = $_SESSION['userdata']['id'];
         }

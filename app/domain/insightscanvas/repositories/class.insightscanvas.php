@@ -4,9 +4,9 @@
  * Insights - Repository
  */
 
-namespace leantime\domain\repositories {
+namespace tiggomark\domain\repositories {
 
-    class insightscanvas extends \leantime\domain\repositories\canvas
+    class insightscanvas extends \tiggomark\domain\repositories\canvas
     {
         /**
          * Constant that must be redefined

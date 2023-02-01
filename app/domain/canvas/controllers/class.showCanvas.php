@@ -4,12 +4,12 @@
  * showCanvas class - Generic canvas controller
  */
 
-namespace leantime\domain\controllers\canvas {
+namespace tiggomark\domain\controllers\canvas {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
 
     class showCanvas extends controller
     {
@@ -26,7 +26,7 @@ namespace leantime\domain\controllers\canvas {
          */
         public function init()
         {
-            $canvasRepoName = "leantime\\domain\\repositories\\" . static::CANVAS_NAME . 'canvas';
+            $canvasRepoName = "tiggomark\\domain\\repositories\\" . static::CANVAS_NAME . 'canvas';
             $this->canvasRepo = new $canvasRepoName();
             $this->projectService = new services\projects();
         }
@@ -171,7 +171,7 @@ namespace leantime\domain\controllers\canvas {
             // Import canvas
             if (isset($_POST['importCanvas'])) {
                 if (isset($_FILES['canvasfile']) && $_FILES['canvasfile']['error'] === 0) {
-                    $uploadfile = tempnam(sys_get_temp_dir(), 'leantime.') . '.xml';
+                    $uploadfile = tempnam(sys_get_temp_dir(), 'tiggomark.') . '.xml';
 
                     $status = move_uploaded_file($_FILES['canvasfile']['tmp_name'], $uploadfile);
                     if ($status) {

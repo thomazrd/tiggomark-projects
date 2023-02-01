@@ -2,7 +2,7 @@
 $ticket = $this->get('ticket');
 ?>
 <div class="mediamgr_category">
-    
+
     <form action='<?=BASE_URL ?>/tickets/showTicket/<?php echo $ticket->id; ?>#files' method='POST' enctype="multipart/form-data" class="ticketModal">
         <div class="par f-left" style="margin-right: 15px;">
         <input type="hidden" name="upload" value="1" />
@@ -83,5 +83,5 @@ $ticket = $this->get('ticket');
 <div style='clear:both'>&nbsp;</div>
 
 <script type='text/javascript'>
-    leantime.replaceSVGColors();
+    tiggomark.replaceSVGColors();
 </script>

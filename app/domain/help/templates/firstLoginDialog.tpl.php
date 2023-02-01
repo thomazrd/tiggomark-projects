@@ -47,7 +47,7 @@ if (isset($_GET['step']) && $_GET['step'] == "complete") {?>
             <br />
             <select name="theme" id="theme" style="width: 220px">
                 <?php
-                $themeCore = new \leantime\core\theme();
+                $themeCore = new \tiggomark\core\theme();
                 $themeAll = $themeCore->getAll();
                 foreach ($themeAll as $key => $name) {
                     ?>

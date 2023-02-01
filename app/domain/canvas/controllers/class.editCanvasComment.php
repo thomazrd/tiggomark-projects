@@ -4,13 +4,13 @@
  * editCanvasComment class - Generic canvas controller / Edit Comments
  */
 
-namespace leantime\domain\controllers\canvas {
+namespace tiggomark\domain\controllers\canvas {
 
-    use leantime\core;
-    use leantime\core\controller;
-    use leantime\domain\repositories;
-    use leantime\domain\services;
-    use leantime\domain\models;
+    use tiggomark\core;
+    use tiggomark\core\controller;
+    use tiggomark\domain\repositories;
+    use tiggomark\domain\services;
+    use tiggomark\domain\models;
 
     use DateTime;
     use DateInterval;
@@ -34,7 +34,7 @@ namespace leantime\domain\controllers\canvas {
         public function init()
         {
 
-            $canvasRepoName = "leantime\\domain\\repositories\\" . static::CANVAS_NAME . 'canvas';
+            $canvasRepoName = "tiggomark\\domain\\repositories\\" . static::CANVAS_NAME . 'canvas';
             $this->canvasRepo = new $canvasRepoName();
             $this->sprintService = new services\sprints();
             $this->ticketRepo = new repositories\tickets();

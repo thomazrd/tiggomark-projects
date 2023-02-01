@@ -41,8 +41,8 @@ $project = $this->get('values');
 
 <script type="text/javascript">
     jQuery(document).ready(function() {
-            leantime.projectsController.initProjectTabs();
-            leantime.projectsController.initProjectsEditor();
+            tiggomark.projectsController.initProjectTabs();
+            tiggomark.projectsController.initProjectsEditor();
 
         }
     );
