@@ -152,7 +152,7 @@
 
 .leftmenu .nav-tabs.nav-stacked .bigProjectSelector {
     display:block;
-    font-weight:normal;
+    font-weight:bold;
     font-size: var(--font-size-l);
     padding:0px 10px;
     line-height:59px;
@@ -379,10 +379,10 @@
 
 .leftmenu .nav-tabs.nav-stacked .dropdown ul li a {
     display: block;
-    font-size: var(--base-font-size);
-    padding: 10px 10px 10px 10px;
+    padding: 15px 15px 15px 15px;
     color: var(--main-menu-link-color);
-    border-left:5px solid transparent;
+    border-left: 5px solid transparent;
+    font-weight: bold;
 
 }
 

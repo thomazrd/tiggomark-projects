@@ -1046,6 +1046,7 @@ a .label-default:after, a .label-primary:after {
     font-size: var(--font-size-xl);
     color: var(--main-action-color);
     line-height:60px;
+    font-weight: bold;
 
 }
 
@@ -1085,6 +1086,7 @@ a .label-default:after, a .label-primary:after {
     color: var(--primary-font-color);
     margin-bottom: 10px;
     font-weight:lighter;
+    font-weight: bold;
 
 }
 

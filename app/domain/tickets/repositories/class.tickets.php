@@ -84,7 +84,7 @@ namespace leantime\domain\repositories {
          * @access public
          * @var    array
          */
-        public $priority = array('1' => 'Critical', '2' => 'High', '3' => 'Medium', '4' => 'Low', '5' => 'Lowest');
+        public $priority = array('1' => 'Critica', '2' => 'Alta', '3' => 'Média', '4' => 'Baixa', '5' => 'Muito Baixa');
 
         /**
          * @access public

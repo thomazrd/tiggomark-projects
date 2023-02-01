@@ -104,8 +104,8 @@ if (is_array($currentLink)) {
         </a>
         <div class="dropdown-menu" id="notificationsDropdown">
             <div class="dropdownTabs">
-                <a href="javascript:void(0);" class="notifcationTabs active" id="notificationsListLink" onclick="toggleNotificationTabs('notifications')" >Notifications (<?=$totalNewNotifications?>)</a>
-                <a href="javascript:void(0);" class="notifcationTabs" id="mentionsListLink" onclick="toggleNotificationTabs('mentions')">Mentions (<?=$totalNewMentions?>)</a>
+                <a href="javascript:void(0);" class="notifcationTabs active" id="notificationsListLink" onclick="toggleNotificationTabs('notifications')" ><?=$this->__("label.notifications")?> (<?=$totalNewNotifications?>)</a>
+                <a href="javascript:void(0);" class="notifcationTabs" id="mentionsListLink" onclick="toggleNotificationTabs('mentions')"><?=$this->__("label.mentions")?> (<?=$totalNewMentions?>)</a>
             </div>
             <div class="scroll-wrapper">
 
