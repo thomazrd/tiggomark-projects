@@ -77,24 +77,23 @@
 }
 
 .logo {
-    width: 240px;
-    text-align: center;
-    height: 50px;
-    padding:10px 5px 5px 10px;
-    margin-left: 0px;
-    display: flex;
-
-    flex-direction: column;
+  width: 220px;
+  text-align: center;
+  height: 120px;
+  padding: 10px 5px 5px 10px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo a {
-    width: 220px;
-    text-align: center;
-    height: 35px;
-    background-position: left center;
-    display: block;
-    background-repeat: no-repeat;
-    background-size:contain;
+  width: 220px;
+  text-align: center;
+  height: 120px;
+  background-position: center;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .logo a:hover {

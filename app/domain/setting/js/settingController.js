@@ -31,7 +31,7 @@ tiggomark.settingController = (function () {
                             enforceBoundary: false,
                             viewport:{
                                 width: 220,
-                                height: 40,
+                                height: 120,
                                 type: 'square'
                             },
                             boundary: {

@@ -4,7 +4,7 @@
     --accent1-hover: #555;
     --accent1-color:#fff;
 
-    --accent2: #1b75bb;
+    --accent2: #365751;
     --accent2-hover: #555;
     --accent2-color:#fff;
 
@@ -79,7 +79,7 @@
     --header-bg-color:var(--primary-color);
     --header-gradient:linear-gradient(90deg, var(--accent1) 0%,var(--accent1) 80%);
 
-    --primary-font-family: font-family: "proxima-nova", "proxima nova", "helvetica neue", "helvetica", "arial", sans-serif;
+    --primary-font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
     --base-font-size: 15px;
     --font-size-xs: 10px;
     --font-size-s:12px;
