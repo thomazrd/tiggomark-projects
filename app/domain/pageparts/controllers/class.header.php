@@ -138,9 +138,9 @@ namespace tiggomark\domain\controllers {
 
             if (!isset($_SESSION["companysettings.primarycolor"])) {
                 $_SESSION["companysettings.primarycolor"] = "#1b75bb";
-                $_SESSION["companysettings.secondarycolor"] = "#81B1A8";
+                $_SESSION["companysettings.secondarycolor"] = "#0d3e61";
                 $_SESSION["companysettings.$theme.primarycolor"] = "#1b75bb";
-                $_SESSION["companysettings.$theme.secondarycolor"] = "#81B1A8";
+                $_SESSION["companysettings.$theme.secondarycolor"] = "#0d3e61";
 
                 //Old setting
                 $mainColor = $this->settingsRepo->getSetting("companysettings.mainColor");

@@ -569,7 +569,7 @@ namespace tiggomark\domain\repositories {
                     ->name($value['firstname'] . " " . $value['lastname'])
                     ->font(ROOT . '/fonts/roboto/Roboto-Light.ttf')
                     ->fontName("Roboto")
-                    ->background('#81B1A8')->color("#fff")
+                    ->background('#0d3e61')->color("#fff")
                     ->generate();
 
                 return $image->encode('jpg', 100);

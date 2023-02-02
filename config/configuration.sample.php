@@ -16,7 +16,7 @@ class config
     public $appUrlRoot = '';                              //Base of application withotu trailing slash (used for cookies), e.g, /tiggomark
     public $defaultTheme = 'default';                     //Default theme
     public $primarycolor = '#1b75bb';                     //Primary Theme color
-    public $secondarycolor = '#81B1A8';                   //Secondary Theme Color
+    public $secondarycolor = '#0d3e61';                   //Secondary Theme Color
     public $defaultTimezone = 'America/Los_Angeles';      //Set default timezone
     public $enableMenuType = false;                       //Enable to specifiy menu on aproject by project basis
     public $keepTheme = true;                             //Keep theme and language from previous user for login screen
