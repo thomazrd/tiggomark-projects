@@ -503,7 +503,7 @@ jQuery(document).ready(function(){
                 </tfoot>
             </table>
             <div class="right">
-                <input type="submit" name="saveTimeSheet" value="Save"/>
+                <input type="submit" name="saveTimeSheet" value="<?php echo $this->__('buttons.save')?>"/>
             </div>
 
             <div class="clearall"></div>

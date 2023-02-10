@@ -1,0 +1,31 @@
+version: '3.3'
+
+services:
+
+  tiggomark_local_to_prod:
+    image: tiggomark/projects:1.0
+    container_name: tiggomark_local_to_prod
+    environment:
+      #LEAN_APP_URL: 'https://vpn.tiggomark.com.br'                     # Only needed for subdirectory setup; protocol (http or https) and base URL , trailing slash not needed
+      LEAN_SITENAME: 'Tiggomark'                                         # Name of your site, can be changed later
+      LEAN_DB_HOST: 'mysql_tiggomark_prod'                                    # Database host, derived from container_name in tiggomark_db container
+      LEAN_DB_USER: 'admin'
+      LEAN_DB_PASSWORD: '321.qwerty'
+      LEAN_DB_PORT: 3309
+      LEAN_DB_DATABASE: 'tiggomark'
+      LEAN_DEFAULT_TIMEZONE: 'Europe/Stockholm'                         # Set default server timezone
+      LEAN_SESSION_PASSWORD: 'GD8Fozemg3AqM9my86TTfgTeGPXXkPF7'         # Salting sessions. Replace with a strong password
+      LEAN_SESSION_EXPIRATION: 28800                                    # How many seconds after inactivity should we logout?  28800seconds = 8hours
+    volumes:
+      - public_userfiles2:/var/www/html/public/userfiles
+      - userfiles2:/var/www/html/userfiles
+    ports:
+      - "9095:80"                                                       # The port to expose and access tiggomark
+                                                     # Don't start tiggomark unless tiggomark_db is running
+
+volumes:
+  userfiles2:
+  public_userfiles2:
+
+
+

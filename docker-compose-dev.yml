@@ -1,9 +1,9 @@
 version: '3.3'
 
 services:
-  tiggomark_db:
+  tiggomark_db_dev_2:
     image: mysql:8.0
-    container_name: mysql_tiggomark_dev
+    container_name: mysql_tiggomark_dev_2
     environment:
       MYSQL_ROOT_PASSWORD: '321.qwerty'
       MYSQL_DATABASE: 'tiggomark'
@@ -13,14 +13,14 @@ services:
     ports:
       - "3306:3306"
 
-  tiggomark:
+  tiggomark_dev_2:
     build: .
-    container_name: tiggomark11
+    container_name: tiggomark_dev_2
     restart: unless-stopped
     environment:
-      # LEAN_APP_URL: 'https://domain.com/tiggomark'                     # Only needed for subdirectory setup; protocol (http or https) and base URL , trailing slash not needed
+      #LEAN_APP_URL: 'https://vpn.tiggomark.com.br'                     # Only needed for subdirectory setup; protocol (http or https) and base URL , trailing slash not needed
       LEAN_SITENAME: 'tiggomark2'                                         # Name of your site, can be changed later
-      LEAN_DB_HOST: 'mysql_tiggomark_dev'                                    # Database host, derived from container_name in tiggomark_db container
+      LEAN_DB_HOST: 'mysql_tiggomark_dev_2'                                    # Database host, derived from container_name in tiggomark_db container
       LEAN_DB_USER: 'admin'
       LEAN_DB_PASSWORD: '321.qwerty'
       LEAN_DB_DATABASE: 'tiggomark'
@@ -32,6 +32,6 @@ services:
     ports:
       - "8080:80"                                                       # The port to expose and access tiggomark
     depends_on:
-      - tiggomark_db                                                     # Don't start tiggomark unless tiggomark_db is running
+      - tiggomark_db_dev_2                                                  # Don't start tiggomark unless tiggomark_db is running
 
 

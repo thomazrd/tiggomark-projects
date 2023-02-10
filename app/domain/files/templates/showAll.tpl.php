@@ -23,7 +23,7 @@
                                         <i class="fa-file fileupload-exists"></i><span class="fileupload-preview"></span>
                                     </div>
                                     <span class="btn btn-file">
-                                    <span class="fileupload-new">Select file</span>
+                                    <span class="fileupload-new"><?=$this->__('label.select_file'); ?></span>
                                     <span class='fileupload-exists'>Change</span>
                                     <input type='file' name='file' />
                                 </span>

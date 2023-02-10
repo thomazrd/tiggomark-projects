@@ -202,6 +202,7 @@ if (is_array($currentLink)) {
                     <?php if ($login::userIsAtLeast($roles::$owner)) { ?>
                         <li class="nav-header border"><?=$this->__("label.administration")?></li>
 
+                        <!--
                         <li <?php if ($module == 'plugins') {
                             echo" class='active' ";
                             } ?>>
@@ -209,6 +210,7 @@ if (is_array($currentLink)) {
                                 <?=$this->__("menu.plugins")?>
                             </a>
                         </li>
+                        -->
 
                         <li <?php if ($module == 'setting') {
                             echo" class='active' ";

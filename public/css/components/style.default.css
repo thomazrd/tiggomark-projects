@@ -387,7 +387,7 @@ label, input, textarea, select, button {
 }
 
 h1, h2, h3, h4, h5 {
-    font-weight: normal;
+    font-weight: bold;
     line-height: normal;
 }
 
@@ -1094,7 +1094,7 @@ a .label-default:after, a .label-primary:after {
     font-size: var(--font-size-l);
     color: var(--primary-font-color);
     margin-bottom: 10px;
-    font-weight:lighter;
+    font-weight:bold;
 }
 
 .maincontentinner .accordionTitle i {
@@ -3087,7 +3087,8 @@ a.filter-term {
     display: block;
     padding: 5px;
     margin-bottom: 5px;
-    border-radius:var(--box-radius);
+    border-radius: var(--box-radius);
+    font-weight: bold;
 }
 
 .quickAddLink:hover {
@@ -3648,6 +3649,7 @@ body .widgettitle .editHeadline:hover {
 .profileBox .userName {
     font-size:var(--font-size-l);
     display:block;
+    font-weight: bold;
 }
 
 a.anchor {

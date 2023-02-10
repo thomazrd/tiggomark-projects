@@ -153,7 +153,6 @@
     display:block;
     font-weight:bold;
     font-size: var(--font-size-l);
-    padding:0px 10px;
     line-height:59px;
     height:60px;
     border-bottom:1px solid var(--main-menu-border-color);
@@ -221,6 +220,7 @@
 .leftpanel .leftmenu .nav-tabs ul.projectselector  li.intro .sub {
     font-size: var(--base-font-size);
     color: var(--secondary-font-color);
+    font-weight: bold;
 }
 
 .leftpanel .leftmenu .nav-tabs ul.projectselector  li.intro a {

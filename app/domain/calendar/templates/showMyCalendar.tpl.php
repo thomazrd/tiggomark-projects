@@ -17,7 +17,7 @@
 <div class="maincontent">
     <div class="maincontentinner">
 
-        <a href="<?=BASE_URL?>/calendar/export" class="btn btn-default right exportModal">Export</a>
+        <a href="<?=BASE_URL?>/calendar/export" class="btn btn-default right exportModal"><?php echo $this->__('datatables.buttons.download'); ?></a>
 
         <?php echo $this->displayLink(
             'calendar.addEvent',

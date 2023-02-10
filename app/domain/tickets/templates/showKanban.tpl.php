@@ -211,8 +211,8 @@ if ($numberofColumns > 0) {
 
                     <div class="filterBoxLeft">
                         <label class="inline"><?=$this->__("label.search_term") ?></label><br />
-                        <input type="text" class="form-control input-default" id="termInput" name="term" placeholder="Search" value="<?php $this->e($searchCriteria['term']); ?>">
-                        <input type="submit" value="Search" name="submitSearch" class="form-control btn btn-primary pull-left" id="filterFormSubmit"/>
+                        <input type="text" class="form-control input-default" id="termInput" name="term" placeholder='<?=$this->__("input.placeholders.search") ?>' value="<?php $this->e($searchCriteria['term']); ?>">
+                        <input type="submit" value='<?=$this->__("buttons.search") ?>' name="submitSearch" class="form-control btn btn-primary pull-left" id="filterFormSubmit"/>
                     </div>
 
                 </div>
@@ -258,7 +258,7 @@ if ($numberofColumns > 0) {
                                             <input type="hidden" name="milestone" value="<?php echo $searchCriteria['milestone']; ?>" />
                                             <input type="hidden" name="status" value="<?php echo $key; ?> " />
                                             <input type="hidden" name="sprint" value="<?php echo $_SESSION["currentSprint"]; ?> " />
-                                            <input type="submit" value="Save" name="quickadd" />
+                                            <input type="submit" value='<?=$this->__("buttons.save") ?>' name="quickadd" />
                                             <a href="javascript:void(0);" onclick="jQuery('#ticket_new_<?=$key?>').toggle('fast'); jQuery('#ticket_new_link_<?=$key?>').toggle('fast');">
                                                 <?=$this->__("links.cancel") ?>
                                             </a>

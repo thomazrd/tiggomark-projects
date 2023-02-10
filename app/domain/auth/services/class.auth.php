@@ -415,7 +415,7 @@ namespace tiggomark\domain\services {
                         $actual_link = "" . BASE_URL . "/auth/resetPw/" . $resetLink;
                         $mailer->setHtml(sprintf($this->language->__('email_notifications.password_reset_message'), $actual_link));
                         $to = array($username);
-                        $mailer->sendMail($to, "tiggomark System");
+                        $mailer->sendMail($to, "Tiggomark");
 
                         return true;
                     }

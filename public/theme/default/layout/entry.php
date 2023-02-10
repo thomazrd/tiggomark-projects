@@ -10,7 +10,7 @@
 <div class="header hidden-gt-sm">
 
     <div class="logo" style="margin-left:0px;">
-        <a href="<?=BASE_URL ?>/" style="background-image:url(<?php echo htmlentities($_SESSION["companysettings.logoPath"]);?>)">&nbsp;</a>
+        <a href="<?=BASE_URL ?>/" style="background-image:url(<?=BASE_URL ?>/images/logo.png);?>)">&nbsp;</a>
     </div>
 
 </div>
@@ -24,7 +24,9 @@
     <div class="col-md-6 hidden-phone regLeft">
         <div class="row">
             <div class="col-md-12" style="position:relative;">
-                <h1 class="mainWelcome"><?php echo $language->__("headlines.welcome_back"); ?></h1>
+                <div class="mainWelcome">
+                    <img src="<?=BASE_URL ?>/images/logo-fundo-branco.png" />
+                </div>
                 <span class="iq-objects-04 iq-fadebounce">
 				    <span class="iq-round"></span>
                 </span>
@@ -32,7 +34,6 @@
         </div>
     </div>
     <div class="col-md-6 col-sm-12 regRight">
-
         <div class="regpanel">
             <div class="regpanelinner">
                 <a href="<?=BASE_URL ?>" target="_blank"><img src="<?php echo htmlentities($_SESSION["companysettings.logoPath"]); ?>" /></a>
@@ -41,7 +42,6 @@
 
             </div>
         </div>
-
     </div>
 	<div class="tiggomarkLogo">
 		<img style="height: 25px;" src="<?=BASE_URL ?>/images/logo-powered-by-tiggomark.png">

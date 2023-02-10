@@ -17,7 +17,7 @@
             <br />
         </div>
     </div>
-
+   <!--
     <div class="row onboarding">
         <div class="col-md-3">
             <div class="profileBox">
@@ -92,7 +92,7 @@
             </div>
         </div>
     </div>
-
+   -->
 
     <div class="row">
         <div class="col-md-12">

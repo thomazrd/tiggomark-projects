@@ -1,9 +1,18 @@
 module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks('grunt-exec');
     grunt.initConfig({
+
+        cssmin : {
+        			target : {
+        				src :["public/css/libs/croppie.css","public/css/libs/loading.css","public/css/libs/loading-btn.css","public/css/libs/bootstrap.min.css","public/css/libs/bootstrap-responsive.min.css","public/css/libs/bootstrap-timepicker.min.css","public/css/libs/bootstrap-fileupload.min.css","public/css/libs/slimselect.min.css","public/css/libs/slimselect.tiggomark.css","public/css/libs/jquery.ui.css","public/css/libs/animate.min.css","public/css/libs/animate.delay.css","public/css/libs/jquery.growl.css","public/css/libs/jquery.alerts.css","public/css/libs/jquery.tagsinput.css","public/css/libs/ui.spinner.css","public/css/libs/jquery.chosen.css","public/css/libs/fullcalendar.css","public/css/libs/roboto.css","public/css/libs/fontawesome-free/css/all.css","public/css/libs/fontawesome-free/css/v4-shims.css","public/css/libs/jquery.simple-color-picker.css","public/css/libs/frappe_theme.css","public/css/libs/jquery.chosen.css","public/css/libs/shepherd-theme-arrows.css","public/css/libs/jstree/style.css","public/css/libs/uppy/style.css","public/css/libs/uppy/dashboard.css","public/css/libs/prism.css","public/css/libs/iconpicker/css/fontawesome-iconpicker.css","public/css/components/nyroModal.css","public/css/components/dropdowns.css","public/css/components/kanban.css","public/css/components/tables.css","public/css/components/masonwall.css","public/css/components/wysiwyg-overrides.css","public/css/components/forms.css","public/css/components/gantt-overwrites.css","public/css/components/tree-overwrites.css","public/css/components/nav.css","public/css/components/style.default.css","public/css/components/mobile.css","public/css/components/overwrites.css"],
+        				dest : "public/css/style.min.css"
+        			}
+        		},
+
         uglify: {
             app_src: {
                 options: {
@@ -171,7 +180,7 @@ module.exports = function (grunt) {
             }
         }
     });
-    grunt.registerTask("Build-All", ["less:dev", "uglify", "jshint"]);
+    grunt.registerTask("Build-All", ["cssmin","less:dev", "uglify", "jshint"]);
 
     grunt.registerTask("Build-App-Src", ["uglify:app_src", "jshint"]);
     grunt.registerTask("Build-Base-Lib", ["uglify:base_lib_src"]);

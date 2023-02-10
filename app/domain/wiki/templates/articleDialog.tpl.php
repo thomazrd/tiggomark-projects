@@ -93,7 +93,7 @@ if (isset($currentArticle->id)) {
                                     </select>
                                     <input type="hidden" name="type" value="milestone" />
                                     <input type="hidden" name="articleId" value="<?php echo $id; ?> " />
-                                    <input type="button" value="Save" onclick="jQuery('#primaryArticleSubmitButton').click()" class="btn btn-primary" />
+                                    <input type="button" value='<?=$this->__("buttons.save") ?>' onclick="jQuery('#primaryArticleSubmitButton').click()" class="btn btn-primary" />
                                     <a href="javascript:void(0);"  onclick="tiggomark.leanCanvasController.toggleMilestoneSelectors('hide');">
                                         <i class="fas fa-times"></i> <?=$this->__("links.cancel") ?>
                                     </a>

@@ -22,6 +22,7 @@
                 <?=$this->__("menu.what_is_this_page")?>
             </a>
         </li>
+        <!--
         <li>
             <a href='https://docs.tiggomark.io' target="_blank">
                 <?=$this->__("menu.knowledge_base")?>
@@ -37,6 +38,8 @@
                 <?=$this->__("menu.contact_us")?>
             </a>
         </li>
+
+        -->
         <li class="border">
             <a href='<?=BASE_URL ?>/auth/logout'>
                 <?=$this->__("menu.sign_out")?>
