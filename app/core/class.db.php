@@ -60,7 +60,8 @@ class db
 
             //Get configuration-object for connection-details
             $config = \tiggomark\core\environment::getInstance();
-
+            $host = $_SERVER['HTTP_HOST'];
+            $this->tenant = explode('.', $host)[0];
             $this->user = $config->dbUser;
             $this->password = $config->dbPassword;
             $this->databaseName = $config->dbDatabase;
@@ -68,9 +69,12 @@ class db
             $this->port = $config->dbPort ?? "3306";
 
 
+
+
+
         try {
             $driver_options = array( PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4,sql_mode="NO_ENGINE_SUBSTITUTION"' );
-            $this->database = new PDO('mysql:host=' . $this->host . ';port=' . $this->port . ';dbname=' . $this->databaseName . '', $this->user, $this->password, $driver_options);
+            $this->database = new PDO('mysql:host=' . $this->host . ';port=' . $this->port . ';dbname=' . $this->tenant . '', $this->user, $this->password, $driver_options);
             $this->database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->database->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
         } catch (PDOException $e) {
