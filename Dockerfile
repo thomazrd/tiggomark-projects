@@ -1,7 +1,7 @@
 FROM docker.io/library/php:8.0.21-fpm-alpine
 
 #Change version to trigger build
-ARG LEAN_VERSION=2.3.6
+ARG LEAN_VERSION=2.3.7
 
 WORKDIR /var/www/html
 
@@ -16,7 +16,7 @@ RUN apk update && apk add --no-cache \
     apache2 \
     apache2-ctl \
     apache2-proxy
-    
+
 
 # Installing extensions
 RUN docker-php-ext-install mysqli pdo_mysql mbstring exif pcntl pdo bcmath opcache ldap

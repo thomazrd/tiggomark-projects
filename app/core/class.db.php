@@ -34,8 +34,6 @@ class db
     private $password = '';
 
 
-    private $databaseName = '';
-
     /**
      * @access private
      * @var    string database port default: 3306
@@ -43,7 +41,6 @@ class db
     private $port = '3306';
 
 
-    public $database = '';
     /**
      * @access private
      * @var    pdo object
@@ -64,7 +61,6 @@ class db
             $this->tenant = explode('.', $host)[0];
             $this->user = $config->dbUser;
             $this->password = $config->dbPassword;
-            $this->databaseName = $config->dbDatabase;
             $this->host = $config->dbHost ?? "localhost";
             $this->port = $config->dbPort ?? "3306";
 

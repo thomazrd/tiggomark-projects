@@ -13,6 +13,19 @@ services:
     ports:
       - "3306:3306"
 
+  tenant_creator_dev:
+    image: tiggomark/tenant-creator:latest
+    container_name: tenant_creator_dev
+    environment:
+      DB_HOST: 'mysql_tiggomark_dev_2'
+      DB_USERNAME: 'root'
+      DB_PASSWORD: '321.qwerty'
+      DB_PORT: 3306
+    depends_on:
+      - tiggomark_db_dev_2
+    ports:
+      - "8081:8081"
+
   tiggomark_dev_2:
     build: .
     container_name: tiggomark_dev_2
@@ -23,7 +36,6 @@ services:
       LEAN_DB_HOST: 'mysql_tiggomark_dev_2'                                    # Database host, derived from container_name in tiggomark_db container
       LEAN_DB_USER: 'admin'
       LEAN_DB_PASSWORD: '321.qwerty'
-      LEAN_DB_DATABASE: 'tiggomark'
       LEAN_DB_PORT: 3306
       LEAN_DEFAULT_TIMEZONE: 'Europe/Stockholm'                         # Set default server timezone
       LEAN_SESSION_PASSWORD: 'GD8Fozemg3AqM9my86TTfgTeGPXXkPF7'         # Salting sessions. Replace with a strong password

@@ -22,19 +22,21 @@ function runBackup($backupFile, $config){
 
     $backupPath = $config->dbBackupPath.$backupFile;
     $output = array();
-    exec("mysqldump --user={$config->dbUser} --password={$config->dbPassword} --host={$config->dbHost} {$config->dbDatabase} --port={$config->dbPort} --result-file={$backupPath} 2>&1", $output,$worked);
+    $host = $_SERVER['HTTP_HOST'];
+    $tenant = explode('.', $host)[0];
+    exec("mysqldump --user={$config->dbUser} --password={$config->dbPassword} --host={$config->dbHost} {$tenant} --port={$config->dbPort} --result-file={$backupPath} 2>&1", $output,$worked);
 
     switch ($worked) {
         case 0:
-            return array('type'=>'success','msg'=> 'The Database ' .$config->dbDatabase .' is save in the path '.getcwd().'/' .$backupPath );
+            return array('type'=>'success','msg'=> 'The Database ' .$tenant .' is save in the path '.getcwd().'/' .$backupPath );
             chmod(ROOT.'/'.$config->userFilePath,0755);
             break;
         case 1:
 
-            return array('type'=>'error','msg'=>'There was an error backup ' .$config->dbDatabase . ' to ' . $backupPath);
+            return array('type'=>'error','msg'=>'There was an error backup ' .$tenant . ' to ' . $backupPath);
             break;
         case 2:
-            return array('type'=>'error','msg'=>'There was an error: Database MySQL: ' . $config->dbDatabase );
+            return array('type'=>'error','msg'=>'There was an error: Database MySQL: ' . $tenant );
             break;
     }
 
@@ -77,7 +79,9 @@ $S3=NULL;
 
 $timezone  = -6; //(GMT -6:00) Central Time
 $date = gmdate("Ymd-Hi", time() + 3600 * ($timezone + date("I")));
-$backupFile = $config->dbDatabase . '_' . $date . '.sql';
+$host = $_SERVER['HTTP_HOST'];
+$tenant = explode('.', $host)[0];
+$backupFile = $tenant . '_' . $date . '.sql';
 
 if($config->useS3 == true){
 

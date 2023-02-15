@@ -21,6 +21,7 @@
 
 <link rel="shortcut icon" href="<?=BASE_URL?>/images/favicon.png"/>
 <link rel="apple-touch-icon" href="<?=BASE_URL?>/images/apple-touch-icon.png">
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 
 <link rel="stylesheet" href="https://tiggomark-projects-cdn.sfo3.cdn.digitaloceanspaces.com/css/style.min.css"/>
 <?php $this->dispatchTplEvent('afterLinkTags'); ?>

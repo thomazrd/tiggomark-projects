@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   tiggomark_local_to_prod:
-    image: tiggomark/projects:1.0
+    build: .
     container_name: tiggomark_local_to_prod
     environment:
       #LEAN_APP_URL: 'https://vpn.tiggomark.com.br'                     # Only needed for subdirectory setup; protocol (http or https) and base URL , trailing slash not needed
@@ -22,6 +22,18 @@ services:
     ports:
       - "9095:80"                                                       # The port to expose and access tiggomark
                                                      # Don't start tiggomark unless tiggomark_db is running
+  tenant_creator_prod:
+    image: tiggomark/tenant-creator:latest
+    container_name: tenant_creator_local_prod
+    environment:
+      DB_HOST: 'mysql_tiggomark_prod'
+      DB_USERNAME: 'root'
+      DB_PASSWORD: '321.qwerty'
+      DB_PORT: 3309
+    depends_on:
+      - tiggomark_local_to_prod
+    ports:
+      - "8082:8081"
 
 volumes:
   userfiles2:

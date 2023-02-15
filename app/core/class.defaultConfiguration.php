@@ -25,7 +25,6 @@ class config
     public $dbHost = 'localhost';                         //Database host
     public $dbUser = '';                                  //Database username
     public $dbPassword = '';                              //Database password
-    public $dbDatabase = '';                              //Database name
     public $dbPort = '3306';                              //Database port
 
     /* Fileupload */

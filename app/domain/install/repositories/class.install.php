@@ -141,7 +141,10 @@ namespace tiggomark\domain\repositories {
         {
 
             try {
-                $this->database->query("Use `" . $this->config->dbDatabase . "`;");
+
+                $host = $_SERVER['HTTP_HOST'];
+                $this->tenant = explode('.', $host)[0];
+                $this->database->query("Use `" . $this->tenant . "`;");
 
                 $stmn = $this->database->prepare("SELECT COUNT(*) FROM zp_user");
 
@@ -170,7 +173,9 @@ namespace tiggomark\domain\repositories {
             $sql = $this->sqlPrep();
 
             try {
-                $this->database->query("Use `" . $this->config->dbDatabase . "`;");
+                $host = $_SERVER['HTTP_HOST'];
+                $this->tenant = explode('.', $host)[0];
+                $this->database->query("Use `" . $this->tenant . "`;");
 
                 $stmn = $this->database->prepare($sql);
                 $stmn->bindValue(':email', $values["email"], PDO::PARAM_STR);
@@ -205,8 +210,9 @@ namespace tiggomark\domain\repositories {
         {
 
             $errors = array();
-
-            $this->database->query("Use `" . $this->config->dbDatabase . "`;");
+            $host = $_SERVER['HTTP_HOST'];
+            $this->tenant = explode('.', $host)[0];
+            $this->database->query("Use `" .  $this->tenant . "`;");
 
             $versionArray = explode(".", $this->settings->dbVersion);
             if (is_array($versionArray) && count($versionArray) == 3) {
