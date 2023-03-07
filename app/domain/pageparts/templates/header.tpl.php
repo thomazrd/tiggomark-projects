@@ -23,18 +23,18 @@
 <link rel="apple-touch-icon" href="<?=BASE_URL?>/images/apple-touch-icon.png">
 <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 
-<link rel="stylesheet" href="https://tiggomark-projects-cdn.sfo3.cdn.digitaloceanspaces.com/css/style.min.css"/>
+<link rel="stylesheet" href="<?=BASE_URL?>/css/style.min.css"/>
 <?php $this->dispatchTplEvent('afterLinkTags'); ?>
 
 <script src="<?=BASE_URL?>/api/i18n"></script>
 
 <!-- libs -->
-<script src="https://tiggomark-projects-cdn.sfo3.cdn.digitaloceanspaces.com/js/compiled-base-libs.min.js?v=<?php echo $settings->appVersion; ?>"></script>
-<script src="https://tiggomark-projects-cdn.sfo3.cdn.digitaloceanspaces.com/js/compiled-extended-libs.min.js?v=<?php echo $settings->appVersion; ?>"></script>
+<script src="<?=BASE_URL?>/js/compiled-base-libs.min.js?v=<?php echo $settings->appVersion; ?>"></script>
+<script src="<?=BASE_URL?>/js/compiled-extended-libs.min.js?v=<?php echo $settings->appVersion; ?>"></script>
 <?php $this->dispatchTplEvent('afterScriptLibTags'); ?>
 
 <!-- app -->
-<script src="https://tiggomark-projects-cdn.sfo3.cdn.digitaloceanspaces.com/js/compiled-app.min.js?v=<?php echo $settings->appVersion; ?>"></script>
+<script src="<?=BASE_URL?>/js/compiled-app.min.js"></script>
 <?php $this->dispatchTplEvent('afterMainScriptTag'); ?>
 
 <!-- theme -->

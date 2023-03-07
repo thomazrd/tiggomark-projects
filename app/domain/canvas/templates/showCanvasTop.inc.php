@@ -8,6 +8,7 @@
  */
 
 $canvasTitle = '';
+$responseCanvasInsight = 'Insight Teste Canvas 123';
 $allCanvas = $this->get('allCanvas');
 $canvasIcon = $this->get('canvasIcon');
 $canvasTypes = $this->get('canvasTypes');
@@ -47,6 +48,7 @@ foreach ($this->get('allCanvas') as $canvasRow) {
         <a href="javascript:void(0)" class="dropdown-toggle btn btn-transparent" data-toggle="dropdown"><i class="fa-solid fa-ellipsis-v"></i></a>
         <ul class="dropdown-menu editCanvasDropdown">
             <?php if ($login::userIsAtLeast($roles::$editor)) { ?>
+                <li><a href="javascript:void(0)" class="showCanvasInsightsLink "><i class='fa fa-sliders-h'></i> Gerar exemplo</a></li>
                 <li><a href="javascript:void(0)" class="editCanvasLink "><?=$this->__("links.icon.edit") ?></a></li>
                 <li><a href="javascript:void(0)" class="cloneCanvasLink "><?=$this->__("links.icon.clone") ?></a></li>
                 <li><a href="javascript:void(0)" class="mergeCanvasLink "><?=$this->__("links.icon.merge") ?></a></li>
@@ -91,7 +93,7 @@ foreach ($this->get('allCanvas') as $canvasRow) {
     <div class="maincontentinner">
 
         <?php echo $this->displayNotification(); ?>
-
+        <a href="javascript:void(0)" class="showCanvasInsightsLink2"><i class="fa fa-edit"></i> Editar</a>
         <div class="row">
             <div class="col-md-3">
 
@@ -110,6 +112,7 @@ foreach ($this->get('allCanvas') as $canvasRow) {
                 <div class="pull-right">
                     <div class="btn-group viewDropDown">
                         <?php if (count($allCanvas) > 0 && !empty($statusLabels)) {?>
+
                             <?php if ($filter['status'] == 'all') { ?>
                                 <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="fas fa-filter"></i> <?=$this->__("status.all") ?> <?=$this->__("links.view") ?></button>
                             <?php } else { ?>

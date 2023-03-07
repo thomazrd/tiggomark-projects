@@ -6,6 +6,30 @@
 
 ?>
 <!-- Modals -->
+
+<div class="modal fade" id="showCanvasInsights"  style="width: 1200px;margin-left: -650px;border-radius: 10px;">
+  <div class="modal-dialog modal-lg" style+="padding: 20px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><i class='fa fa-sliders-h'></i> Canvas</h4>
+      </div>
+      <div class="modal-body" style="max-height: 700px;padding:30px">
+      <div class="text-center">
+         <img src='<?= BASE_URL ?>/images/logo.png' width='200'/>
+      </div>
+      <h2 class="modal-title text-center" style="margin-bottom: 15px;">Bem vindo ao gerador de exemplo de canvas!</h2>
+      <p class="text-center">Clique no botão "Gerar" e o sistema irá usar inteligência artifical (AI) para gerar um modelo de canvas baseado nas informações que você inseriu nos cards.</p>
+       <div id="canvasInsightContent" class="content-canvas-insights"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="gerar-insights" class="btn btn-default" >Gerar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="modal fade bs-example-modal-lg" id="addCanvas">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -27,6 +51,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
 
 <div class="modal fade bs-example-modal-lg" id="editCanvas">
   <div class="modal-dialog modal-lg">
@@ -107,7 +132,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() { new SlimSelect({ select: '#mergeCanvasSelect' }); });
 </script>
-      
+
 <div class="modal fade bs-example-modal-lg" id="importCanvas">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">

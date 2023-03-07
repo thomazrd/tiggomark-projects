@@ -17,7 +17,57 @@ tiggomark.canvasController = (function () {
 
     };
 
+
+   var escrever =  async function (str, el) {
+    str = str.trim();
+      if (str.length == 0) {
+        return;
+      }
+
+      const regexTagContent = /<([^>]+)>[^<]*<\/\1>/i;
+      const regexTag = /<\/?([a-z][a-z0-9]*)\b[^>]*>/i;
+      const tag = str.match(regexTag)[1];
+      const content = str.match(regexTagContent)[0].replace(/<\/?\w+>/g, '');
+      var element;
+      if(tag == "p"){
+      element= document.createElement("p");
+      var span = document.createElement("span");
+      span.setAttribute("class", "badge badge-default");
+      span.setAttribute("style", "font-size:14px");
+       var elementIcon = document.createElement("i");
+         elementIcon.setAttribute("class", "fa fa-thumbtack");
+         span.appendChild(elementIcon);
+         span.innerHTML+= " ";
+         element.appendChild(span);
+         el.appendChild(element);
+         element = span;
+       }
+       else {
+
+       element = document.createElement(tag);
+       el.appendChild(element);
+       }
+
+
+      var char = content.split('');
+
+      for (const next of char) {
+        element.innerHTML+= next;
+        await new Promise((resolve) => setTimeout(resolve, 20));
+      }
+
+    }
+
+
     var initCanvasLinks = function () {
+
+
+       jQuery(".showCanvasInsightsLink").click(function () {
+
+             jQuery('#showCanvasInsights').modal('show');
+
+         });
+
 
         jQuery(".addCanvasLink").click(function () {
 
@@ -48,6 +98,73 @@ tiggomark.canvasController = (function () {
             jQuery('#importCanvas').modal('show');
 
         });
+
+
+
+          // Adiciona um ouvinte de eventos ao botão
+        jQuery('#gerar-insights').click(async function() {
+             // Define o token de API
+
+             console.log("Clicou no gerar insights");
+
+             var div = document.getElementById('canvasInsightContent');
+
+             var texto = `<h1>Proposta de valor</h1>
+                 <p>Melhoria na eficiência da gestão de leads e clientes.</p>
+                 <p>Integração com ERPs para facilitar o processo de vendas e atendimento ao cliente.</p>
+                 <p>Análise de dados para tomada de decisões informadas.</p>
+                 <h1>Relacionamento com clientes</h1>
+                 <p>Suporte técnico via chat, e-mail e telefone.</p>
+                 <p>Comunidade online para compartilhamento de experiências e dicas.</p>
+                 <p>Atendimento personalizado para clientes corporativos.</p>
+                 <h1>Segmentos de clientes</h1>
+                 <p>Pequenas e médias empresas que buscam soluções de CRM acessíveis e fáceis de usar.</p>
+                 <p>Empresas que desejam integrar o gerenciamento de leads e clientes com seus sistemas ERP existentes.</p>
+                 <h1>Alternativas existentes</h1>
+                 <p>Plataformas de CRM concorrentes, como Salesforce e HubSpot.</p>
+                 <p>Soluções de gerenciamento de leads e clientes desenvolvidas internamente.</p>
+                 <h1>Métricas chave</h1>
+                 <p>Número de novos leads e clientes adquiridos.</p>
+                 <p>Taxa de conversão de leads em clientes.</p>
+                 <p>Nível de satisfação do cliente.</p>
+                 <p>Receita gerada por assinaturas e serviços adicionais.</p>
+                 <h1>Conceito de alto nível</h1>
+                 <p>Uma plataforma de CRM Web que ajuda as empresas a gerenciar seus leads e clientes de forma mais eficiente, integrando-se com ERPs para facilitar o processo de vendas e atendimento ao cliente.</p>
+                 <h1>Canais</h1>
+                 <p>Website e aplicativo móvel para dispositivos iOS e Android.</p>
+                 <p>Marketing de conteúdo em blogs, redes sociais e fóruns relevantes.</p>
+                 <p>Parcerias com fornecedores de software ERP para integrar a plataforma de CRM Web.</p>
+                 <h1>Primeiros usuários</h1>
+                 <p>Pequenas e médias empresas que buscam soluções de gerenciamento de vendas acessíveis e fáceis de usar.</p>
+                 <p>Empresas que desejam integrar o gerenciamento de vendas com seus sistemas ERP existentes.</p>
+                 <h1>Estrutura de custos</h1>
+                 <p>Desenvolvimento e manutenção da plataforma.</p>
+                 <p>Custos de suporte técnico e atendimento ao cliente.</p>
+                 <p>Marketing e publicidade para promover a plataforma.</p>
+                 <p>Despesas gerais, como aluguel, serviços públicos e suprimentos.</p>
+                 <h1>Fontes de receita</h1>
+                 <p>Assinaturas mensais para acesso à plataforma e recursos adicionais.</p>
+                 <p>Pacotes de consultoria e treinamento para empresas que precisam de ajuda adicional.</p>
+                 <p>Parcerias com outras empresas para oferecer serviços adicionais aos usuários.</p>`;
+
+
+                 texto = texto.replace(/\n/g, "")
+
+
+             const splitRegex = /(<[^>]*>.*?<\/[^>]*>)/ig;
+             const partes = texto.split(splitRegex);
+
+             console.log("Partes: ");
+             console.log(partes);
+
+              for (const texto of partes) {
+               await escrever(texto, div);
+             }
+
+         });
+
+
+
 
     };
 

@@ -131,6 +131,20 @@
 
 }
 
+.content-canvas-insights h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.content-canvas-insights p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+
+
+
 .ss-option:hover {
 	color: white;
 	background-color: var(--accent1) !important;

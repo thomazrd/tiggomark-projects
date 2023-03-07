@@ -5,7 +5,7 @@
     "config": {
         "platform-check": false,
         "platform": {
-            "php": "8.0"
+            "php": "8.1.0"
         }
     },
     "authors": [
@@ -15,10 +15,11 @@
         }
     ],
     "require": {
+       "openai-php/client":"^0.3.2",
         "php": "^8.0",
         "ext-ldap": "*",
         "ext-pdo": "*",
-        "guzzlehttp/guzzle": "7.4.5",
+        "guzzlehttp/guzzle": "7.5.0",
         "aws/aws-sdk-php": "3.219.0",
         "phpmailer/phpmailer": "6.6.0",
         "robthree/twofactorauth": "1.8.2",

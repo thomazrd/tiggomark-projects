@@ -65,7 +65,11 @@ class db
             $this->port = $config->dbPort ?? "3306";
 
 
+         if (strpos($host, "127.0.0.1") !== false) {
 
+           $this->tenant = "tiggomark";
+
+         }
 
 
         try {
@@ -76,6 +80,9 @@ class db
         } catch (PDOException $e) {
             echo "No database connection, check your database credentials in your configuration file.<br />\n";
             echo "Checking common issues:<br />\n";
+            echo "host: ".$host."\n";
+            echo "tenant: ".$this->tenant."\n";
+
 
             if (!extension_loaded('PDO')) {
                 echo "- php-PDO is required, but not installed<br />\n";

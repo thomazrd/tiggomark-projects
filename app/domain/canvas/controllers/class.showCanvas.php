@@ -21,6 +21,8 @@ namespace tiggomark\domain\controllers\canvas {
         private $canvasRepo;
         private $projectService;
 
+        private $responseCanvasInsight;
+
         /**
          * init - initialize private variables
          */
@@ -29,6 +31,7 @@ namespace tiggomark\domain\controllers\canvas {
             $canvasRepoName = "tiggomark\\domain\\repositories\\" . static::CANVAS_NAME . 'canvas';
             $this->canvasRepo = new $canvasRepoName();
             $this->projectService = new services\projects();
+            $this->responseCanvasInsight = "Teste Insight";
         }
 
         /**
@@ -109,6 +112,11 @@ namespace tiggomark\domain\controllers\canvas {
                 } else {
                     $this->tpl->setNotification($this->language->__('notification.please_enter_title'), 'error');
                 }
+            }
+
+             // Show Cavnas insights
+            if (isset($_POST['showCanvasInsights']) && $currentCanvasId > 0) {
+                $this->responseCanvasInsight = "Response Canvas Insight";
             }
 
             // Edit Canvas
