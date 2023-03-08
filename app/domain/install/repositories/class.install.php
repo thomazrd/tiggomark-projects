@@ -174,7 +174,13 @@ namespace tiggomark\domain\repositories {
 
             try {
                 $host = $_SERVER['HTTP_HOST'];
-                $this->tenant = explode('.', $host)[0];
+                $this->tenant =  $values["tenant"];
+                error_log("setupDB");
+
+                $createSchemaSql = "CREATE SCHEMA `" . $this->tenant . "`;";
+                $stmn = $this->database->prepare($createSchemaSql);
+                $stmn->execute();
+
                 $this->database->query("Use `" . $this->tenant . "`;");
 
                 $stmn = $this->database->prepare($sql);
@@ -197,7 +203,7 @@ namespace tiggomark\domain\repositories {
                 return false;
             }
 
-            return "Could not initialize transaction";
+            return false;
         }
 
         /**

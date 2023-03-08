@@ -19,6 +19,7 @@ class application
 
     private $publicActions = array(
         "auth.login",
+        "api.userwebhook",
         "auth.resetPw",
         "auth.userInvite",
         "install",

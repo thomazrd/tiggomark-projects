@@ -23,9 +23,7 @@ namespace tiggomark\domain\controllers {
 
             $this->installRepo = new repositories\install();
 
-            if ($this->installRepo->checkIfInstalled()) {
-                core\frontcontroller::redirect(BASE_URL);
-            }
+
         }
 
         /**
@@ -40,11 +38,14 @@ namespace tiggomark\domain\controllers {
             $this->tpl->display("install.new", "entry");
         }
 
-        public function post($params)
-        {
+        public function post($params){
+
+            $json_payload = file_get_contents('php://input');
+            $params = json_decode($json_payload, true);
 
             $values = array(
                 'email'         => "",
+                'tenant'         => "",
                 'password'      => "",
                 'firstname'     => "",
                 'lastname'      => ""
@@ -56,40 +57,23 @@ namespace tiggomark\domain\controllers {
                     'password' => $params['password'],
                     'firstname' => ($params['firstname']),
                     'lastname' => ($params['lastname']),
-                    'company' => ($params['company'])
+                    'company' => ($params['company']),
+                     'tenant' => ($params['tenant'])
                 );
 
-                if (isset($params['email']) == false || $params['email'] == '') {
-                    $this->tpl->setNotification("notification.enter_email", "error");
-                } else {
-                    if (isset($params['password']) == false || $params['password'] == '') {
-                        $this->tpl->setNotification("notification.enter_password", "error");
-                    } else {
-                        if (isset($params['firstname']) == false || $params['firstname'] == '') {
-                            $this->tpl->setNotification("notification.enter_firstname", "error");
-                        } else {
-                            if (isset($params['lastname']) == false || $params['lastname'] == '') {
-                                $this->tpl->setNotification("notification.enter_lastname", "error");
-                            } else {
-                                if (isset($params['company']) == false || $params['company'] == '') {
-                                    $this->tpl->setNotification("notification.enter_company", "error");
-                                    ;
-                                } else {
-                                    $values['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                error_log($values['email']);
 
-                                    if ($this->installRepo->setupDB($values)) {
-                                        $this->tpl->setNotification(sprintf($this->language->__("notifications.installation_success"), BASE_URL), "success");
-                                    } else {
-                                        $this->tpl->setNotification($this->language->__('notification.error_installing'), "error");
-                                    }
-                                }
-                            }
-                        }
-                    }
+
+                if ($this->installRepo->setupDB($values)) {
+                   http_response_code(200);
+                } else {
+                    http_response_code(500);
                 }
+
+
             }
 
-            core\frontcontroller::redirect(BASE_URL . "/install");
+
         }
     }
 }
