@@ -175,7 +175,6 @@ namespace tiggomark\domain\repositories {
             try {
                 $host = $_SERVER['HTTP_HOST'];
                 $this->tenant =  $values["tenant"];
-                error_log("setupDB");
 
                 $createSchemaSql = "CREATE SCHEMA `" . $this->tenant . "`;";
                 $stmn = $this->database->prepare($createSchemaSql);
@@ -517,7 +516,7 @@ namespace tiggomark\domain\repositories {
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
                 insert  into `zp_tickets`(`id`,`projectId`,`headline`,`description`,`acceptanceCriteria`,`date`,`dateToFinish`,`priority`,`status`,`userId`,`os`,`browser`,`resolution`,`component`,`version`,`url`,`dependingTicketId`,`editFrom`,`editTo`,`editorId`,`planHours`,`hourRemaining`,`type`,`production`,`staging`,`storypoints`,`sprint`,`sortindex`,`kanbanSortIndex`) values
-                (9,3,'Getting Started with tiggomark','Look around and make yourself familiar with the system. ','','2015-11-30 00:00:00','1969-12-31 00:00:00',NULL,3,1,NULL,NULL,NULL,NULL,'',NULL,NULL,'1969-12-31 00:00:00','1969-12-31 00:00:00',1,0,0,'Story',0,0,0,0,NULL,NULL);
+                (9,3,'Projeto de exemplo','... ','','2015-11-30 00:00:00','1969-12-31 00:00:00',NULL,3,1,NULL,NULL,NULL,NULL,'',NULL,NULL,'1969-12-31 00:00:00','1969-12-31 00:00:00',1,0,0,'Story',0,0,0,0,NULL,NULL);
 
                 CREATE TABLE `zp_timesheets` (
                   `id` int(255) NOT NULL AUTO_INCREMENT,

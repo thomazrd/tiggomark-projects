@@ -40,38 +40,6 @@ namespace tiggomark\domain\controllers {
 
         public function post($params){
 
-            $json_payload = file_get_contents('php://input');
-            $params = json_decode($json_payload, true);
-
-            $values = array(
-                'email'         => "",
-                'tenant'         => "",
-                'password'      => "",
-                'firstname'     => "",
-                'lastname'      => ""
-            );
-
-            if (isset($_POST['install'])) {
-                $values = array(
-                    'email' => ($params['email']),
-                    'password' => $params['password'],
-                    'firstname' => ($params['firstname']),
-                    'lastname' => ($params['lastname']),
-                    'company' => ($params['company']),
-                     'tenant' => ($params['tenant'])
-                );
-
-                error_log($values['email']);
-
-
-                if ($this->installRepo->setupDB($values)) {
-                   http_response_code(200);
-                } else {
-                    http_response_code(500);
-                }
-
-
-            }
 
 
         }

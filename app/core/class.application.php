@@ -236,7 +236,7 @@ class application
                     $this->frontController::getCurrentRoute() !== "install" &&
                     $this->frontController::getCurrentRoute() !== "api.i18n"
                 ) {
-                    $this->frontController::redirect(BASE_URL . "/install");
+                   // $this->frontController::redirect(BASE_URL . "/install");
                 }
             } else {
                 $_SESSION['isInstalled'] = true;
@@ -253,7 +253,7 @@ class application
                 if (isset($_SESSION['userdata'])) {
                     unset($_SESSION['userdata']);
                 }
-                $this->frontController::redirect(BASE_URL . "/install");
+                //$this->frontController::redirect(BASE_URL . "/install");
             }
 
             $dbVersion = $this->settingsRepo->getSetting("db-version");
@@ -270,7 +270,7 @@ class application
                     $this->frontController::getCurrentRoute() !== "install.update" &&
                     $this->frontController::getCurrentRoute() !== "api.i18n"
                 ) {
-                    $this->frontController::redirect(BASE_URL . "/install/update");
+                   // $this->frontController::redirect(BASE_URL . "/install/update");
                 }
             }
         }
