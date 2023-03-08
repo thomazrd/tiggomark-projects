@@ -56,7 +56,7 @@ namespace tiggomark\domain\controllers {
                     foreach ($success as $errorMessage) {
                         $this->tpl->setNotification($errorMessage, "error");
 
-                        core\frontcontroller::redirect(BASE_URL . "/install/update");
+                        //core\frontcontroller::redirect(BASE_URL . "/install/update");
                     }
                 }
 

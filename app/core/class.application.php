@@ -270,7 +270,7 @@ class application
                     $this->frontController::getCurrentRoute() !== "install.update" &&
                     $this->frontController::getCurrentRoute() !== "api.i18n"
                 ) {
-                    $this->frontController::redirect(BASE_URL . "/install/update");
+                    //$this->frontController::redirect(BASE_URL . "/install/update");
                 }
             }
         }
