@@ -33,6 +33,8 @@ services:
     environment:
       #LEAN_APP_URL: 'https://vpn.tiggomark.com.br'                     # Only needed for subdirectory setup; protocol (http or https) and base URL , trailing slash not needed
       LEAN_SITENAME: 'tiggomark2'                                         # Name of your site, can be changed later
+      SAAS_CONNECTOR_URL: 'http://localhost:8080'
+      SAAS_CONNECTOR_APP_TOKEN: 'app-token'
       LEAN_DB_HOST: 'mysql_tiggomark_dev_2'                                    # Database host, derived from container_name in tiggomark_db container
       LEAN_DB_USER: 'admin'
       LEAN_DB_PASSWORD: '321.qwerty'

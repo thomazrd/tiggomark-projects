@@ -13,6 +13,14 @@
             <a href='<?=BASE_URL ?>/users/editOwn/'>
                 <?=$this->__("menu.my_profile")?>
             </a>
+
+
+        </li>
+
+        <li>
+            <a href='#' onclick="tiggomark.generalController.changeUserPlan();">
+               <?=$this->__("menu.change_plan")?>
+             </a>
         </li>
 
         <li class="nav-header border"><?=$this->__("menu.help_support")?></li>

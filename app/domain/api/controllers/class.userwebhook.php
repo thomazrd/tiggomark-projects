@@ -45,8 +45,10 @@ namespace tiggomark\domain\controllers {
                                 'password'      => "",
                                 'firstname'     => "",
                                 'lastname'      => "",
-                                'tenant'      => ""
+                                'tenant'      => "",
+                                'internalUserId'      => ""
                             );
+
 
 
                             $values = array(
@@ -55,7 +57,8 @@ namespace tiggomark\domain\controllers {
                                 'firstname' => ($params['name']),
                                 'lastname'      => "",
                                 'company' => ($params['companyName']),
-                                 'tenant' => ($params['tenant'])
+                                'tenant' => ($params['tenant']),
+                                'internalUserId' => ($params['internalUserId'])
                             );
 
 

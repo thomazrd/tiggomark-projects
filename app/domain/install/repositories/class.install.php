@@ -172,6 +172,8 @@ namespace tiggomark\domain\repositories {
 
             $sql = $this->sqlPrep();
 
+
+
             try {
                 $host = $_SERVER['HTTP_HOST'];
                 $this->tenant =  $values["tenant"];
@@ -189,6 +191,7 @@ namespace tiggomark\domain\repositories {
                 $stmn->bindValue(':lastname', $values["lastname"], PDO::PARAM_STR);
                 $stmn->bindValue(':dbVersion', $this->settings->dbVersion, PDO::PARAM_STR);
                 $stmn->bindValue(':company', $values["company"], PDO::PARAM_STR);
+                $stmn->bindValue(':internalUserId', $values["internalUserId"], PDO::PARAM_STR);
 
                 $stmn->execute();
 
@@ -621,6 +624,7 @@ namespace tiggomark\domain\repositories {
                     PRIMARY KEY (`key`)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+                INSERT INTO zp_settings (`key`, `value`) VALUES ('saasConnectorUserId', :internalUserId);
                 INSERT INTO zp_settings (`key`, `value`) VALUES ('db-version', :dbVersion);
                 INSERT INTO zp_settings (`key`, `value`) VALUES ('companysettings.telemetry.active', 'true');
 

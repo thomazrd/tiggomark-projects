@@ -1,5 +1,10 @@
 <?php
     $redirectUrl = $this->get('redirectUrl');
+    $email = '';
+    if (isset($_GET['email'])) {
+        $email = $_GET['email'];
+    }
+
 ?>
 
 <?php $this->dispatchTplEvent('beforePageHeaderOpen'); ?>
@@ -21,7 +26,7 @@
         <?php echo $this->displayInlineNotification(); ?>
 
         <div class="">
-            <input type="text" name="username" id="username" class="form-control" placeholder="<?php echo $this->language->__($this->get("inputPlaceholder")); ?>" value=""/>
+            <input type="text"  value="<?php echo htmlspecialchars($email); ?>" name="username" id="username" class="form-control" placeholder="<?php echo $this->language->__($this->get("inputPlaceholder")); ?>" />
         </div>
         <div class="">
             <input type="password" name="password" id="password" class="form-control" placeholder="<?php echo $this->language->__("input.placeholders.enter_password"); ?>" value=""/>

@@ -46,6 +46,13 @@ class environment
         $this->appUrlRoot = $this->environmentHelper("LEAN_APP_URL_ROOT", $defaultConfiguration->appUrlRoot ?? '');
 
         /* Database */
+        $this->saasConnectorUrl = $this->environmentHelper("SAAS_CONNECTOR_URL", $defaultConfiguration->saasConnectorUrl);
+        $this->saasConnectorAppToken = $this->environmentHelper("SAAS_CONNECTOR_APP_TOKEN", $defaultConfiguration->saasConnectorAppToken);
+
+
+
+
+        /* Database */
         $this->dbHost = $this->environmentHelper("LEAN_DB_HOST", $defaultConfiguration->dbHost);
         $this->dbUser = $this->environmentHelper("LEAN_DB_USER", $defaultConfiguration->dbUser);
         $this->dbPassword = $this->environmentHelper("LEAN_DB_PASSWORD", $defaultConfiguration->dbPassword);

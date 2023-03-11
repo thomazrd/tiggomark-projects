@@ -58,6 +58,7 @@ module.exports = function (grunt) {
                     "public/js/libs/jquery.tagsinput.min.js",
                     "public/js/libs/confetti/js/confetti.js"
 
+
                 ],
                 dest: "public/js/compiled-base-libs.min.js"
             },

@@ -12,6 +12,10 @@ namespace tiggomark\domain\controllers {
     {
         private services\users $usersService;
         private repositories\files $filesRepository;
+        private repositories\setting $settingsRepo;
+
+
+         private $config;
 
         /**
          * init - initialize private variables
@@ -24,6 +28,9 @@ namespace tiggomark\domain\controllers {
 
             $this->usersService = new services\users();
             $this->filesRepository = new repositories\files();
+            $this->settingsRepo = new repositories\setting();
+
+            $this->config = \tiggomark\core\environment::getInstance();
         }
 
 
@@ -35,6 +42,28 @@ namespace tiggomark\domain\controllers {
          */
         public function get($params)
         {
+
+            if (isset($params['saasConnectorToken'])) {
+                header('Content-Type: application/json');
+               $saasConnectorUserId = $this->settingsRepo->getSetting("saasConnectorUserId");
+
+               $url = $this->config->saasConnectorUrl .'/user/token?userId='.$saasConnectorUserId;
+
+               $appToken = $this->config->saasConnectorAppToken;
+
+               $ch = curl_init();
+               curl_setopt($ch, CURLOPT_URL, $url);
+               curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+               curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                   "app-token: " . $appToken
+               ));
+
+               $response = curl_exec($ch);
+               curl_close($ch);
+
+               echo $response;
+
+             }
 
             if (isset($params['assignedProjectUsersAssigned'])) {
             }

@@ -467,6 +467,20 @@ tiggomark.generalController = (function () {
     };
 
 
+    var changeUserPlan = function () {
+
+        jQuery.getJSON(tiggomark.appUrl + '/api/users?saasConnectorToken=token', function (res) {
+          console.log("res call /api/users?saasConnectorToken=token");
+          console.log(res);
+          saasConnector.showSubscriptionFlow({'userToken': res.token});
+       }, function(error){
+          console.log("Erro ao gerar token para o usuário: ");
+          console.log(error);
+       });
+
+    };
+
+
     // Make public what you want to have public, everything else is private
     return {
         initSimpleEditor:_initSimpleEditor,
@@ -475,6 +489,7 @@ tiggomark.generalController = (function () {
         enableCommenterForms:enableCommenterForms,
         initFixedToolBarEditor:initFixedToolBarEditor,
         copyUrl:copyUrl,
+        changeUserPlan: changeUserPlan
     };
 
 })();

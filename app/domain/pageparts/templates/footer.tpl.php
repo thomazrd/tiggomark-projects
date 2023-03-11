@@ -1,5 +1,7 @@
 <?php defined('RESTRICTED') or die('Restricted access'); ?>
 
+
+
 <?php $this->dispatchTplEvent('beforeFooterOpen'); ?>
 <div class="footer">
     <?php $this->dispatchTplEvent('afterFooterOpen'); ?>

@@ -29,8 +29,8 @@
 <script src="<?=BASE_URL?>/api/i18n"></script>
 
 <!-- libs -->
-<script src="<?=BASE_URL?>/js/compiled-base-libs.min.js?v=<?php echo $settings->appVersion; ?>"></script>
-<script src="<?=BASE_URL?>/js/compiled-extended-libs.min.js?v=<?php echo $settings->appVersion; ?>"></script>
+<script src="<?=BASE_URL?>/js/compiled-base-libs.min.js"></script>
+<script src="<?=BASE_URL?>/js/compiled-extended-libs.min.js"></script>
 <?php $this->dispatchTplEvent('afterScriptLibTags'); ?>
 
 <!-- app -->

@@ -21,6 +21,11 @@ class config
     public $debug = 0;                                    //Debug flag
 
 
+    public $saasConnectorUrl = '';
+
+    public $saasConnectorAppToken = '';
+
+
     /* Database */
     public $dbHost = 'localhost';                         //Database host
     public $dbUser = '';                                  //Database username
